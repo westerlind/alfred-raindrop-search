@@ -5,7 +5,8 @@ This Alfred Workflow is created to have a single, fast, and always reachable way
 - If the workflow is not authenticated with Alfred when you initiate it, you will be taken to the authentication process.
 - If a web browser is the frontmost app when you open a bookmark from this workflow, it will open in that browser.
 - If you are working in another app, the bookmark will open in your default browser.
-- Hold the cmd-key to view the URL for a bookmark
+- Hold the cmd-key to view the URL for a bookmark.
+- Hold the option-key while pressing enter to copy the URL instead of opening it in a browser.
 - Press enter before you have started typing a search query, and Raindrop.io itself will open in your active web browser.
 
 # Availability

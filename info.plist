@@ -153,11 +153,36 @@
 				<false/>
 			</dict>
 		</array>
+		<key>36896C84-4763-46D0-9598-45825301874A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8F4E601D-AEF9-444D-96F1-45875D1A39A3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>3A985C66-C402-4358-A103-FA2233FF2D18</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E44DA31A-ABF5-41DD-8991-204E24E4827F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>56E7477E-A147-406F-B423-659AB0BD8355</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>E44DA31A-ABF5-41DD-8991-204E24E4827F</string>
+				<string>36896C84-4763-46D0-9598-45825301874A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -171,6 +196,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>2469C16C-7E26-4F22-AB46-7D1C762E942B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8F4E601D-AEF9-444D-96F1-45875D1A39A3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C33F0548-F96D-43A8-A5E1-F157C8553D2A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -238,21 +276,19 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string>com.brave.Browser</string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{var:link}</string>
-				<key>utf8</key>
-				<true/>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
+			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
-			<string>B4AC4F51-56BA-4168-88B2-CEE7381D3103</string>
+			<string>C33F0548-F96D-43A8-A5E1-F157C8553D2A</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -306,18 +342,70 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>{query}</string>
-				<key>variables</key>
-				<dict>
-					<key>link</key>
-					<string>{query}</string>
-				</dict>
+				<key>browser</key>
+				<string>com.brave.Browser</string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{var:link}</string>
+				<key>utf8</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
+			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>E44DA31A-ABF5-41DD-8991-204E24E4827F</string>
+			<string>B4AC4F51-56BA-4168-88B2-CEE7381D3103</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>matchmode</key>
+				<integer>1</integer>
+				<key>matchstring</key>
+				<string>^copy:</string>
+				<key>regexcaseinsensitive</key>
+				<false/>
+				<key>regexmultiline</key>
+				<false/>
+				<key>replacestring</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.replace</string>
+			<key>uid</key>
+			<string>8F4E601D-AEF9-444D-96F1-45875D1A39A3</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>^copy:</string>
+						<key>outputlabel</key>
+						<string>copy</string>
+						<key>uid</key>
+						<string>3A985C66-C402-4358-A103-FA2233FF2D18</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>36896C84-4763-46D0-9598-45825301874A</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -375,6 +463,24 @@
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
 			<string>1EE45FF5-B323-4060-AC4B-CA15074C3028</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>link</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>E44DA31A-ABF5-41DD-8991-204E24E4827F</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -582,25 +688,6 @@
 			<key>config</key>
 			<dict>
 				<key>browser</key>
-				<string>com.microsoft.edgemac</string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{var:link}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>311C1490-CED2-4F08-9B15-1BDE7A96CAC3</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
 				<string>com.google.Chrome.canary</string>
 				<key>spaces</key>
 				<string></string>
@@ -613,6 +700,25 @@
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
 			<string>6F269388-3954-427F-88E6-01C7750A3334</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string>com.microsoft.edgemac</string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{var:link}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>311C1490-CED2-4F08-9B15-1BDE7A96CAC3</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -742,7 +848,8 @@ return frontApp</string>
 - If the workflow is not authenticated with Alfred when you initiate it, you will be taken to the authentication process.
 - If a web browser is the frontmost app when you open a bookmark from this workflow, it will open in that browser.
 - If you are working in another app, the bookmark will open in your default browser.
-- Hold the cmd-key to view the URL for a bookmark
+- Hold the cmd-key to view the URL for a bookmark.
+- Hold the option-key while pressing enter to copy the URL instead of opening it in a browser.
 - Press enter before you have started typing a search query, and Raindrop.io itself will open in your active web browser.</string>
 	<key>uidata</key>
 	<dict>
@@ -782,6 +889,13 @@ return frontApp</string>
 			<key>ypos</key>
 			<integer>265</integer>
 		</dict>
+		<key>36896C84-4763-46D0-9598-45825301874A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>220</integer>
+			<key>ypos</key>
+			<integer>55</integer>
+		</dict>
 		<key>5073EAC4-DF95-479C-BCDD-B6828F53181C</key>
 		<dict>
 			<key>colorindex</key>
@@ -819,7 +933,7 @@ return frontApp</string>
 		<key>78C09EC9-0B83-454E-B40B-4B6D1BBD21A2</key>
 		<dict>
 			<key>xpos</key>
-			<integer>215</integer>
+			<integer>225</integer>
 			<key>ypos</key>
 			<integer>315</integer>
 		</dict>
@@ -831,6 +945,13 @@ return frontApp</string>
 			<integer>805</integer>
 			<key>ypos</key>
 			<integer>455</integer>
+		</dict>
+		<key>8F4E601D-AEF9-444D-96F1-45875D1A39A3</key>
+		<dict>
+			<key>xpos</key>
+			<integer>305</integer>
+			<key>ypos</key>
+			<integer>55</integer>
 		</dict>
 		<key>B4AC4F51-56BA-4168-88B2-CEE7381D3103</key>
 		<dict>
@@ -859,6 +980,13 @@ return frontApp</string>
 			<key>ypos</key>
 			<integer>335</integer>
 		</dict>
+		<key>C33F0548-F96D-43A8-A5E1-F157C8553D2A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>380</integer>
+			<key>ypos</key>
+			<integer>35</integer>
+		</dict>
 		<key>CC95B992-1336-4312-A443-B705E2E12F59</key>
 		<dict>
 			<key>colorindex</key>
@@ -871,9 +999,9 @@ return frontApp</string>
 		<key>E44DA31A-ABF5-41DD-8991-204E24E4827F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>210</integer>
+			<integer>225</integer>
 			<key>ypos</key>
-			<integer>65</integer>
+			<integer>155</integer>
 		</dict>
 		<key>EB0BEEDE-D9CF-4DAF-A154-0E92E796BF0D</key>
 		<dict>
@@ -894,8 +1022,6 @@ return frontApp</string>
 			<integer>215</integer>
 		</dict>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
 	<string>1.1</string>
 	<key>webaddress</key>

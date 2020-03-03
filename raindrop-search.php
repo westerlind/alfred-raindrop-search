@@ -47,7 +47,8 @@ if ($query != "") {
       ->title($result["title"])
       ->subtitle($result["excerpt"] != "" ? $result["excerpt"] : $result["link"])
       ->copy($result["link"])
-      ->mod('cmd', $result["link"], $result["link"]);
+      ->mod('cmd', $result["link"], $result["link"])
+      ->mod('alt', "Press enter to copy this link to clipboard", "copy:".$result["link"]);
   }
 }
 
