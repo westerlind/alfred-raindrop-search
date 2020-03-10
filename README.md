@@ -6,8 +6,9 @@ This Alfred Workflow is created to have a single, fast, and always reachable way
 - If a web browser is the frontmost app when you open a bookmark from this workflow, it will open in that browser.
 - If you are working in another app, the bookmark will open in your default browser.
 - Hold the cmd-key to view the URL for a bookmark.
-- Hold the option-key while pressing enter to copy the URL instead of opening it in a browser.
+- Hold the option-key while pressing enter, or use cmd+c to copy the URL instead of opening it in a browser.
 - Press enter before you have started typing a search query, and Raindrop.io itself will open in your active web browser.
+- Go to the "Search Raindrop.io" workflow in the Alfred preferences and look in the top left corner if you want to add a keyboard shortcut for going directly to the Raindrop.io search.
 
 # Availability
 The official place to download this workflow is here:
