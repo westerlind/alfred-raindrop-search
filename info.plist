@@ -431,6 +431,39 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>action</key>
+				<integer>1</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>r </string>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>51318D41-E845-48F7-822D-8B6D1F0BC11F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>browser</key>
 				<string>org.chromium.Chromium</string>
 				<key>spaces</key>
@@ -463,24 +496,6 @@
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
 			<string>1EE45FF5-B323-4060-AC4B-CA15074C3028</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{query}</string>
-				<key>variables</key>
-				<dict>
-					<key>link</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>E44DA31A-ABF5-41DD-8991-204E24E4827F</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -668,6 +683,24 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>link</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>E44DA31A-ABF5-41DD-8991-204E24E4827F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>browser</key>
 				<string>com.operasoftware.Opera</string>
 				<key>spaces</key>
@@ -725,48 +758,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>tell application "System Events"	set frontApp to name of first application process whose frontmost is trueend tell
-return frontApp</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>B9566004-3BE2-40F9-97F8-DAF489100CE4</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{query}</string>
-				<key>variables</key>
-				<dict>
-					<key>browser</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>78C09EC9-0B83-454E-B40B-4B6D1BBD21A2</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>browser</key>
 				<string>org.mozilla.SeaMonkey</string>
 				<key>spaces</key>
@@ -818,6 +809,48 @@ return frontApp</string>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
 			<string>5073EAC4-DF95-479C-BCDD-B6828F53181C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>tell application "System Events"	set frontApp to name of first application process whose frontmost is trueend tell
+return frontApp</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B9566004-3BE2-40F9-97F8-DAF489100CE4</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>browser</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>78C09EC9-0B83-454E-B40B-4B6D1BBD21A2</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -905,6 +938,18 @@ return frontApp</string>
 			<key>ypos</key>
 			<integer>385</integer>
 		</dict>
+		<key>51318D41-E845-48F7-822D-8B6D1F0BC11F</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
+			<key>note</key>
+			<string>Double click above to add a keyboard shortcut for going directly to the Rainbow.io Search.
+I personally use option+space.</string>
+			<key>xpos</key>
+			<integer>55</integer>
+			<key>ypos</key>
+			<integer>145</integer>
+		</dict>
 		<key>55332F63-B661-47D7-B85D-C76484E34D12</key>
 		<dict>
 			<key>colorindex</key>
@@ -916,6 +961,8 @@ return frontApp</string>
 		</dict>
 		<key>56E7477E-A147-406F-B423-659AB0BD8355</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
 			<key>xpos</key>
 			<integer>55</integer>
 			<key>ypos</key>
@@ -935,7 +982,7 @@ return frontApp</string>
 			<key>xpos</key>
 			<integer>225</integer>
 			<key>ypos</key>
-			<integer>315</integer>
+			<integer>445</integer>
 		</dict>
 		<key>7B5B2A0C-413E-4321-85A2-F96ADDB26BB6</key>
 		<dict>
@@ -969,7 +1016,7 @@ return frontApp</string>
 			<key>xpos</key>
 			<integer>55</integer>
 			<key>ypos</key>
-			<integer>285</integer>
+			<integer>415</integer>
 		</dict>
 		<key>BE5382DD-AB74-4D17-919D-D9F08E264B12</key>
 		<dict>
@@ -999,9 +1046,9 @@ return frontApp</string>
 		<key>E44DA31A-ABF5-41DD-8991-204E24E4827F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>225</integer>
+			<integer>220</integer>
 			<key>ypos</key>
-			<integer>155</integer>
+			<integer>205</integer>
 		</dict>
 		<key>EB0BEEDE-D9CF-4DAF-A154-0E92E796BF0D</key>
 		<dict>
