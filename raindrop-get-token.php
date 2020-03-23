@@ -4,6 +4,8 @@
 // By Andreas Westerlind in 2020
 //
 
+require 'raindrop-common.php';
+
 $code = $argv[1];
 
 // Get client_id and client_secret from client_code.json

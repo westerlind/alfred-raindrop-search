@@ -8,6 +8,21 @@
 	<string>Internet</string>
 	<key>connections</key>
 	<dict>
+		<key>0FB6E4B2-21D2-4255-9906-5657611EE7DC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B9566004-3BE2-40F9-97F8-DAF489100CE4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>3A985C66-C402-4358-A103-FA2233FF2D18</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>2469C16C-7E26-4F22-AB46-7D1C762E942B</key>
 		<array>
 			<dict>
@@ -153,6 +168,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>34AB4054-0239-4B48-89A4-C5BB051CCB1B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B9566004-3BE2-40F9-97F8-DAF489100CE4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>36896C84-4763-46D0-9598-45825301874A</key>
 		<array>
 			<dict>
@@ -178,11 +206,75 @@
 				<false/>
 			</dict>
 		</array>
+		<key>41FA3DD8-08E4-4908-8251-BC74C228C0D8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>34AB4054-0239-4B48-89A4-C5BB051CCB1B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>3A985C66-C402-4358-A103-FA2233FF2D18</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E7FB4B6B-1FB7-40F5-9B59-63198E520FAD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>51318D41-E845-48F7-822D-8B6D1F0BC11F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>56E7477E-A147-406F-B423-659AB0BD8355</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>53B0EA43-377E-44EB-8FE6-3AA390620E97</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0FB6E4B2-21D2-4255-9906-5657611EE7DC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>56E7477E-A147-406F-B423-659AB0BD8355</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>36896C84-4763-46D0-9598-45825301874A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6E6668A6-E82C-4C77-B178-FABE7F28863C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E326B12F-69C1-44A0-AC1A-7B9D3916C537</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -217,6 +309,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>9A3C06F3-0910-45D6-8995-7183FC7E4500</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>53B0EA43-377E-44EB-8FE6-3AA390620E97</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>B9566004-3BE2-40F9-97F8-DAF489100CE4</key>
 		<array>
 			<dict>
@@ -230,11 +335,37 @@
 				<false/>
 			</dict>
 		</array>
+		<key>E326B12F-69C1-44A0-AC1A-7B9D3916C537</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>41FA3DD8-08E4-4908-8251-BC74C228C0D8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>E44DA31A-ABF5-41DD-8991-204E24E4827F</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>B9566004-3BE2-40F9-97F8-DAF489100CE4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E7FB4B6B-1FB7-40F5-9B59-63198E520FAD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9A3C06F3-0910-45D6-8995-7183FC7E4500</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -289,6 +420,37 @@
 			<string>C33F0548-F96D-43A8-A5E1-F157C8553D2A</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>51318D41-E845-48F7-822D-8B6D1F0BC11F</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -364,7 +526,7 @@
 				<key>matchmode</key>
 				<integer>1</integer>
 				<key>matchstring</key>
-				<string>^copy:</string>
+				<string>^copy:::</string>
 				<key>regexcaseinsensitive</key>
 				<false/>
 				<key>regexmultiline</key>
@@ -431,39 +593,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>1</integer>
-				<key>argument</key>
-				<integer>3</integer>
-				<key>argumenttext</key>
-				<string>r </string>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>0</integer>
-				<key>hotmod</key>
-				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>51318D41-E845-48F7-822D-8B6D1F0BC11F</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>browser</key>
 				<string>org.chromium.Chromium</string>
 				<key>spaces</key>
@@ -496,6 +625,24 @@
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
 			<string>1EE45FF5-B323-4060-AC4B-CA15074C3028</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>link</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>E44DA31A-ABF5-41DD-8991-204E24E4827F</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -683,24 +830,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>{query}</string>
-				<key>variables</key>
-				<dict>
-					<key>link</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>E44DA31A-ABF5-41DD-8991-204E24E4827F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>browser</key>
 				<string>com.operasoftware.Opera</string>
 				<key>spaces</key>
@@ -716,6 +845,191 @@
 			<string>EDB576B7-F065-49A4-840D-8EAD0C79DE5B</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>6E6668A6-E82C-4C77-B178-FABE7F28863C</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>ra</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading Raindop.io categories...</string>
+				<key>script</key>
+				<string>property ff_dir: (system attribute "alfred_workflow_cache")
+property ff_path: ff_dir &amp; "/firefox_current_tab.json"
+property ff_file: POSIX file ff_path
+
+on run
+
+tell application "System Events"
+	set frontApp to name of first application process whose frontmost is true
+end tell
+
+set browserURL to "No browser active"
+set browserTitle to ""
+
+if (frontApp = "Microsoft Edge") then
+	tell application "Microsoft Edge"
+		set browserURL to the URL of the active tab of the front window
+		set browserTitle to the name of the active tab of the front window
+	end tell
+else if (frontApp = "Safari") then
+	tell application "Safari"
+		set browserURL to the URL of the current tab of the front window
+		set browserTitle to the name of the current tab of the front window
+	end tell
+else if (frontApp = "Google Chrome") then
+	tell application "Google Chrome"
+		set browserURL to the URL of the active tab of the front window
+		set browserTitle to the name of the active tab of the front window
+	end tell
+else if (frontApp = "Google Chrome Canary") then
+	tell application "Google Chrome Canary"
+		set browserURL to the URL of the active tab of the front window
+		set browserTitle to the name of the active tab of the front window
+	end tell
+else if (frontApp = "Chromium") then
+	tell application "Chromium"
+		set browserURL to the URL of the active tab of the front window
+		set browserTitle to the name of the active tab of the front window
+	end tell
+else if (frontApp = "Brave Browser") then
+	tell application "Brave Browser"
+		set browserURL to the URL of the active tab of the front window
+		set browserTitle to the name of the active tab of the front window
+	end tell
+else if (frontApp = "Safari Technology Preview") then
+	tell application "Safari Technology Preview"
+		set browserURL to the URL of the current tab of the front window
+		set browserTitle to the name of the current tab of the front window
+	end tell
+else if (frontApp = "Opera") then
+	tell application "Opera"  
+		set browserURL to the URL of the active tab of the front window
+		set browserTitle to the name of the active tab of the front window
+	end tell
+else if (frontApp = "Vivaldi") then
+	tell application "Vivaldi"
+		set browserURL to the URL of the active tab of the front window
+		set browserTitle to the name of the active tab of the front window
+	end tell
+else if (frontApp = "firefox") then
+	-- For getting tab info from Firefox, we use the awsome Firefox Assistant by Dean Jackson, because Firefox does not have Apple Script support like the other browsers.
+	-- Ensure directory exists
+	do shell script "mkdir -p " &amp; quoted form of ff_dir
+	-- Ensure JSON file does not
+	do shell script "rm -f " &amp; quoted form of ff_path
+
+	-- Tell Firefox Assistant to write tab info to ff_path
+	try
+		tell application id "com.runningwithcrayons.Alfred"
+			run trigger "current-tab" in workflow "net.deanishe.alfred.firefox-assistant" with argument ff_path
+		end tell
+	on error errMsg
+		log "ERROR: " &amp; quoted form of errMsg
+		return do shell script "/usr/bin/php firefox-error-management.php " &amp; quoted form of errMsg
+	end try
+
+	-- External Trigger calls are asynchronous, so wait up to one second for file to appear,
+	-- then return contents of file (which are written to STDOUT)
+	tell application "Finder"
+		repeat 100 times
+			try
+				if exists ff_file then
+					set ff_tab_info to do shell script "cat " &amp; quoted form of ff_path
+					-- Remove JSON file
+					do shell script "rm -f " &amp; quoted form of ff_path
+					if (ff_tab_info is equal to "Cannot Connect to Extension") then
+						return do shell script "/usr/bin/php firefox-error-management.php " &amp; quoted form of ff_tab_info
+					else
+						return do shell script "/usr/bin/php raindrop-categories.php " &amp; quoted form of ff_tab_info &amp; " \"{query}\""
+					end if
+				end if
+			on error errMsg
+				log "ERROR: " &amp; quoted form of errMsg
+				return do shell script "/usr/bin/php firefox-error-management.php " &amp; quoted form of errMsg
+			end try
+			delay 0.01
+		end repeat
+	end tell
+
+	-- Failed to get tab info (in time)
+	log "Tab info not saved by Firefox Assistant"
+	return do shell script "/usr/bin/php firefox-error-management.php \"Tab info not saved by Firefox Assistant\""
+end if
+
+do shell script "/usr/bin/php raindrop-categories.php " &amp; quoted form of browserURL &amp; " \"{query}\" " &amp; quoted form of browserTitle
+
+end run</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Add a bookmark to Raindrop.io</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E326B12F-69C1-44A0-AC1A-7B9D3916C537</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -752,6 +1066,24 @@
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
 			<string>311C1490-CED2-4F08-9B15-1BDE7A96CAC3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>browser</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>78C09EC9-0B83-454E-B40B-4B6D1BBD21A2</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -839,24 +1171,6 @@ return frontApp</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>{query}</string>
-				<key>variables</key>
-				<dict>
-					<key>browser</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>78C09EC9-0B83-454E-B40B-4B6D1BBD21A2</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>spaces</key>
@@ -870,6 +1184,148 @@ return frontApp</string>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
 			<string>7B5B2A0C-413E-4321-85A2-F96ADDB26BB6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>/usr/bin/php raindrop-add.php "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9A3C06F3-0910-45D6-8995-7183FC7E4500</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>variables</key>
+				<dict>
+					<key>link</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>34AB4054-0239-4B48-89A4-C5BB051CCB1B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:bookmark_title}</string>
+				<key>title</key>
+				<string>Raindrop.io Bookmark Added</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>53B0EA43-377E-44EB-8FE6-3AA390620E97</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>.* :§:open_raindrop:§: .*</string>
+						<key>outputlabel</key>
+						<string>Open Raindrop.io after saving</string>
+						<key>uid</key>
+						<string>3A985C66-C402-4358-A103-FA2233FF2D18</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Or else, nothing more to do</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>0FB6E4B2-21D2-4255-9906-5657611EE7DC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:ff_error}</string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>true</string>
+						<key>outputlabel</key>
+						<string>View info</string>
+						<key>uid</key>
+						<string>3A985C66-C402-4358-A103-FA2233FF2D18</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Add bookmark</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>41FA3DD8-08E4-4908-8251-BC74C228C0D8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}§+#^§{var:url}§+#^§{var:title}</string>
+				<key>variables</key>
+				<dict>
+					<key>bookmark_title</key>
+					<string>{var:title}</string>
+					<key>link</key>
+					<string>https://app.raindrop.io/#/collection/0</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>E7FB4B6B-1FB7-40F5-9B59-63198E520FAD</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -887,57 +1343,80 @@ return frontApp</string>
 - Go to the "Search Raindrop.io" workflow in the Alfred preferences and look in the top left corner if you want to add a keyboard shortcut for going directly to the Raindrop.io search.</string>
 	<key>uidata</key>
 	<dict>
+		<key>0FB6E4B2-21D2-4255-9906-5657611EE7DC</key>
+		<dict>
+			<key>note</key>
+			<string>Open Raindrop.io in a web browser if cmd was held down while selection category.</string>
+			<key>xpos</key>
+			<integer>575</integer>
+			<key>ypos</key>
+			<integer>675</integer>
+		</dict>
 		<key>17FF8844-FFFD-4127-9879-42F68E3F5ED9</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>665</integer>
+			<integer>735</integer>
 			<key>ypos</key>
-			<integer>380</integer>
+			<integer>370</integer>
 		</dict>
 		<key>1EE45FF5-B323-4060-AC4B-CA15074C3028</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>945</integer>
+			<integer>1015</integer>
 			<key>ypos</key>
-			<integer>150</integer>
+			<integer>140</integer>
 		</dict>
 		<key>2469C16C-7E26-4F22-AB46-7D1C762E942B</key>
 		<dict>
 			<key>note</key>
 			<string>If a browser is the frontmost app, open Raindrop.io with your search in that browser, or otherwise open it in the default browser.</string>
 			<key>xpos</key>
-			<integer>330</integer>
+			<integer>490</integer>
 			<key>ypos</key>
-			<integer>155</integer>
+			<integer>145</integer>
 		</dict>
 		<key>311C1490-CED2-4F08-9B15-1BDE7A96CAC3</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>945</integer>
+			<integer>1015</integer>
 			<key>ypos</key>
-			<integer>265</integer>
+			<integer>255</integer>
+		</dict>
+		<key>34AB4054-0239-4B48-89A4-C5BB051CCB1B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>210</integer>
+			<key>ypos</key>
+			<integer>660</integer>
 		</dict>
 		<key>36896C84-4763-46D0-9598-45825301874A</key>
 		<dict>
 			<key>xpos</key>
-			<integer>220</integer>
+			<integer>380</integer>
 			<key>ypos</key>
-			<integer>55</integer>
+			<integer>45</integer>
+		</dict>
+		<key>41FA3DD8-08E4-4908-8251-BC74C228C0D8</key>
+		<dict>
+			<key>xpos</key>
+			<integer>60</integer>
+			<key>ypos</key>
+			<integer>680</integer>
 		</dict>
 		<key>5073EAC4-DF95-479C-BCDD-B6828F53181C</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>945</integer>
+			<integer>1015</integer>
 			<key>ypos</key>
-			<integer>385</integer>
+			<integer>375</integer>
 		</dict>
 		<key>51318D41-E845-48F7-822D-8B6D1F0BC11F</key>
 		<dict>
@@ -947,131 +1426,181 @@ return frontApp</string>
 			<string>Double click above to add a keyboard shortcut for going directly to the Rainbow.io Search.
 I personally use option+space.</string>
 			<key>xpos</key>
-			<integer>55</integer>
+			<integer>25</integer>
 			<key>ypos</key>
-			<integer>145</integer>
+			<integer>25</integer>
+		</dict>
+		<key>53B0EA43-377E-44EB-8FE6-3AA390620E97</key>
+		<dict>
+			<key>note</key>
+			<string>Show info to user</string>
+			<key>xpos</key>
+			<integer>435</integer>
+			<key>ypos</key>
+			<integer>660</integer>
 		</dict>
 		<key>55332F63-B661-47D7-B85D-C76484E34D12</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>665</integer>
+			<integer>735</integer>
 			<key>ypos</key>
-			<integer>150</integer>
+			<integer>140</integer>
 		</dict>
 		<key>56E7477E-A147-406F-B423-659AB0BD8355</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>5</integer>
+			<key>note</key>
+			<string>Search Raindrop.io</string>
 			<key>xpos</key>
-			<integer>55</integer>
+			<integer>170</integer>
 			<key>ypos</key>
-			<integer>35</integer>
+			<integer>25</integer>
+		</dict>
+		<key>6E6668A6-E82C-4C77-B178-FABE7F28863C</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
+			<key>note</key>
+			<string>Double click above to add a keyboard shortcut for going directly to adding a new Rainbow.io bookmark.
+I personally use cmd+option+space.</string>
+			<key>xpos</key>
+			<integer>25</integer>
+			<key>ypos</key>
+			<integer>235</integer>
 		</dict>
 		<key>6F269388-3954-427F-88E6-01C7750A3334</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>665</integer>
+			<integer>735</integer>
 			<key>ypos</key>
-			<integer>265</integer>
+			<integer>255</integer>
 		</dict>
 		<key>78C09EC9-0B83-454E-B40B-4B6D1BBD21A2</key>
 		<dict>
 			<key>xpos</key>
-			<integer>225</integer>
+			<integer>430</integer>
 			<key>ypos</key>
-			<integer>445</integer>
+			<integer>305</integer>
 		</dict>
 		<key>7B5B2A0C-413E-4321-85A2-F96ADDB26BB6</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>805</integer>
+			<integer>875</integer>
 			<key>ypos</key>
-			<integer>455</integer>
+			<integer>445</integer>
 		</dict>
 		<key>8F4E601D-AEF9-444D-96F1-45875D1A39A3</key>
 		<dict>
 			<key>xpos</key>
-			<integer>305</integer>
+			<integer>465</integer>
 			<key>ypos</key>
-			<integer>55</integer>
+			<integer>45</integer>
+		</dict>
+		<key>9A3C06F3-0910-45D6-8995-7183FC7E4500</key>
+		<dict>
+			<key>note</key>
+			<string>Save the bookmark</string>
+			<key>xpos</key>
+			<integer>295</integer>
+			<key>ypos</key>
+			<integer>660</integer>
 		</dict>
 		<key>B4AC4F51-56BA-4168-88B2-CEE7381D3103</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>945</integer>
+			<integer>1015</integer>
 			<key>ypos</key>
-			<integer>35</integer>
+			<integer>25</integer>
 		</dict>
 		<key>B9566004-3BE2-40F9-97F8-DAF489100CE4</key>
 		<dict>
 			<key>note</key>
 			<string>Check for frontmost app</string>
 			<key>xpos</key>
-			<integer>55</integer>
+			<integer>345</integer>
 			<key>ypos</key>
-			<integer>415</integer>
+			<integer>405</integer>
 		</dict>
 		<key>BE5382DD-AB74-4D17-919D-D9F08E264B12</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>805</integer>
+			<integer>875</integer>
 			<key>ypos</key>
-			<integer>335</integer>
+			<integer>325</integer>
 		</dict>
 		<key>C33F0548-F96D-43A8-A5E1-F157C8553D2A</key>
 		<dict>
 			<key>xpos</key>
-			<integer>380</integer>
+			<integer>540</integer>
 			<key>ypos</key>
-			<integer>35</integer>
+			<integer>25</integer>
 		</dict>
 		<key>CC95B992-1336-4312-A443-B705E2E12F59</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>805</integer>
+			<integer>875</integer>
 			<key>ypos</key>
-			<integer>95</integer>
+			<integer>85</integer>
+		</dict>
+		<key>E326B12F-69C1-44A0-AC1A-7B9D3916C537</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
+			<key>note</key>
+			<string>Add bookmark to Raindrop.io</string>
+			<key>xpos</key>
+			<integer>170</integer>
+			<key>ypos</key>
+			<integer>235</integer>
 		</dict>
 		<key>E44DA31A-ABF5-41DD-8991-204E24E4827F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>220</integer>
+			<integer>385</integer>
 			<key>ypos</key>
-			<integer>205</integer>
+			<integer>145</integer>
+		</dict>
+		<key>E7FB4B6B-1FB7-40F5-9B59-63198E520FAD</key>
+		<dict>
+			<key>xpos</key>
+			<integer>210</integer>
+			<key>ypos</key>
+			<integer>715</integer>
 		</dict>
 		<key>EB0BEEDE-D9CF-4DAF-A154-0E92E796BF0D</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>665</integer>
+			<integer>735</integer>
 			<key>ypos</key>
-			<integer>35</integer>
+			<integer>25</integer>
 		</dict>
 		<key>EDB576B7-F065-49A4-840D-8EAD0C79DE5B</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<integer>805</integer>
+			<integer>875</integer>
 			<key>ypos</key>
-			<integer>215</integer>
+			<integer>205</integer>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>1.2</string>
+	<string>1.3</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>
