@@ -1256,7 +1256,7 @@ return frontApp</string>
 				<array>
 					<dict>
 						<key>inputstring</key>
-						<string></string>
+						<string>{var:selection}</string>
 						<key>matchcasesensitive</key>
 						<true/>
 						<key>matchmode</key>
@@ -1320,6 +1320,8 @@ return frontApp</string>
 					<string>{var:title}</string>
 					<key>link</key>
 					<string>https://app.raindrop.io/#/collection/0</string>
+					<key>selection</key>
+					<string>{query}</string>
 				</dict>
 			</dict>
 			<key>type</key>
