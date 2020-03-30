@@ -112,7 +112,12 @@ function render_categories($raindrop_categories, $raindrop_categories_sublevel, 
       }
 
       $icon_url_array = explode("/", $result["cover"][0]);
-      $icon_file_name = "icon_cache/" . $icon_url_array[key(array_slice($icon_url_array, -1, 1, true))];
+      if ($icon_url_array[key(array_slice($icon_url_array, -1, 1, true))] == "") {
+        $icon_file_name = "icon.png";
+      }
+      else {
+        $icon_file_name = "icon_cache/" . $icon_url_array[key(array_slice($icon_url_array, -1, 1, true))];
+      }
       if (!file_exists($icon_file_name)) {
         $icon_content = file_get_contents($result["cover"][0]);
         file_put_contents($icon_file_name, $icon_content);
