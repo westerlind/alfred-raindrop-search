@@ -118,7 +118,11 @@ function render_categories($raindrop_categories, $raindrop_categories_sublevel, 
       else {
         $icon_file_name = "icon_cache/" . $icon_url_array[key(array_slice($icon_url_array, -1, 1, true))];
       }
-      if (!file_exists($icon_file_name)) {
+      # Redownload the collection icon if the cache version is older than 45 days
+      if (time() - filemtime($icon_file_name) > 3888000 && substr($icon_file_name, 0, 11) === "icon_cache/") {
+        if (file_exists($icon_file_name)) {
+          unlink($icon_file_name);
+        }
         $icon_content = file_get_contents($result["cover"][0]);
         file_put_contents($icon_file_name, $icon_content);
       }
@@ -150,6 +154,7 @@ function sub_category_names($raindrop_categories_sublevel, $parent_id) {
 
 // Function for getting Raindrop.io categories
 function categories(string $token, bool $sublevel) {
+  # Cache collection list for 1 minute to make searching faster but still don't have to wait for new collections to appear
   if (file_exists($sublevel ? "categories_sublevel.json" : "categories.json") && time() - filemtime($sublevel ? "categories_sublevel.json" : "categories.json") < 60) {
     // Read stored cached categories
     $raindrop_results = json_decode(file_get_contents($sublevel ? "categories_sublevel.json" : "categories.json"), true);
