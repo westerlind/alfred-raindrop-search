@@ -13,7 +13,7 @@ use Alfred\Workflows\Workflow;
 $query = $argv[2];
 if (substr($argv[1], 0, 16) === "{\"alfredworkflow") {
   $firefox_tab = json_decode($argv[1], true);
-  $browserUrl = $firefox_tab["alfredworkflow"]["variables"]["FF_URL"];
+  $browserUrl = $firefox_tab["alfredworkflow"]["variables"]["FF_URL"]; 
   $browserTitle = $firefox_tab["alfredworkflow"]["variables"]["FF_TITLE"];
 }
 else {
@@ -100,20 +100,15 @@ function render_categories($raindrop_categories, $raindrop_categories_sublevel, 
       $indentation = "";
       $sub_indentation = "";
       if ($current_level > 0) {
-        $indentation .= " ";
-        $sub_indentation .= "          ";
+        $sub_indentation .= "\t";
       }
       for ($i = 1; $i < $current_level; $i++) {
-        $indentation .= "      ";
-        if ($current_level == 3) {
-          $sub_indentation .= "        ";
-        }
-        else {
-          $sub_indentation .= "         ";
-        }
+        $indentation .= "\t";
+        $sub_indentation .= "\t";
       }
       if ($current_level > 0) {
-        $indentation .= " ↳ ";
+        $indentation .= "   ↳ ";
+        $sub_indentation .= "   ";
       }
 
       $icon_url_array = explode("/", $result["cover"][0]);
