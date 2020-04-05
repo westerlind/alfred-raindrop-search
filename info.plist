@@ -903,7 +903,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Loading Raindop.io categories...</string>
+				<string>Loading Raindop.io collections...</string>
 				<key>script</key>
 				<string>property ff_dir: (system attribute "alfred_workflow_cache")
 property ff_path: ff_dir &amp; "/firefox_current_tab.json"
@@ -992,7 +992,7 @@ else if (frontApp = "firefox") then
 					if (ff_tab_info is equal to "Cannot Connect to Extension") then
 						return do shell script "/usr/bin/php firefox-error-management.php " &amp; quoted form of ff_tab_info
 					else
-						return do shell script "/usr/bin/php raindrop-categories.php " &amp; quoted form of ff_tab_info &amp; " \"{query}\""
+						return do shell script "/usr/bin/php raindrop-collections.php " &amp; quoted form of ff_tab_info &amp; " \"{query}\""
 					end if
 				end if
 			on error errMsg
@@ -1008,7 +1008,7 @@ else if (frontApp = "firefox") then
 	return do shell script "/usr/bin/php firefox-error-management.php \"Tab info not saved by Firefox Assistant\""
 end if
 
-do shell script "/usr/bin/php raindrop-categories.php " &amp; quoted form of browserURL &amp; " \"{query}\" " &amp; quoted form of browserTitle
+do shell script "/usr/bin/php raindrop-collections.php " &amp; quoted form of browserURL &amp; " \"{query}\" " &amp; quoted form of browserTitle
 
 end run</string>
 				<key>scriptargtype</key>
@@ -1152,7 +1152,9 @@ end run</string>
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>tell application "System Events"	set frontApp to name of first application process whose frontmost is trueend tell
+				<string>tell application "System Events"
+	set frontApp to name of first application process whose frontmost is true
+end tell
 return frontApp</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -1605,6 +1607,8 @@ I personally use cmd+option+space.</string>
 			<integer>205</integer>
 		</dict>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
 	<string>1.3.1</string>
 	<key>webaddress</key>

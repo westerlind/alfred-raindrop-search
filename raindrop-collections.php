@@ -50,7 +50,7 @@ if ($browserUrl === "No browser active") {
   die();
 }
 
-// Put alternative to add the new bookmark to Unsorted above the category list
+// Put alternative to add the new bookmark to Unsorted above the collection list
 $workflow->result()
   ->arg("")
   ->mod('cmd', $sub_indentation . "Open Raindrop.io to change details after saving", " :§:open_raindrop:§: ")
@@ -62,12 +62,12 @@ if (!file_exists('icon_cache')) {
   mkdir('icon_cache', 0777, true);
 }
 
-// Get categories
-$raindrop_categories = array_reverse(categories($token["access_token"], false)["items"]);
-$raindrop_categories_sublevel = array_reverse(categories($token["access_token"], true)["items"]);
+// Get collections
+$raindrop_collections = array_reverse(collections($token["access_token"], false)["items"]);
+$raindrop_collections_sublevel = array_reverse(collections($token["access_token"], true)["items"]);
 
-// Render categories
-render_categories($raindrop_categories, $raindrop_categories_sublevel, $workflow);
+// Render collections
+render_collections($raindrop_collections, $raindrop_collections_sublevel, $workflow);
 
 // Add Alfred variable for the URL we want to add to Raindrop
 $workflow->variable('url', $browserUrl);
@@ -84,15 +84,15 @@ if ($query == "") {
 
 // ----------FUNCTIONS----------
 
-// Function for rendering Raindrop.io categories in Alfred
-function render_categories($raindrop_categories, $raindrop_categories_sublevel, $workflow, $parent_id = 0, $current_object = [], $current_level = -1)
+// Function for rendering Raindrop.io collections in Alfred
+function render_collections($raindrop_collections, $raindrop_collections_sublevel, $workflow, $parent_id = 0, $current_object = [], $current_level = -1)
 {
   if ($parent_id == 0) {
-    $category_array = $raindrop_categories;
+    $collection_array = $raindrop_collections;
   } else {
-    $category_array = $raindrop_categories_sublevel;
+    $collection_array = $raindrop_collections_sublevel;
   }
-  foreach ($category_array as $result) {
+  foreach ($collection_array as $result) {
     if ($parent_id == 0 || $result["parent"]["\$id"] === $parent_id) {
       $current_level++;
       $current_object[$current_level] = mb_strtolower($result["title"]);
@@ -128,12 +128,12 @@ function render_categories($raindrop_categories, $raindrop_categories_sublevel, 
       }
 
       $workflow->result()
-        ->arg($result["_id"] . " " . implode(" ", $current_object) . " " . mb_strtolower(sub_category_names($raindrop_categories_sublevel, $result["_id"])))
-        ->mod('cmd', $sub_indentation."Open Raindrop.io to change details after saving", $result["_id"] . " :§:open_raindrop:§: " . mb_strtolower(sub_category_names($raindrop_categories_sublevel, $result["_id"])))
+        ->arg($result["_id"] . " " . implode(" ", $current_object) . " " . mb_strtolower(sub_collection_names($raindrop_collections_sublevel, $result["_id"])))
+        ->mod('cmd', $sub_indentation."Open Raindrop.io to change details after saving", $result["_id"] . " :§:open_raindrop:§: " . mb_strtolower(sub_collection_names($raindrop_collections_sublevel, $result["_id"])))
         ->icon($icon_file_name)
         ->title($indentation . $result["title"]);
 
-      render_categories($raindrop_categories, $raindrop_categories_sublevel, $workflow, $result["_id"], $current_object, $current_level);
+      render_collections($raindrop_collections, $raindrop_collections_sublevel, $workflow, $result["_id"], $current_object, $current_level);
 
       unset($current_object[$current_level]);
       $current_level--;
@@ -141,23 +141,23 @@ function render_categories($raindrop_categories, $raindrop_categories_sublevel, 
   }
 }
 
-// Function for getting the names of all sub categories in a string
-function sub_category_names($raindrop_categories_sublevel, $parent_id) {
+// Function for getting the names of all sub collections in a string
+function sub_collection_names($raindrop_collections_sublevel, $parent_id) {
   $names = "";
-  foreach ($raindrop_categories_sublevel as $result) {
+  foreach ($raindrop_collections_sublevel as $result) {
     if ($result["parent"]["\$id"] === $parent_id) {
-      $names .= $result["title"]." ".sub_category_names($raindrop_categories_sublevel, $result["_id"]);
+      $names .= $result["title"]." ".sub_collection_names($raindrop_collections_sublevel, $result["_id"]);
     }
   }
   return $names;
 }
 
-// Function for getting Raindrop.io categories
-function categories(string $token, bool $sublevel) {
+// Function for getting Raindrop.io collections
+function collections(string $token, bool $sublevel) {
   # Cache collection list for 1 minute to make searching faster but still don't have to wait for new collections to appear
-  if (file_exists($sublevel ? "categories_sublevel.json" : "categories.json") && time() - filemtime($sublevel ? "categories_sublevel.json" : "categories.json") < 60) {
-    // Read stored cached categories
-    $raindrop_results = json_decode(file_get_contents($sublevel ? "categories_sublevel.json" : "categories.json"), true);
+  if (file_exists($sublevel ? "collections_sublevel.json" : "collections.json") && time() - filemtime($sublevel ? "collections_sublevel.json" : "collections.json") < 60) {
+    // Read stored cached collections
+    $raindrop_results = json_decode(file_get_contents($sublevel ? "collections_sublevel.json" : "collections.json"), true);
     if ($raindrop_results["result"] == 1) {
       return $raindrop_results;
     }
@@ -175,6 +175,6 @@ function categories(string $token, bool $sublevel) {
   curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: Bearer ' . $token));
   $raindrop_results = json_decode(curl_exec($curl), true);
   curl_close($curl);
-  file_put_contents($sublevel ? "categories_sublevel.json" : "categories.json", json_encode($raindrop_results));
+  file_put_contents($sublevel ? "collections_sublevel.json" : "collections.json", json_encode($raindrop_results));
   return $raindrop_results;
 }
