@@ -18,10 +18,13 @@ You can also add bookmarks to Raindrop.io from the browser you are currently usi
 Safari, Chrome, Firefox, Edge, Brave, Vivaldi, Opera, Chromium, Chrome Canary, Safari Technology Preview (and SeaMonkey, but only for opening bookmarks)
 
 ## Availability
-The official place to download this workflow is here:
+The main place to download the latest release of this workflow is at Packal, here:
 https://www.packal.org/workflow/search-raindropio
 
-## If You Downloaded from Github
-If you downloaded this workflow from GitHub, the codes that are used to identify this as a client to Raindrop.io is not included, as they are supposed to be application specific.
+You can also get it from GitHub here:
+https://github.com/westerlind/alfred-raindrop-search/releases
+
+## If You Download the Source Code
+If you download the source code from GitHub rather than the packaged .alfredworkflow file, the codes that are used to identify this as a client to Raindrop.io is not included, as they are supposed to be application specific.
 Get your own codes at the following link and put them in client_code.json, and everything will work perfectly:
 https://app.raindrop.io/#/settings/apps/dev
