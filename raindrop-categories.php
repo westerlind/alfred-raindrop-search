@@ -118,8 +118,8 @@ function render_categories($raindrop_categories, $raindrop_categories_sublevel, 
       else {
         $icon_file_name = "icon_cache/" . $icon_url_array[key(array_slice($icon_url_array, -1, 1, true))];
       }
-      # Redownload the collection icon if the cache version is older than 45 days
-      if (time() - filemtime($icon_file_name) > 3888000 && substr($icon_file_name, 0, 11) === "icon_cache/") {
+      # Redownload the collection icon if the cached version is older than 45 days
+      if (substr($icon_file_name, 0, 11) === "icon_cache/" && (!file_exists($icon_file_name) || time() - filemtime($icon_file_name) > 3888000)) {
         if (file_exists($icon_file_name)) {
           unlink($icon_file_name);
         }
