@@ -614,7 +614,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Searching...</string>
+				<string></string>
 				<key>script</key>
 				<string>/usr/bin/php raindrop-search.php "{query}"</string>
 				<key>scriptargtype</key>
@@ -622,7 +622,7 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Or press enter to open Raindrop.io</string>
+				<string></string>
 				<key>title</key>
 				<string>Search your Raindrop.io bookmarks</string>
 				<key>type</key>
@@ -832,7 +832,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Loading Raindop.io collections...</string>
+				<string></string>
 				<key>script</key>
 				<string>property ff_dir: (system attribute "alfred_workflow_cache")
 property ff_path: ff_dir &amp; "/firefox_current_tab.json"
