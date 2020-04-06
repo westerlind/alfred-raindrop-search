@@ -11,7 +11,24 @@ require 'raindrop-common.php';
 use Alfred\Workflows\Workflow;
 
 $query = $argv[1];
+$collection_search = false;
+$collection_search_id = 0;
+if ($argv[2] == "collection") {
+  $collection_info = explode ("⏦" , file_get_contents("current_collection.tmp"));
+  $collection_search = true;
+  $collection_search_name = $collection_info[1];
+  $collection_search_id = (int)$collection_info[2];
+  $collection_search_icon = $collection_info[3];
+}
 $workflow = new Workflow;
+
+if ($collection_search) {
+  $workflow->result()
+    ->arg("⬅︎")
+    ->title("Bookmarks in " . $collection_search_name)
+    ->subtitle("⬅︎ Go back and search for all bookmarks")
+    ->icon($collection_search_icon);
+}
 
 // Check if the token file exists and otherwise send the user over to the authentication
 if (!file_exists("token.json")) {
@@ -22,8 +39,8 @@ if (!file_exists("token.json")) {
 $token = json_decode(file_get_contents("token.json"), true);
 
 if ($query != "") {
-  // Query Raindrop.io
-  $raindrop_results = search($query, $token["access_token"]);
+// Query Raindrop.io
+  $raindrop_results = search($query, $token["access_token"], $collection_search_id);
 
   if (!isset($raindrop_results["items"]) && isset($raindrop_results["result"]) && !$raindrop_results["result"]) {
     // We got an error instead of the content we wanted, and that's probably because the token is outdated, so first try to refresh it
@@ -37,24 +54,26 @@ if ($query != "") {
     }
     else {
       // Try to query Raindrop again, and assume it will work now as we just got a fresh new token to authenticate with
-      $raindrop_results = search($query, $new_token["access_token"]);
+      $raindrop_results = search($query, $new_token["access_token"], $collection_search_id);
     }
   }
 
-  // Prepare results for being viewed in Alfred
-  foreach ($raindrop_results["items"] as $result) {
-    $workflow->result()
-      ->uid("raindrop.io.".$result["_id"])
-      ->arg($result["link"])
-      ->title($result["title"])
-      ->subtitle($result["excerpt"] != "" ? $result["excerpt"] : $result["link"])
-      ->copy($result["link"])
-      ->mod('cmd', $result["link"], $result["link"])
-      ->mod('alt', "Press enter to copy this link to clipboard", "copy:::".$result["link"]);
+  // Search for collections that matches the search query, but only if we are not already doing a search in a collection
+  if (!$collection_search) {
+    // Get collection list from cache
+    $raindrop_collections = array_reverse(collections($token["access_token"], false, "trust")["items"]);
+    $raindrop_collections_sublevel = array_reverse(collections($token["access_token"], true, "trust")["items"]);
+
+    // Render collections
+    render_collections($raindrop_collections, $raindrop_collections_sublevel, $workflow, "paths", "searching");
+
+    // Filter collections by search query
+    $workflow->filterResults(mb_strtolower($query), 'arg');
   }
 }
+else {
+  // We got no search query
 
-if ($query == "") {
   // Check if Token has gone through more than half of it's lifetime, and in that case, refresh it
   $current_time = new DateTime("now", new DateTimeZone('UTC'));
   $token_time = date_create_from_format("Y-m-d H:i:s", $token["creation_time"], new DateTimeZone('UTC'));
@@ -63,27 +82,37 @@ if ($query == "") {
     refresh_token($token["refresh_token"]);
   }
 
-  // Default results if nothing is searched for. Just go to Raindrop.io itself
-  $workflow->result()
-    ->arg("https://app.raindrop.io/")
-    ->title("Search your Raindrop.io bookmarks")
-    ->subtitle("Or press enter to open Raindrop.io");
+  // If we are inside a collection
+  if ($collection_search) {
+    $raindrop_results = search("", $token["access_token"], $collection_search_id);
+  }
+  // If we are are in standard search mode
+  else {
+    // Cache the collection list to make searching faster when the user types a search query
+    array_reverse(collections($token["access_token"], false)["items"], "fetch");
+    array_reverse(collections($token["access_token"], true)["items"], "fetch");
+
+    // Default results if nothing is searched for. Just go to Raindrop.io itself
+    $workflow->result()
+      ->arg("https://app.raindrop.io/")
+      ->title("Search your Raindrop.io bookmarks")
+      ->subtitle("Or press enter to open Raindrop.io");
+  }
+}
+
+if ($query != "" || $collection_search) {
+  // Prepare results for being viewed in Alfred
+  foreach ($raindrop_results["items"] as $result) {
+    $workflow->result()
+      ->uid("raindrop.io." . $result["_id"])
+      ->arg($result["link"])
+      ->title($result["title"])
+      ->subtitle($result["excerpt"] != "" ? $result["excerpt"] : $result["link"])
+      ->copy($result["link"])
+      ->mod('cmd', $result["link"], $result["link"])
+      ->mod('alt', "Press enter to copy this link to clipboard", "copy:::" . $result["link"]);
+  }
 }
 
 // Output to Alfred
 echo $workflow->output();
-
-// ----------FUNCTIONS----------
-
-// Function for searching Raindrop.io bookmarks
-function search(string $query, string $token) {
-  // Query Raindrop.io
-  $curl = curl_init();
-  curl_setopt($curl, CURLOPT_URL, "https://api.raindrop.io/rest/v1/raindrops/0/?search=[{\"key\":\"word\",\"val\":\"" . urlencode($query) . "\"}]");
-  curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-  curl_setopt($curl, CURLOPT_USERAGENT, "Alfred (Macintosh; Mac OS X)");
-  curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: Bearer ' . $token));
-  $raindrop_results = json_decode(curl_exec($curl), true);
-  curl_close($curl);
-  return $raindrop_results;
-}

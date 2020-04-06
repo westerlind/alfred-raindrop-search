@@ -74,3 +74,130 @@ function partial_string_in_array($needle, $haystack)
   }
   return false;
 }
+
+// Function for searching Raindrop.io bookmarks
+function search(string $query, string $token, int $collection = 0)
+{
+  // Query Raindrop.io
+  $curl = curl_init();
+  curl_setopt($curl, CURLOPT_URL, "https://api.raindrop.io/rest/v1/raindrops/" . $collection . "/?search=[{\"key\":\"word\",\"val\":\"" . urlencode($query) . "\"}]");
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($curl, CURLOPT_USERAGENT, "Alfred (Macintosh; Mac OS X)");
+  curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: Bearer ' . $token));
+
+  $raindrop_results = json_decode(curl_exec($curl), true);
+  curl_close($curl);
+  return $raindrop_results;
+}
+
+// Function for rendering Raindrop.io collections in Alfred
+function render_collections($raindrop_collections, $raindrop_collections_sublevel, $workflow, $render_style = "tree", $purpose = "adding", $parent_id = 0, $current_object = [], $current_level = -1)
+{
+  if ($parent_id == 0) {
+    $collection_array = $raindrop_collections;
+  } else {
+    $collection_array = $raindrop_collections_sublevel;
+  }
+  foreach ($collection_array as $result) {
+    if ($parent_id == 0 || $result["parent"]["\$id"] === $parent_id) {
+      $current_level++;
+      $current_object[$current_level] = $result["title"];
+
+      $indentation = "";
+      $sub_indentation = "";
+      if ($render_style == "tree") {
+        if ($current_level > 0) {
+          $sub_indentation .= "\t";
+        }
+        for ($i = 1; $i < $current_level; $i++) {
+          $indentation .= "\t";
+          $sub_indentation .= "\t";
+        }
+        if ($current_level > 0) {
+          $indentation .= "   ↳ ";
+          $sub_indentation .= "   ";
+        }
+      }
+
+      $icon_url_array = explode("/", $result["cover"][0]);
+      if ($icon_url_array[key(array_slice($icon_url_array, -1, 1, true))] == "") {
+        $icon_file_name = "icon.png";
+      } else {
+        $icon_file_name = "icon_cache/" . $icon_url_array[key(array_slice($icon_url_array, -1, 1, true))];
+      }
+      # Redownload the collection icon if the cached version is older than 60 days
+      if (substr($icon_file_name, 0, 11) === "icon_cache/" && (!file_exists($icon_file_name) || time() - filemtime($icon_file_name) > 5184000)) {
+        if (file_exists($icon_file_name)) {
+          unlink($icon_file_name);
+        }
+        $icon_content = file_get_contents($result["cover"][0]);
+        file_put_contents($icon_file_name, $icon_content);
+      }
+
+      $collection_title = $result["title"];
+      if ($render_style == "paths") {
+        $collection_title = implode("/", $current_object);
+      }
+
+      if ($purpose == "adding") {
+        $workflow->result()
+          ->arg($result["_id"] . " " . mb_strtolower(implode(" ", $current_object)) . " " . mb_strtolower(sub_collection_names($raindrop_collections_sublevel, $result["_id"])))
+          ->mod('cmd', $sub_indentation . "Open Raindrop.io to change details after saving", $result["_id"] . " :§:open_raindrop:§: " . mb_strtolower(sub_collection_names($raindrop_collections_sublevel, $result["_id"])))
+          ->icon($icon_file_name)
+          ->title($indentation . $collection_title);
+      } else if ($purpose == "searching") {
+        $workflow->result()
+          ->arg("⏦" . $collection_title . "⏦" . $result["_id"] . "⏦" . $icon_file_name . "⏦" . mb_strtolower(implode(" ", $current_object)))
+          ->icon($icon_file_name)
+          ->title($indentation . $collection_title);
+      }
+
+      render_collections($raindrop_collections, $raindrop_collections_sublevel, $workflow, $render_style, $purpose, $result["_id"], $current_object, $current_level);
+
+      unset($current_object[$current_level]);
+      $current_level--;
+    }
+  }
+}
+
+// Function for getting the names of all sub collections in a string
+function sub_collection_names($raindrop_collections_sublevel, $parent_id)
+{
+  $names = "";
+  foreach ($raindrop_collections_sublevel as $result) {
+    if ($result["parent"]["\$id"] === $parent_id) {
+      $names .= $result["title"] . " " . sub_collection_names($raindrop_collections_sublevel, $result["_id"]);
+    }
+  }
+  return $names;
+}
+
+// Function for getting Raindrop.io collections
+function collections(string $token, bool $sublevel, $caching = "check")
+{
+  // If $caching == "check": Redownload collection list only if cache is older than 1 minute, to make searching faster while still not having to wait for new collections to appear
+  // If $caching == "trust": Trust the collection list cache to be good enough and use what is cached without checking its age (only download if no chache exists yet)
+  // If $caching == "fetch": Always redownload collection list without checking the age of the cache
+  if (file_exists($sublevel ? "collections_sublevel.json" : "collections.json") && ((time() - filemtime($sublevel ? "collections_sublevel.json" : "collections.json") < 60 && $caching == "check") || $caching == "trust")) {
+    // Read stored cached collections
+    $raindrop_results = json_decode(file_get_contents($sublevel ? "collections_sublevel.json" : "collections.json"), true);
+    if ($raindrop_results["result"] == 1) {
+      return $raindrop_results;
+    }
+  }
+
+  // Query Raindrop.io
+  $curl = curl_init();
+  if ($sublevel) {
+    curl_setopt($curl, CURLOPT_URL, "https://api.raindrop.io/rest/v1/collections/childrens");
+  } else {
+    curl_setopt($curl, CURLOPT_URL, "https://api.raindrop.io/rest/v1/collections");
+  }
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($curl, CURLOPT_USERAGENT, "Alfred (Macintosh; Mac OS X)");
+  curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: Bearer ' . $token));
+  $raindrop_results = json_decode(curl_exec($curl), true);
+  curl_close($curl);
+  file_put_contents($sublevel ? "collections_sublevel.json" : "collections.json", json_encode($raindrop_results));
+  return $raindrop_results;
+}
