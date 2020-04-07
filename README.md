@@ -3,6 +3,8 @@ This Alfred Workflow is created to have a single, fast, and always reachable way
 You can also add bookmarks to Raindrop.io from the browser you are currently using.
 
 - To search your Raindrop.io bookmarks, open Alfred, type **r**, space, and then your search query, and the results will show directly in Alfred so that you can select one and press enter to open it in your browser.
+  - Raindrop.io collections will also show in the search results together with bookmarks, and you can select them to browse or search their content.
+  - Before you have started to type a search query, you also have the option to browse your collections instead of starting with a search.
   - If a web browser is the frontmost app when you open a bookmark from this workflow, it will open in that browser.
   - If you are working in another app, the bookmark will open in your default browser.
   - Hold the cmd-key to view the URL for a bookmark.
