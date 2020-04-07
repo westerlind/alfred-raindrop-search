@@ -63,8 +63,14 @@ if (!file_exists('icon_cache')) {
 }
 
 // Get collections
-$raindrop_collections = array_reverse(collections($token["access_token"], false)["items"]);
-$raindrop_collections_sublevel = array_reverse(collections($token["access_token"], true)["items"]);
+if ($query != "") {
+  $raindrop_collections = array_reverse(collections($token["access_token"], false, "trust")["items"]);
+  $raindrop_collections_sublevel = array_reverse(collections($token["access_token"], true, "trust")["items"]);
+}
+else {
+  $raindrop_collections = array_reverse(collections($token["access_token"], false, "check")["items"]);
+  $raindrop_collections_sublevel = array_reverse(collections($token["access_token"], true, "check")["items"]);
+}
 
 // Render collections
 render_collections($raindrop_collections, $raindrop_collections_sublevel, $workflow, "tree", "adding");

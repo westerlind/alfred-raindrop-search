@@ -80,7 +80,7 @@ function search(string $query, string $token, int $collection = 0)
 {
   // Query Raindrop.io
   $curl = curl_init();
-  curl_setopt($curl, CURLOPT_URL, "https://api.raindrop.io/rest/v1/raindrops/" . $collection . "/?search=[{\"key\":\"word\",\"val\":\"" . urlencode($query) . "\"}]");
+  curl_setopt($curl, CURLOPT_URL, "https://api.raindrop.io/rest/v1/raindrops/" . $collection . "/?search=[{\"key\":\"word\",\"val\":\"" . urlencode($query) . "\"}]&sort=\"" . ($query == "" ? "-created" : "score")."\"");
   curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
   curl_setopt($curl, CURLOPT_USERAGENT, "Alfred (Macintosh; Mac OS X)");
   curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: Bearer ' . $token));
@@ -121,7 +121,7 @@ function render_collections($raindrop_collections, $raindrop_collections_subleve
 
       $icon_url_array = explode("/", $result["cover"][0]);
       if ($icon_url_array[key(array_slice($icon_url_array, -1, 1, true))] == "") {
-        $icon_file_name = "icon.png";
+        $icon_file_name = "folder.png";
       } else {
         $icon_file_name = "icon_cache/" . $icon_url_array[key(array_slice($icon_url_array, -1, 1, true))];
       }
@@ -141,13 +141,13 @@ function render_collections($raindrop_collections, $raindrop_collections_subleve
 
       if ($purpose == "adding") {
         $workflow->result()
-          ->arg($result["_id"] . " " . mb_strtolower(implode(" ", $current_object)) . " " . mb_strtolower(sub_collection_names($raindrop_collections_sublevel, $result["_id"])))
+          ->arg($result["_id"] . " " . mb_strtolower(implode(" ", $current_object)) . " " . ($render_style == "tree" ? mb_strtolower(sub_collection_names($raindrop_collections_sublevel, $result["_id"])) : ""))
           ->mod('cmd', $sub_indentation . "Open Raindrop.io to change details after saving", $result["_id"] . " :§:open_raindrop:§: " . mb_strtolower(sub_collection_names($raindrop_collections_sublevel, $result["_id"])))
           ->icon($icon_file_name)
           ->title($indentation . $collection_title);
       } else if ($purpose == "searching") {
         $workflow->result()
-          ->arg("⏦" . $collection_title . "⏦" . $result["_id"] . "⏦" . $icon_file_name . "⏦" . mb_strtolower(implode(" ", $current_object)))
+          ->arg("⏦" . implode("/", $current_object) . "⏦" . $result["_id"] . "⏦" . $icon_file_name . "⏦" . mb_strtolower(implode(" ", $current_object)) . " " . ($render_style == "tree" ? mb_strtolower(sub_collection_names($raindrop_collections_sublevel, $result["_id"])) : ""))
           ->icon($icon_file_name)
           ->title($indentation . $collection_title);
       }

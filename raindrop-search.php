@@ -14,7 +14,8 @@ $query = $argv[1];
 $collection_search = false;
 $collection_search_id = 0;
 if ($argv[2] == "collection") {
-  $collection_info = explode ("⏦" , file_get_contents("current_collection.tmp"));
+  $collection_info_store = file_get_contents("current_collection.tmp");
+  $collection_info = explode ("⏦" , $collection_info_store);
   $collection_search = true;
   $collection_search_name = $collection_info[1];
   $collection_search_id = (int)$collection_info[2];
@@ -23,11 +24,22 @@ if ($argv[2] == "collection") {
 $workflow = new Workflow;
 
 if ($collection_search) {
-  $workflow->result()
-    ->arg("⬅︎")
-    ->title("Bookmarks in " . $collection_search_name)
-    ->subtitle("⬅︎ Go back and search for all bookmarks")
-    ->icon($collection_search_icon);
+  // We are browsing a collection, and came here from the collection browser
+  if (mb_substr($collection_info_store, -18, 17) == "§collection_list§") {
+    $workflow->result()
+      ->arg("⬅︎⊟")
+      ->title("Bookmarks in " . $collection_search_name)
+      ->subtitle("⬅︎ Go back to collection browser")
+      ->icon($collection_search_icon);
+  }
+  // We are browsing a collection, and came here from the main bookmark search
+  else {
+    $workflow->result()
+      ->arg("⬅︎")
+      ->title("Bookmarks in " . $collection_search_name)
+      ->subtitle("⬅︎ Go back to search all bookmarks")
+      ->icon($collection_search_icon);
+  }
 }
 
 // Check if the token file exists and otherwise send the user over to the authentication
@@ -97,6 +109,10 @@ else {
       ->arg("https://app.raindrop.io/")
       ->title("Search your Raindrop.io bookmarks")
       ->subtitle("Or press enter to open Raindrop.io");
+    $workflow->result()
+      ->arg("browse➡︎")
+      ->title("Browse your Raindrop.io collections")
+      ->icon("folder.png");
   }
 }
 
@@ -104,7 +120,6 @@ if ($query != "" || $collection_search) {
   // Prepare results for being viewed in Alfred
   foreach ($raindrop_results["items"] as $result) {
     $workflow->result()
-      ->uid("raindrop.io." . $result["_id"])
       ->arg($result["link"])
       ->title($result["title"])
       ->subtitle($result["excerpt"] != "" ? $result["excerpt"] : $result["link"])
