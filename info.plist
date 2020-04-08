@@ -883,51 +883,36 @@ end tell
 set browserURL to "No browser active"
 set browserTitle to ""
 
-if (frontApp = "Microsoft Edge") then
-	tell application "Microsoft Edge"
-		set browserURL to the URL of the active tab of the front window
-		set browserTitle to the name of the active tab of the front window
-	end tell
-else if (frontApp = "Safari") then
+
+if (frontApp = "Safari") then
 	tell application "Safari"
 		set browserURL to the URL of the current tab of the front window
 		set browserTitle to the name of the current tab of the front window
 	end tell
+else if (frontApp = "Microsoft Edge") then
+	set browserURL to do shell script "/usr/bin/osascript browser-info/edge-url.scpt"
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/edge-title.scpt"
 else if (frontApp = "Google Chrome") then
-	tell application "Google Chrome"
-		set browserURL to the URL of the active tab of the front window
-		set browserTitle to the name of the active tab of the front window
-	end tell
+	set browserURL to do shell script "/usr/bin/osascript browser-info/chrome-url.scpt"
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/chrome-title.scpt"
 else if (frontApp = "Google Chrome Canary") then
-	tell application "Google Chrome Canary"
-		set browserURL to the URL of the active tab of the front window
-		set browserTitle to the name of the active tab of the front window
-	end tell
+	set browserURL to do shell script "/usr/bin/osascript browser-info/chrome-canary-url.scpt"
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/chrome-canary-title.scpt"
 else if (frontApp = "Chromium") then
-	tell application "Chromium"
-		set browserURL to the URL of the active tab of the front window
-		set browserTitle to the name of the active tab of the front window
-	end tell
+	set browserURL to do shell script "/usr/bin/osascript browser-info/chromium-url.scpt"
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/chromium-title.scpt"
 else if (frontApp = "Brave Browser") then
-	tell application "Brave Browser"
-		set browserURL to the URL of the active tab of the front window
-		set browserTitle to the name of the active tab of the front window
-	end tell
+	set browserURL to do shell script "/usr/bin/osascript browser-info/brave-url.scpt"
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/brave-title.scpt"
 else if (frontApp = "Safari Technology Preview") then
-	tell application "Safari Technology Preview"
-		set browserURL to the URL of the current tab of the front window
-		set browserTitle to the name of the current tab of the front window
-	end tell
+	set browserURL to do shell script "/usr/bin/osascript browser-info/safari-techpreview-url.scpt"
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/safari-techpreview-title.scpt"
 else if (frontApp = "Opera") then
-	tell application "Opera"  
-		set browserURL to the URL of the active tab of the front window
-		set browserTitle to the name of the active tab of the front window
-	end tell
+	set browserURL to do shell script "/usr/bin/osascript browser-info/opera-url.scpt"
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/opera-title.scpt"
 else if (frontApp = "Vivaldi") then
-	tell application "Vivaldi"
-		set browserURL to the URL of the active tab of the front window
-		set browserTitle to the name of the active tab of the front window
-	end tell
+	set browserURL to do shell script "/usr/bin/osascript browser-info/vivaldi-url.scpt"
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/vivaldi-title.scpt"
 else if (frontApp = "firefox") then
 	-- For getting tab info from Firefox, we use the awsome Firefox Assistant by Dean Jackson, because Firefox does not have Apple Script support like the other browsers.
 	-- Ensure directory exists
@@ -2278,7 +2263,7 @@ I personally use cmd+option+space.</string>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.4</string>
+	<string>1.4.1</string>
 	<key>webaddress</key>
 	<string>https://www.packal.org/workflow/search-raindropio</string>
 </dict>
