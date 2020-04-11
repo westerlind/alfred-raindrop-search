@@ -6,34 +6,41 @@
 
 require 'raindrop-common.php';
 
-// Get variables from Alfred.
-// The §+#^§ divider thing is a workaround for issues with passing a parameter to a script within Alfred.
-// It doesn't look very good, but it works.
-$category = explode(" ", $argv[1], 2)[0];
-$url = explode("§+#^§", $argv[1])[1];
-$title = explode("§+#^§", $argv[1])[2];
+// Get information about new bookmark
+$selection  = file_get_contents("current_selection.tmp");
+$collection = explode(" ", $selection)[0];
+$url = explode("§+#^§", $selection)[1];
+$title = file_get_contents("current_title.tmp");
+$tags = explode(",", $argv[1]);
+foreach ($tags as $key => $current_tag) {
+  $tags[$key] = trim(trim($current_tag), "#");
+}
+
 
 // Read token and related data from file.
 // We assume that this exists, as it would not be possible to get here from within Alfred otherwise.
 $token = json_decode(file_get_contents("token.json"), true);
 
 // Add bookmark to Raindrop.io
-raindrop_add($token["access_token"], $category, $url, $title);
+raindrop_add($token["access_token"], $collection, $url, $title, $tags);
+
+echo $title;
 
 // ----------FUNCTIONS----------
 
 // Function for adding a new bookmark to Alfred
-function raindrop_add(string $token, string $category, string $url, string $title) {
-  
+function raindrop_add(string $token, string $collection, string $url, string $title, array $tags) {
+
   // Prepare POST variables
   $post_variables = array(
     "collection" => array(
       "\$ref" => "collections",
-      "\$id" => $category
+      "\$id" => $collection
     ),
     "link" => $url,
-    "title" => $title
-  );
+    "title" => $title,
+    "tags" => $tags
+  ); 
 
   // Add to Raindrop.io
   $curl = curl_init();

@@ -81,9 +81,7 @@ $workflow->variable('title', $browserTitle);
 
 // Output to Alfred
 if ($query == "") {
-  //echo $workflow->sortResults('asc', 'uid')->output();
   echo $workflow->output();
 } else {
-  //echo $workflow->filterResults(mb_strtolower($query), 'uid')->sortResults('asc', 'uid')->output();
   echo $workflow->filterResults(mb_strtolower($query), 'arg')->output();
 }

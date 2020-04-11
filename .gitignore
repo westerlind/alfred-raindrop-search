@@ -4,3 +4,6 @@ icon_cache/*
 collections_sublevel.json
 collections.json
 current_collection.tmp
+tags.json
+current_title.tmp
+current_selection.tmp

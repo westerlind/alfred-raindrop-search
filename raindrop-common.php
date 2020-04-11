@@ -201,3 +201,29 @@ function collections(string $token, bool $sublevel, $caching = "check")
   file_put_contents($sublevel ? "collections_sublevel.json" : "collections.json", json_encode($raindrop_results));
   return $raindrop_results;
 }
+
+// Function for getting Raindrop.io tags
+function tags(string $token, $caching = "check")
+{
+  // If $caching == "check": Redownload tag list only if cache is older than 1 minute, to make searching faster while still not having to wait for new tags to appear
+  // If $caching == "trust": Trust the tag list cache to be good enough and use what is cached without checking its age (only download if no chache exists yet)
+  // If $caching == "fetch": Always redownload tag list without checking the age of the cache
+  if (file_exists("tags.json") && ((time() - filemtime("tags.json") < 60 && $caching == "check") || $caching == "trust")) {
+    // Read stored cached tags
+    $raindrop_results = json_decode(file_get_contents("tags.json"), true);
+    if ($raindrop_results["result"] == 1) {
+      return $raindrop_results;
+    }
+  }
+
+  // Query Raindrop.io
+  $curl = curl_init();
+  curl_setopt($curl, CURLOPT_URL, "https://api.raindrop.io/rest/v1/tags/0");
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($curl, CURLOPT_USERAGENT, "Alfred (Macintosh; Mac OS X)");
+  curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: Bearer ' . $token));
+  $raindrop_results = json_decode(curl_exec($curl), true);
+  curl_close($curl);
+  file_put_contents("tags.json", json_encode($raindrop_results));
+  return $raindrop_results;
+}
