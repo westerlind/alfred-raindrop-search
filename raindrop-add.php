@@ -31,6 +31,16 @@ echo $title;
 // Function for adding a new bookmark to Alfred
 function raindrop_add(string $token, string $collection, string $url, string $title, array $tags) {
 
+  // Get meta description from the webpage we are adding, and use that as description for the bookmark.
+  // Alfred is not really all that good for editing this sort of longer text, so the user will have to
+  // go to Raindrop.io and edit it there to have a custom description.
+  // This is much better than no description at all though!
+  $meta_tags = get_meta_tags($url);
+  $description = "";
+  if (isset($meta_tags["description"])) {
+    $description = $meta_tags["description"];
+  }
+
   // Prepare POST variables
   $post_variables = array(
     "collection" => array(
@@ -39,7 +49,8 @@ function raindrop_add(string $token, string $collection, string $url, string $ti
     ),
     "link" => $url,
     "title" => $title,
-    "tags" => $tags
+    "tags" => $tags,
+    "excerpt" => $description
   ); 
 
   // Add to Raindrop.io
