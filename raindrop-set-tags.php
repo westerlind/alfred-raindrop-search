@@ -71,6 +71,7 @@ if ($query != "") {
     $workflow->result()
       ->arg("-⟲" . $previous_tags . $current_tag["_id"] . ", ")
       ->title($current_tag["_id"])
+      ->mod("cmd", "Add this tag and save",  $previous_tags . $current_tag["_id"])
       ->icon("tag.png");
   }
 }

@@ -53,7 +53,7 @@ if ($browserUrl === "No browser active") {
 // Put alternative to add the new bookmark to Unsorted above the collection list
 $workflow->result()
   ->arg("")
-  ->mod('cmd', $sub_indentation . "Open Raindrop.io to change details after saving", " :§:open_raindrop:§: ")
+  ->mod('cmd', $sub_indentation . "Save now, without setting custom title or adding tags", "-↪︎")
   ->title("Add Raindrop.io Bookmark to Unsorted")
   ->subtitle("Or select a collection below");
 
@@ -75,9 +75,14 @@ else {
 // Render collections
 render_collections($raindrop_collections, $raindrop_collections_sublevel, $workflow, "tree", "adding");
 
-// Add Alfred variable for the URL we want to add to Raindrop
-$workflow->variable('url', $browserUrl);
+// Add Alfred variable for the title of the new bookmark
 $workflow->variable('title', $browserTitle);
+
+// Save temporary info about the new bookmark
+file_put_contents("current_selection.tmp", json_encode(array(
+  "url" => $browserUrl,
+  "title" => $browserTitle
+)));
 
 // Output to Alfred
 if ($query == "") {

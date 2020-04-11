@@ -7,15 +7,14 @@
 require 'raindrop-common.php';
 
 // Get information about new bookmark
-$selection  = file_get_contents("current_selection.tmp");
-$collection = explode(" ", $selection)[0];
-$url = explode("§+#^§", $selection)[1];
-$title = file_get_contents("current_title.tmp");
+$selection = json_decode(file_get_contents("current_selection.tmp"), true);
+$collection = $selection["collection"];
+$url = $selection["url"];
+$title = $selection["title"];
 $tags = explode(",", $argv[1]);
 foreach ($tags as $key => $current_tag) {
   $tags[$key] = trim(trim($current_tag), "#");
 }
-
 
 // Read token and related data from file.
 // We assume that this exists, as it would not be possible to get here from within Alfred otherwise.
@@ -32,9 +31,9 @@ echo $title;
 function raindrop_add(string $token, string $collection, string $url, string $title, array $tags) {
 
   // Get meta description from the webpage we are adding, and use that as description for the bookmark.
-  // Alfred is not really all that good for editing this sort of longer text, so the user will have to
-  // go to Raindrop.io and edit it there to have a custom description.
-  // This is much better than no description at all though!
+  // Alfred is not really all that good for editing this sort of longer text, so the user will have to go to 
+  // Raindrop.io and edit it there to have a custom description, or to get a description if there is no meta description tag.
+  // This is much better than no ability to have a description at all though!
   $meta_tags = get_meta_tags($url);
   $description = "";
   if (isset($meta_tags["description"])) {

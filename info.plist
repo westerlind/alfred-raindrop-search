@@ -49,7 +49,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>0B045132-17BF-4B34-B089-F612D2482BB5</string>
+				<string>4251BB15-A382-4DD8-9250-782B029B5DD9</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -100,7 +100,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>048C10E2-3F90-4080-AE13-0F3DD2FF9AC6</string>
+				<string>FA046954-7AB1-4373-A391-1BE1836C277C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -293,6 +293,31 @@
 				<false/>
 			</dict>
 		</array>
+		<key>2E719CC5-B574-4926-BDD1-6DBDAAEB84A0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2A543265-00FC-48D7-BDCB-7BDF95DE8FE0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>78757CD3-6B62-40A7-87F7-A72CA203E01D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>3AF1C7E1-0068-4C6B-B941-8D79EFAFF1B0</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>36896C84-4763-46D0-9598-45825301874A</key>
 		<array>
 			<dict>
@@ -348,6 +373,31 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>EB409EE8-09FD-423A-BEBA-B6C3D1694D91</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>4251BB15-A382-4DD8-9250-782B029B5DD9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0B045132-17BF-4B34-B089-F612D2482BB5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>3AF1C7E1-0068-4C6B-B941-8D79EFAFF1B0</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>78757CD3-6B62-40A7-87F7-A72CA203E01D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -434,19 +484,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>6735B311-38B8-4CF0-9F9F-BC8C255232D5</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>2A543265-00FC-48D7-BDCB-7BDF95DE8FE0</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>6E6668A6-E82C-4C77-B178-FABE7F28863C</key>
 		<array>
 			<dict>
@@ -465,6 +502,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>38BC4967-CFC1-4968-A40F-E120F1EC709D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>78757CD3-6B62-40A7-87F7-A72CA203E01D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9A3C06F3-0910-45D6-8995-7183FC7E4500</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -529,6 +579,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>8E440F7A-8E3A-416F-8FF8-05DB56CC966D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8B78BDEB-BA1A-414A-BCD3-72F9CF7AB1EB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2E719CC5-B574-4926-BDD1-6DBDAAEB84A0</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -628,24 +691,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>E7FB4B6B-1FB7-40F5-9B59-63198E520FAD</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>6735B311-38B8-4CF0-9F9F-BC8C255232D5</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>EB409EE8-09FD-423A-BEBA-B6C3D1694D91</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>FC9F5CAB-BCC9-415F-8A54-3311A40A3DB7</string>
+				<string>8B78BDEB-BA1A-414A-BCD3-72F9CF7AB1EB</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -667,11 +717,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>FC9F5CAB-BCC9-415F-8A54-3311A40A3DB7</key>
+		<key>FA046954-7AB1-4373-A391-1BE1836C277C</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>E7FB4B6B-1FB7-40F5-9B59-63198E520FAD</string>
+				<string>048C10E2-3F90-4080-AE13-0F3DD2FF9AC6</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -707,6 +757,78 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>r</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>/usr/bin/php raindrop-search.php "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Search your Raindrop.io bookmarks</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>56E7477E-A147-406F-B423-659AB0BD8355</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>tell application id "com.runningwithcrayons.Alfred" to run trigger "search" in workflow "me.westerlind.alfred.raindrop-search"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F2E4EA63-F9B6-4F44-8CFA-A6810711FAA1</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -732,29 +854,6 @@
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
 			<string>51318D41-E845-48F7-822D-8B6D1F0BC11F</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>tell application id "com.runningwithcrayons.Alfred" to run trigger "search" in workflow "me.westerlind.alfred.raindrop-search"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>F2E4EA63-F9B6-4F44-8CFA-A6810711FAA1</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -802,55 +901,6 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>38BC4967-CFC1-4968-A40F-E120F1EC709D</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>r</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<false/>
-				<key>queuedelaymode</key>
-				<integer>1</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string>/usr/bin/php raindrop-search.php "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Search your Raindrop.io bookmarks</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>56E7477E-A147-406F-B423-659AB0BD8355</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -971,7 +1021,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string></string>
+				<string>Loading...</string>
 				<key>script</key>
 				<string>property ff_dir: (system attribute "alfred_workflow_cache")
 property ff_path: ff_dir &amp; "/firefox_current_tab.json"
@@ -1087,23 +1137,67 @@ end run</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>⬅︎</string>
+						<key>outputlabel</key>
+						<string>Start over</string>
+						<key>uid</key>
+						<string>5A93BCF5-0D0E-435F-BD9C-FE6AB9BCD196</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>⬅︎⊟</string>
+						<key>outputlabel</key>
+						<string>Browse</string>
+						<key>uid</key>
+						<string>9C13F068-37F7-4311-8635-EC1AAA3C1C6C</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Open</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>00BF67F8-5443-44FF-8F1B-7758FE5AFF17</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>tell application id "com.runningwithcrayons.Alfred" to run trigger "browse" in workflow "me.westerlind.alfred.raindrop-search"</string>
+				<string>echo "{query}" &gt; current_collection.tmp</string>
 				<key>scriptargtype</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>6</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>BBD2CADE-7164-409D-9835-6A6ACF7A211B</string>
+			<string>820C39FD-6428-476C-A97F-5C6E14544FCB</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -1162,64 +1256,20 @@ end run</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>echo "{query}" &gt; current_collection.tmp</string>
+				<string>tell application id "com.runningwithcrayons.Alfred" to run trigger "browse" in workflow "me.westerlind.alfred.raindrop-search"</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>0</integer>
+				<integer>6</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>820C39FD-6428-476C-A97F-5C6E14544FCB</string>
+			<string>BBD2CADE-7164-409D-9835-6A6ACF7A211B</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<true/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>⬅︎</string>
-						<key>outputlabel</key>
-						<string>Start over</string>
-						<key>uid</key>
-						<string>5A93BCF5-0D0E-435F-BD9C-FE6AB9BCD196</string>
-					</dict>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>⬅︎⊟</string>
-						<key>outputlabel</key>
-						<string>Browse</string>
-						<key>uid</key>
-						<string>9C13F068-37F7-4311-8635-EC1AAA3C1C6C</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>Open</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>00BF67F8-5443-44FF-8F1B-7758FE5AFF17</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1268,6 +1318,23 @@ end run</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>C33F0548-F96D-43A8-A5E1-F157C8553D2A</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>browser</key>
 				<string>org.mozilla.firefox</string>
 				<key>spaces</key>
@@ -1283,23 +1350,6 @@ end run</string>
 			<string>EB0BEEDE-D9CF-4DAF-A154-0E92E796BF0D</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>C33F0548-F96D-43A8-A5E1-F157C8553D2A</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1407,25 +1457,6 @@ end run</string>
 			<key>config</key>
 			<dict>
 				<key>browser</key>
-				<string>org.chromium.Chromium</string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{var:link}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>55332F63-B661-47D7-B85D-C76484E34D12</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
 				<string>com.apple.Safari</string>
 				<key>spaces</key>
 				<string></string>
@@ -1438,6 +1469,25 @@ end run</string>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
 			<string>1EE45FF5-B323-4060-AC4B-CA15074C3028</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string>org.chromium.Chromium</string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{var:link}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>55332F63-B661-47D7-B85D-C76484E34D12</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1658,25 +1708,6 @@ end run</string>
 			<key>config</key>
 			<dict>
 				<key>browser</key>
-				<string>com.microsoft.edgemac</string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{var:link}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>311C1490-CED2-4F08-9B15-1BDE7A96CAC3</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
 				<string>com.google.Chrome.canary</string>
 				<key>spaces</key>
 				<string></string>
@@ -1689,6 +1720,25 @@ end run</string>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
 			<string>6F269388-3954-427F-88E6-01C7750A3334</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string>com.microsoft.edgemac</string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{var:link}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>311C1490-CED2-4F08-9B15-1BDE7A96CAC3</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1770,25 +1820,6 @@ end run</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{var:link}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>7B5B2A0C-413E-4321-85A2-F96ADDB26BB6</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1811,6 +1842,25 @@ return frontApp</string>
 			<string>B9566004-3BE2-40F9-97F8-DAF489100CE4</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{var:link}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>7B5B2A0C-413E-4321-85A2-F96ADDB26BB6</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1866,9 +1916,50 @@ return frontApp</string>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>//error_reporting(E_ERROR | E_PARSE);
+$query = "{query}";
+$current_selection = json_decode(file_get_contents("current_selection.tmp"), true);
+$current_selection["collection"] = preg_replace('/^-↪︎/', '', explode(" ", $query)[0]);
+file_put_contents("current_selection.tmp", json_encode($current_selection));
+echo($current_selection["title"]);</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8B78BDEB-BA1A-414A-BCD3-72F9CF7AB1EB</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>set_tags</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>5A67646D-F12E-46AC-A943-6F956AEDC631</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>tell application id "com.runningwithcrayons.Alfred" to run trigger "tags" in workflow "me.westerlind.alfred.raindrop-search" with argument "{query}"</string>
+				<string>tell application id "com.runningwithcrayons.Alfred" to run trigger "set_tags" in workflow "me.westerlind.alfred.raindrop-search" with argument "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1886,89 +1977,43 @@ return frontApp</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>printf "{query}" &gt; current_selection.tmp
-printf "" &gt; current_title.tmp
-printf "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:selection_status}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>^-↪︎.*</string>
+						<key>outputlabel</key>
+						<string>Save now</string>
+						<key>uid</key>
+						<string>3AF1C7E1-0068-4C6B-B941-8D79EFAFF1B0</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Set title</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>FC9F5CAB-BCC9-415F-8A54-3311A40A3DB7</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>triggerid</key>
-				<string>tags</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>5A67646D-F12E-46AC-A943-6F956AEDC631</string>
+			<string>2E719CC5-B574-4926-BDD1-6DBDAAEB84A0</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>printf "{query}" &gt; current_title.tmp
-printf "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>6735B311-38B8-4CF0-9F9F-BC8C255232D5</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>matchmode</key>
-				<integer>0</integer>
-				<key>matchstring</key>
-				<string>-⟲</string>
-				<key>replacestring</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.replace</string>
-			<key>uid</key>
-			<string>1DE7EE28-E463-45EF-AD0E-5C3CFFC91460</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argument</key>
-				<string>{query}§+#^§{var:url}</string>
+				<string>{query}</string>
 				<key>variables</key>
-				<dict/>
+				<dict>
+					<key>selection_status</key>
+					<string>{query}</string>
+				</dict>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
@@ -1980,17 +2025,23 @@ printf "{query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>{var:title}</string>
-				<key>variables</key>
-				<dict/>
+				<key>matchmode</key>
+				<integer>1</integer>
+				<key>matchstring</key>
+				<string>^-⟲</string>
+				<key>regexcaseinsensitive</key>
+				<false/>
+				<key>regexmultiline</key>
+				<false/>
+				<key>replacestring</key>
+				<string></string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
+			<string>alfred.workflow.utility.replace</string>
 			<key>uid</key>
-			<string>E7FB4B6B-1FB7-40F5-9B59-63198E520FAD</string>
+			<string>1DE7EE28-E463-45EF-AD0E-5C3CFFC91460</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2072,29 +2123,6 @@ printf "{query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>printf "{query}" &gt; current_title.tmp</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>048C10E2-3F90-4080-AE13-0F3DD2FF9AC6</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -2142,11 +2170,87 @@ printf "{query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>$current_selection = json_decode(file_get_contents("current_selection.tmp"), true);
+$current_selection["title"] = "{query}";
+file_put_contents("current_selection.tmp", json_encode($current_selection));</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>048C10E2-3F90-4080-AE13-0F3DD2FF9AC6</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:title_status}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>^(?!-↪︎).*</string>
+						<key>outputlabel</key>
+						<string>Add tags</string>
+						<key>uid</key>
+						<string>3AF1C7E1-0068-4C6B-B941-8D79EFAFF1B0</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Save now</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>4251BB15-A382-4DD8-9250-782B029B5DD9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>matchmode</key>
+				<integer>1</integer>
+				<key>matchstring</key>
+				<string>^-↪︎</string>
+				<key>regexcaseinsensitive</key>
+				<false/>
+				<key>regexmultiline</key>
+				<false/>
+				<key>replacestring</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.replace</string>
+			<key>uid</key>
+			<string>FA046954-7AB1-4373-A391-1BE1836C277C</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string>{query}</string>
 				<key>variables</key>
 				<dict>
-					<key>bookmark_title</key>
+					<key>title_status</key>
 					<string>{query}</string>
 				</dict>
 			</dict>
@@ -2201,6 +2305,27 @@ printf "{query}"</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>matchmode</key>
+				<integer>1</integer>
+				<key>matchstring</key>
+				<string>.*</string>
+				<key>regexcaseinsensitive</key>
+				<false/>
+				<key>regexmultiline</key>
+				<false/>
+				<key>replacestring</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.replace</string>
+			<key>uid</key>
+			<string>78757CD3-6B62-40A7-87F7-A72CA203E01D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>This Alfred Workflow is created to have a single, fast, and always reachable way of searching Raindrop.io, and then open bookmarks in the web browser you are currently working in, even if that's not your default browser.
@@ -2231,9 +2356,9 @@ You can also add bookmarks to Raindrop.io from the browser you are currently usi
 		<key>048C10E2-3F90-4080-AE13-0F3DD2FF9AC6</key>
 		<dict>
 			<key>xpos</key>
-			<integer>340</integer>
+			<integer>335</integer>
 			<key>ypos</key>
-			<integer>1235</integer>
+			<integer>1185</integer>
 		</dict>
 		<key>0B045132-17BF-4B34-B089-F612D2482BB5</key>
 		<dict>
@@ -2242,21 +2367,21 @@ You can also add bookmarks to Raindrop.io from the browser you are currently usi
 			<key>xpos</key>
 			<integer>780</integer>
 			<key>ypos</key>
-			<integer>1130</integer>
+			<integer>1080</integer>
 		</dict>
 		<key>0FCFA442-A541-4768-9966-F915FD603717</key>
 		<dict>
 			<key>xpos</key>
 			<integer>920</integer>
 			<key>ypos</key>
-			<integer>1150</integer>
+			<integer>1100</integer>
 		</dict>
 		<key>13EB61EC-13DF-4C56-9ABC-8508648E3A62</key>
 		<dict>
 			<key>xpos</key>
-			<integer>275</integer>
+			<integer>220</integer>
 			<key>ypos</key>
-			<integer>1265</integer>
+			<integer>1215</integer>
 		</dict>
 		<key>17FF8844-FFFD-4127-9879-42F68E3F5ED9</key>
 		<dict>
@@ -2272,7 +2397,7 @@ You can also add bookmarks to Raindrop.io from the browser you are currently usi
 			<key>xpos</key>
 			<integer>920</integer>
 			<key>ypos</key>
-			<integer>1055</integer>
+			<integer>1005</integer>
 		</dict>
 		<key>1EE45FF5-B323-4060-AC4B-CA15074C3028</key>
 		<dict>
@@ -2286,7 +2411,7 @@ You can also add bookmarks to Raindrop.io from the browser you are currently usi
 		<key>2469C16C-7E26-4F22-AB46-7D1C762E942B</key>
 		<dict>
 			<key>note</key>
-			<string>If a browser is the frontmost app, open Raindrop.io with your search in that browser, or otherwise open it in the default browser.</string>
+			<string>If a browser is the frontmost app, open the webpage in that browser, or otherwise open it in the default browser.</string>
 			<key>xpos</key>
 			<integer>480</integer>
 			<key>ypos</key>
@@ -2306,9 +2431,16 @@ You can also add bookmarks to Raindrop.io from the browser you are currently usi
 			<key>note</key>
 			<string>Set title for the new bookmark</string>
 			<key>xpos</key>
-			<integer>130</integer>
+			<integer>80</integer>
 			<key>ypos</key>
-			<integer>1235</integer>
+			<integer>1185</integer>
+		</dict>
+		<key>2E719CC5-B574-4926-BDD1-6DBDAAEB84A0</key>
+		<dict>
+			<key>xpos</key>
+			<integer>380</integer>
+			<key>ypos</key>
+			<integer>990</integer>
 		</dict>
 		<key>311C1490-CED2-4F08-9B15-1BDE7A96CAC3</key>
 		<dict>
@@ -2340,9 +2472,16 @@ You can also add bookmarks to Raindrop.io from the browser you are currently usi
 		<key>41FA3DD8-08E4-4908-8251-BC74C228C0D8</key>
 		<dict>
 			<key>xpos</key>
-			<integer>150</integer>
+			<integer>125</integer>
 			<key>ypos</key>
 			<integer>835</integer>
+		</dict>
+		<key>4251BB15-A382-4DD8-9250-782B029B5DD9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>475</integer>
+			<key>ypos</key>
+			<integer>1205</integer>
 		</dict>
 		<key>5073EAC4-DF95-479C-BCDD-B6828F53181C</key>
 		<dict>
@@ -2377,9 +2516,9 @@ I personally use option+space.</string>
 			<key>note</key>
 			<string>Show info to user</string>
 			<key>xpos</key>
-			<integer>780</integer>
+			<integer>970</integer>
 			<key>ypos</key>
-			<integer>1335</integer>
+			<integer>1285</integer>
 		</dict>
 		<key>55332F63-B661-47D7-B85D-C76484E34D12</key>
 		<dict>
@@ -2406,14 +2545,7 @@ I personally use option+space.</string>
 			<key>xpos</key>
 			<integer>630</integer>
 			<key>ypos</key>
-			<integer>1030</integer>
-		</dict>
-		<key>6735B311-38B8-4CF0-9F9F-BC8C255232D5</key>
-		<dict>
-			<key>xpos</key>
-			<integer>335</integer>
-			<key>ypos</key>
-			<integer>1030</integer>
+			<integer>975</integer>
 		</dict>
 		<key>6E6668A6-E82C-4C77-B178-FABE7F28863C</key>
 		<dict>
@@ -2444,6 +2576,13 @@ I personally use cmd+option+space.</string>
 			<integer>365</integer>
 			<key>ypos</key>
 			<integer>25</integer>
+		</dict>
+		<key>78757CD3-6B62-40A7-87F7-A72CA203E01D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>675</integer>
+			<key>ypos</key>
+			<integer>1315</integer>
 		</dict>
 		<key>78C09EC9-0B83-454E-B40B-4B6D1BBD21A2</key>
 		<dict>
@@ -2486,6 +2625,13 @@ I personally use cmd+option+space.</string>
 			<key>ypos</key>
 			<integer>45</integer>
 		</dict>
+		<key>8B78BDEB-BA1A-414A-BCD3-72F9CF7AB1EB</key>
+		<dict>
+			<key>xpos</key>
+			<integer>210</integer>
+			<key>ypos</key>
+			<integer>970</integer>
+		</dict>
 		<key>8E440F7A-8E3A-416F-8FF8-05DB56CC966D</key>
 		<dict>
 			<key>xpos</key>
@@ -2512,9 +2658,9 @@ I personally use cmd+option+space.</string>
 			<key>note</key>
 			<string>Save the bookmark</string>
 			<key>xpos</key>
-			<integer>635</integer>
+			<integer>780</integer>
 			<key>ypos</key>
-			<integer>1335</integer>
+			<integer>1285</integer>
 		</dict>
 		<key>B4AC4F51-56BA-4168-88B2-CEE7381D3103</key>
 		<dict>
@@ -2539,7 +2685,7 @@ I personally use cmd+option+space.</string>
 			<key>xpos</key>
 			<integer>970</integer>
 			<key>ypos</key>
-			<integer>1025</integer>
+			<integer>975</integer>
 		</dict>
 		<key>BBD2CADE-7164-409D-9835-6A6ACF7A211B</key>
 		<dict>
@@ -2591,16 +2737,9 @@ I personally use cmd+option+space.</string>
 		<key>E44DA31A-ABF5-41DD-8991-204E24E4827F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>275</integer>
+			<integer>265</integer>
 			<key>ypos</key>
 			<integer>845</integer>
-		</dict>
-		<key>E7FB4B6B-1FB7-40F5-9B59-63198E520FAD</key>
-		<dict>
-			<key>xpos</key>
-			<integer>275</integer>
-			<key>ypos</key>
-			<integer>1060</integer>
 		</dict>
 		<key>EB0BEEDE-D9CF-4DAF-A154-0E92E796BF0D</key>
 		<dict>
@@ -2614,9 +2753,9 @@ I personally use cmd+option+space.</string>
 		<key>EB409EE8-09FD-423A-BEBA-B6C3D1694D91</key>
 		<dict>
 			<key>xpos</key>
-			<integer>75</integer>
+			<integer>125</integer>
 			<key>ypos</key>
-			<integer>1060</integer>
+			<integer>1000</integer>
 		</dict>
 		<key>EDB576B7-F065-49A4-840D-8EAD0C79DE5B</key>
 		<dict>
@@ -2647,12 +2786,12 @@ I personally use cmd+option+space.</string>
 			<key>ypos</key>
 			<integer>25</integer>
 		</dict>
-		<key>FC9F5CAB-BCC9-415F-8A54-3311A40A3DB7</key>
+		<key>FA046954-7AB1-4373-A391-1BE1836C277C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>135</integer>
+			<integer>280</integer>
 			<key>ypos</key>
-			<integer>1030</integer>
+			<integer>1215</integer>
 		</dict>
 	</dict>
 	<key>version</key>

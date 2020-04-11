@@ -14,12 +14,13 @@ use Alfred\Workflows\Workflow;
 $workflow = new Workflow;
 
 $title = $argv[1];
-$original_title = file_get_contents("current_title.tmp");
+$original_title = json_decode(file_get_contents("current_selection.tmp"), true)["title"];
 
 $workflow->result()
   ->arg($title)
   ->title("Save as \"" . $title . "\"")
-  ->subtitle("Original title: " . $original_title);
+  ->subtitle("Original title: " . $original_title)
+  ->mod('cmd', "Save now, without adding tags", "-↪︎" . $title);
 
 // Output to Alfred
 echo $workflow->output();

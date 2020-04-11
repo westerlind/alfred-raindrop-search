@@ -142,7 +142,7 @@ function render_collections($raindrop_collections, $raindrop_collections_subleve
       if ($purpose == "adding") {
         $workflow->result()
           ->arg($result["_id"] . " " . mb_strtolower(implode(" ", $current_object)) . " " . ($render_style == "tree" ? mb_strtolower(sub_collection_names($raindrop_collections_sublevel, $result["_id"])) : ""))
-          ->mod('cmd', $sub_indentation . "Open Raindrop.io to change details after saving", $result["_id"] . " :§:open_raindrop:§: " . mb_strtolower(sub_collection_names($raindrop_collections_sublevel, $result["_id"])))
+          ->mod('cmd', $sub_indentation . "Save now, without setting custom title or adding tags", "-↪︎" . $result["_id"] . " " . mb_strtolower(sub_collection_names($raindrop_collections_sublevel, $result["_id"])))
           ->icon($icon_file_name)
           ->title($indentation . $collection_title);
       } else if ($purpose == "searching") {
