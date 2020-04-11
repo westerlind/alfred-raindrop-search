@@ -76,11 +76,16 @@ function partial_string_in_array($needle, $haystack)
 }
 
 // Function for searching Raindrop.io bookmarks
-function search(string $query, string $token, int $collection = 0)
+function search(string $query, string $token, int $collection = 0, string $tag = "")
 {
+  // Prepare for searching by tag, if a tag is provided
+  if($tag != "") {
+    $tag = "{\"key\":\"tag\",\"val\":\"" . urlencode($tag) . "\"},";
+  }
+
   // Query Raindrop.io
   $curl = curl_init();
-  curl_setopt($curl, CURLOPT_URL, "https://api.raindrop.io/rest/v1/raindrops/" . $collection . "/?search=[{\"key\":\"word\",\"val\":\"" . urlencode($query) . "\"}]&sort=\"" . ($query == "" ? "-created" : "score")."\"");
+  curl_setopt($curl, CURLOPT_URL, "https://api.raindrop.io/rest/v1/raindrops/" . $collection . "/?search=[" . $tag . "{\"key\":\"word\",\"val\":\"" . urlencode($query) . "\"}]&sort=\"" . ($query == "" ? "-created" : "score")."\"");
   curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
   curl_setopt($curl, CURLOPT_USERAGENT, "Alfred (Macintosh; Mac OS X)");
   curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: Bearer ' . $token));

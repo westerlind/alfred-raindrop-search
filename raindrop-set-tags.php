@@ -26,7 +26,7 @@ $filtered_tags = [];
 
 if ($query != "" && $tags[count($tags) - 1] != "") {
   // Get tag list from cache
-  $raindrop_tags = array_reverse(tags($token["access_token"], "trust")["items"]);
+  $raindrop_tags = tags($token["access_token"], "trust")["items"];
 
   foreach ($raindrop_tags as $current_tag) {
     if(strpos($current_tag["_id"], $tags[count($tags) - 1]) !== false) {
@@ -35,7 +35,7 @@ if ($query != "" && $tags[count($tags) - 1] != "") {
   }
 } else {
   // Get tag list from Raindrop.io and cache it
-  $raindrop_tags = array_reverse(tags($token["access_token"], "check")["items"]);
+  tags($token["access_token"], "check");
 }
 
 $tag_list = "";

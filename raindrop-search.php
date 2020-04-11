@@ -11,6 +11,7 @@ require 'raindrop-common.php';
 use Alfred\Workflows\Workflow;
 
 $query = $argv[1];
+
 $collection_search = false;
 $collection_search_id = 0;
 if ($argv[2] == "collection") {
@@ -21,6 +22,14 @@ if ($argv[2] == "collection") {
   $collection_search_id = (int)$collection_info[2];
   $collection_search_icon = $collection_info[3];
 }
+
+$tag_search = false;
+$tag = "";
+if ($argv[2] == "tag") {
+  $tag = file_get_contents("current_tag.tmp");
+  $tag_search = true;
+}
+
 $workflow = new Workflow;
 
 if ($collection_search) {
@@ -42,6 +51,15 @@ if ($collection_search) {
   }
 }
 
+if ($tag_search) {
+  // We are browsing bookmarks with a specific tag
+  $workflow->result()
+    ->arg("⬅︎")
+    ->title("Bookmarks tagged with #" . $tag)
+    ->subtitle("⬅︎ Go back to search all bookmarks")
+    ->icon("tag.png");
+}
+
 // Check if the token file exists and otherwise send the user over to the authentication
 if (!file_exists("token.json")) {
   init_auth ($workflow);
@@ -52,7 +70,7 @@ $token = json_decode(file_get_contents("token.json"), true);
 
 if ($query != "") {
 // Query Raindrop.io
-  $raindrop_results = search($query, $token["access_token"], $collection_search_id);
+  $raindrop_results = search($query, $token["access_token"], $collection_search_id, $tag);
 
   if (!isset($raindrop_results["items"]) && isset($raindrop_results["result"]) && !$raindrop_results["result"]) {
     // We got an error instead of the content we wanted, and that's probably because the token is outdated, so first try to refresh it
@@ -66,12 +84,12 @@ if ($query != "") {
     }
     else {
       // Try to query Raindrop again, and assume it will work now as we just got a fresh new token to authenticate with
-      $raindrop_results = search($query, $new_token["access_token"], $collection_search_id);
+      $raindrop_results = search($query, $new_token["access_token"], $collection_search_id, $tag);
     }
   }
 
-  // Search for collections that matches the search query, but only if we are not already doing a search in a collection
-  if (!$collection_search) {
+  // Search for collections and tags that matches the search query, but only if we are not already doing a search in a collection or a tag
+  if (!$collection_search && !$tag_search) {
     // Get collection list from cache
     $raindrop_collections = array_reverse(collections($token["access_token"], false, "trust")["items"]);
     $raindrop_collections_sublevel = array_reverse(collections($token["access_token"], true, "trust")["items"]);
@@ -79,7 +97,18 @@ if ($query != "") {
     // Render collections
     render_collections($raindrop_collections, $raindrop_collections_sublevel, $workflow, "paths", "searching");
 
-    // Filter collections by search query
+    // Get tag list from cache
+    $raindrop_tags = tags($token["access_token"], "trust")["items"];
+
+    // Render tags
+    foreach ($raindrop_tags as $current_tag) {
+      $workflow->result()
+        ->arg("⌈" . $current_tag["_id"] . "⌈")
+        ->title($current_tag["_id"])
+        ->icon("tag.png");
+    }
+
+    // Filter collections and tags by search query
     $workflow->filterResults(mb_strtolower($query), 'arg');
   }
 }
@@ -94,15 +123,16 @@ else {
     refresh_token($token["refresh_token"]);
   }
 
-  // If we are inside a collection
-  if ($collection_search) {
-    $raindrop_results = search("", $token["access_token"], $collection_search_id);
+  // If we are searching for bookmarks inside a collection or with a specific tag
+  if ($collection_search || $tag_search) {
+    $raindrop_results = search("", $token["access_token"], $collection_search_id, $tag);
   }
   // If we are are in standard search mode
   else {
-    // Cache the collection list to make searching faster when the user types a search query
-    array_reverse(collections($token["access_token"], false)["items"], "fetch");
-    array_reverse(collections($token["access_token"], true)["items"], "fetch");
+    // Cache collection and tag lists to make searching faster when the user types a search query
+    collections($token["access_token"], false, "check");
+    collections($token["access_token"], true, "check");
+    tags($token["access_token"], "check");
 
     // Default results if nothing is searched for. Just go to Raindrop.io itself
     $workflow->result()
@@ -116,7 +146,7 @@ else {
   }
 }
 
-if ($query != "" || $collection_search) {
+if ($query != "" || $collection_search || $tag_search) {
   // Prepare results for being viewed in Alfred
   foreach ($raindrop_results["items"] as $result) {
     $workflow->result()
