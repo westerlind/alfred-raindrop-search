@@ -167,10 +167,10 @@ if ($query != "" || $collection_search || $tag_search) {
     $workflow->result()
       ->arg($result["link"])
       ->title($result["title"])
-      ->subtitle($collection_names[$result["collection"]["\$id"]] . " • " . $tag_list . ($result["excerpt"] != "" ? $result["excerpt"] : $result["link"]))
+      ->subtitle($collection_names[$result["collection"]["\$id"]] . " • " . $tag_list . preg_replace('/^www\./', '', parse_url($result["link"])["host"]))
       ->copy($result["link"])
       ->mod('cmd', $result["link"], $result["link"])
-      ->mod('ctrl', $result["excerpt"] != "" ? $result["excerpt"] : $result["link"], $result["link"])
+      ->mod('ctrl', $result["excerpt"] != "" ? $result["excerpt"] : "No description", $result["link"])
       ->mod('alt', "Press enter to copy this link to clipboard", "copy:::" . $result["link"]);
   }
 }
