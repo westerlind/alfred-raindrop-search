@@ -177,6 +177,28 @@ function sub_collection_names($raindrop_collections_sublevel, $parent_id)
   return $names;
 }
 
+// Function for getting an array of all full path names for the collections, with the collection id's as keys.
+function collection_paths($raindrop_collections, $raindrop_collections_sublevel, $path_list = [], $parent_id = 0, $current_object = [], $current_level = -1) {
+  if ($parent_id == 0) {
+    $collection_array = $raindrop_collections;
+  } else {
+    $collection_array = $raindrop_collections_sublevel;
+  }
+  foreach ($collection_array as $result) {
+    if ($parent_id == 0 || $result["parent"]["\$id"] === $parent_id) {
+      $current_level++;
+      $current_object[$current_level] = $result["title"];
+      $path_list[$result["_id"]] = implode("/", $current_object);
+
+      $path_list = collection_paths($raindrop_collections, $raindrop_collections_sublevel, $path_list, $result["_id"], $current_object, $current_level);
+
+      unset($current_object[$current_level]);
+      $current_level--;
+    }
+  }
+  return $path_list;
+}
+
 // Function for getting Raindrop.io collections
 function collections(string $token, bool $sublevel, $caching = "check")
 {

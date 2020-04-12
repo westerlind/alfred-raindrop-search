@@ -2698,6 +2698,8 @@ I personally use option+space.</string>
 		</dict>
 		<key>53B0EA43-377E-44EB-8FE6-3AA390620E97</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
 			<key>note</key>
 			<string>Show info to user</string>
 			<key>xpos</key>
@@ -3006,7 +3008,7 @@ I personally use cmd+option+space.</string>
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>note</key>
-			<string>Start over with a new search</string>
+			<string>Back to normal search</string>
 			<key>xpos</key>
 			<integer>985</integer>
 			<key>ypos</key>

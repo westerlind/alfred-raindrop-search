@@ -88,12 +88,12 @@ if ($query != "") {
     }
   }
 
+  // Get collection list from cache
+  $raindrop_collections = array_reverse(collections($token["access_token"], false, "trust")["items"]);
+  $raindrop_collections_sublevel = array_reverse(collections($token["access_token"], true, "trust")["items"]);
+
   // Search for collections and tags that matches the search query, but only if we are not already doing a search in a collection or a tag
   if (!$collection_search && !$tag_search) {
-    // Get collection list from cache
-    $raindrop_collections = array_reverse(collections($token["access_token"], false, "trust")["items"]);
-    $raindrop_collections_sublevel = array_reverse(collections($token["access_token"], true, "trust")["items"]);
-
     // Render collections
     render_collections($raindrop_collections, $raindrop_collections_sublevel, $workflow, "paths", "searching");
 
@@ -126,12 +126,16 @@ else {
   // If we are searching for bookmarks inside a collection or with a specific tag
   if ($collection_search || $tag_search) {
     $raindrop_results = search("", $token["access_token"], $collection_search_id, $tag);
+
+    // Get collection list from cache
+    $raindrop_collections = array_reverse(collections($token["access_token"], false, "trust")["items"]);
+    $raindrop_collections_sublevel = array_reverse(collections($token["access_token"], true, "trust")["items"]);
   }
   // If we are are in standard search mode
   else {
     // Cache collection and tag lists to make searching faster when the user types a search query
-    collections($token["access_token"], false, "check");
-    collections($token["access_token"], true, "check");
+    $raindrop_collections = collections($token["access_token"], false, "check");
+    $raindrop_collections_sublevel = collections($token["access_token"], true, "check");
     tags($token["access_token"], "check");
 
     // Default results if nothing is searched for. Just go to Raindrop.io itself
@@ -147,14 +151,26 @@ else {
 }
 
 if ($query != "" || $collection_search || $tag_search) {
+
+  $collection_names = collection_paths($raindrop_collections, $raindrop_collections_sublevel);
+
   // Prepare results for being viewed in Alfred
   foreach ($raindrop_results["items"] as $result) {
+    $tag_list = "";
+    foreach ($result["tags"] as $current_tag) {
+      $tag_list .= "#" . $current_tag . " ";
+    }
+    if ($tag_list != "") {
+      $tag_list .= "• ";
+    }
+
     $workflow->result()
       ->arg($result["link"])
       ->title($result["title"])
-      ->subtitle($result["excerpt"] != "" ? $result["excerpt"] : $result["link"])
+      ->subtitle($collection_names[$result["collection"]["\$id"]] . " • " . $tag_list . ($result["excerpt"] != "" ? $result["excerpt"] : $result["link"]))
       ->copy($result["link"])
       ->mod('cmd', $result["link"], $result["link"])
+      ->mod('ctrl', $result["excerpt"] != "" ? $result["excerpt"] : $result["link"], $result["link"])
       ->mod('alt', "Press enter to copy this link to clipboard", "copy:::" . $result["link"]);
   }
 }
