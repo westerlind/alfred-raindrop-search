@@ -64,7 +64,8 @@ if($valid_tag_count > 1) {
 $workflow->result()
   ->arg($query)
   ->title($tag_info . $tag_list)
-  ->subtitle("Separate multiple tags with comma: tag1, tag2, tag3");
+  ->subtitle("Separate multiple tags with comma: tag1, tag2, tag3")
+  ->mod("alt", "Separate multiple tags with comma: tag1, tag2, tag3", $query);
 
 if ($query != "") {
   foreach ($filtered_tags as $current_tag) {
@@ -72,7 +73,8 @@ if ($query != "") {
       ->arg("-⟲" . $previous_tags . $current_tag["_id"] . ", ")
       ->title($current_tag["_id"])
       ->mod("cmd", "Add this tag and save",  $previous_tags . $current_tag["_id"])
-      ->icon("tag.png");
+      ->icon("tag.png")
+      ->mod("alt", "", "-⟲" . $previous_tags . $current_tag["_id"] . ", ");
   }
 }
 

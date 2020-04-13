@@ -30,6 +30,11 @@ if ($argv[2] == "tag") {
   $tag_search = true;
 }
 
+$prefer_description = false;
+if ($argv[3] == "true") {
+  $prefer_description = true;
+}
+
 $workflow = new Workflow;
 
 if ($collection_search) {
@@ -39,7 +44,8 @@ if ($collection_search) {
       ->arg("⬅︎⊟")
       ->title("Bookmarks in " . $collection_search_name)
       ->subtitle("⬅︎ Go back to collection browser")
-      ->icon($collection_search_icon);
+      ->icon($collection_search_icon)
+      ->mod("alt", "⬅︎ Go back to collection browser", "⬅︎⊟");
   }
   // We are browsing a collection, and came here from the main bookmark search
   else {
@@ -47,7 +53,8 @@ if ($collection_search) {
       ->arg("⬅︎")
       ->title("Bookmarks in " . $collection_search_name)
       ->subtitle("⬅︎ Go back to search all bookmarks")
-      ->icon($collection_search_icon);
+      ->icon($collection_search_icon)
+      ->mod("alt", "⬅︎ Go back to search all bookmarks", "⬅︎");
   }
 }
 
@@ -57,7 +64,8 @@ if ($tag_search) {
     ->arg("⬅︎")
     ->title("Bookmarks tagged with #" . $tag)
     ->subtitle("⬅︎ Go back to search all bookmarks")
-    ->icon("tag.png");
+    ->icon("tag.png")
+    ->mod("alt", "⬅︎ Go back to search all bookmarks", "⬅︎");
 }
 
 // Check if the token file exists and otherwise send the user over to the authentication
@@ -105,7 +113,8 @@ if ($query != "") {
       $workflow->result()
         ->arg("⌈" . $current_tag["_id"] . "⌈")
         ->title($current_tag["_id"])
-        ->icon("tag.png");
+        ->icon("tag.png")
+        ->mod("alt", "", "⌈" . $current_tag["_id"] . "⌈");
     }
 
     // Filter collections and tags by search query
@@ -142,11 +151,13 @@ else {
     $workflow->result()
       ->arg("https://app.raindrop.io/")
       ->title("Search your Raindrop.io bookmarks")
-      ->subtitle("Or press enter to open Raindrop.io");
+      ->subtitle("Or press enter to open Raindrop.io")
+      ->mod("alt", "Or press enter to open Raindrop.io", "https://app.raindrop.io/");
     $workflow->result()
       ->arg("browse➡︎")
       ->title("Browse your Raindrop.io collections")
-      ->icon("folder.png");
+      ->icon("folder.png")
+      ->mod("alt", "", "browse➡︎");
   }
 }
 
@@ -161,16 +172,16 @@ if ($query != "" || $collection_search || $tag_search) {
       $tag_list .= "#" . $current_tag . " ";
     }
     if ($tag_list != "") {
-      $tag_list .= "• ";
+      $tag_list .= " •  ";
     }
 
     $workflow->result()
       ->arg($result["link"])
       ->title($result["title"])
-      ->subtitle($collection_names[$result["collection"]["\$id"]] . " • " . $tag_list . preg_replace('/^www\./', '', parse_url($result["link"])["host"]))
+      ->subtitle($prefer_description ? ($result["excerpt"] != "" ? $result["excerpt"] : $result["link"]) : $collection_names[$result["collection"]["\$id"]] . "  •  " . $tag_list . preg_replace('/^www\./', '', parse_url($result["link"])["host"]))
       ->copy($result["link"])
       ->mod('cmd', $result["link"], $result["link"])
-      ->mod('ctrl', $result["excerpt"] != "" ? $result["excerpt"] : "No description", $result["link"])
+      ->mod('ctrl', $prefer_description ? $collection_names[$result["collection"]["\$id"]] . "  •  " . $tag_list . preg_replace('/^www\./', '', parse_url($result["link"])["host"]) : ($result["excerpt"] != "" ? $result["excerpt"] : "No description"), $result["link"])
       ->mod('alt', "Press enter to copy this link to clipboard", "copy:::" . $result["link"]);
   }
 }

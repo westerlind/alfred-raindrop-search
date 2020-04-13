@@ -12,13 +12,20 @@ require 'raindrop-common.php';
 use Alfred\Workflows\Workflow;
 
 $query = $argv[1];
+
+$render_style = "tree";
+if ($argv[2] == "true") {
+  $render_style = "paths";
+}
+
 $workflow = new Workflow;
 
 $workflow->result()
   ->arg("⬅︎")
   ->title("Raindrop.io Bookmark Collections")
-  ->subtitle("⬅︎ Go back to search for all bookmarks")
-  ->icon("icon.png");
+  ->subtitle("⬅︎ Go back to search all bookmarks")
+  ->icon("icon.png")
+  ->mod("alt", "⬅︎ Go back to search all bookmarks", "⬅︎");
 
 // Read token and related data from file
 $token = json_decode(file_get_contents("token.json"), true);
@@ -35,7 +42,7 @@ else {
 }
 
 // Render collections
-render_collections($raindrop_collections, $raindrop_collections_sublevel, $workflow, "tree", "searching");
+render_collections($raindrop_collections, $raindrop_collections_sublevel, $workflow, $render_style, "searching");
 
 if ($query != "") {
   // Filter collections by search query

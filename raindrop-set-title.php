@@ -18,9 +18,10 @@ $original_title = json_decode(file_get_contents("current_selection.tmp"), true)[
 
 $workflow->result()
   ->arg($title)
-  ->title("Save as \"" . $title . "\"")
+  ->title("Save as: " . $title)
   ->subtitle("Original title: " . $original_title)
-  ->mod('cmd', "Save now, without adding tags", "-↪︎" . $title);
+  ->mod('cmd', "Save now, without adding tags", "-↪︎" . $title)
+  ->mod("alt", "Original title: " . $original_title, $title);
 
 // Output to Alfred
 echo $workflow->output();

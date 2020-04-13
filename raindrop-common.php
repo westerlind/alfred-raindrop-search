@@ -149,12 +149,14 @@ function render_collections($raindrop_collections, $raindrop_collections_subleve
           ->arg($result["_id"] . " " . mb_strtolower(implode(" ", $current_object)) . " " . ($render_style == "tree" ? mb_strtolower(sub_collection_names($raindrop_collections_sublevel, $result["_id"])) : ""))
           ->mod('cmd', $sub_indentation . "Save now, without setting custom title or adding tags", "-↪︎" . $result["_id"] . " " . mb_strtolower(sub_collection_names($raindrop_collections_sublevel, $result["_id"])))
           ->icon($icon_file_name)
-          ->title($indentation . $collection_title);
+          ->title($indentation . $collection_title)
+          ->mod("alt", "", $result["_id"] . " " . mb_strtolower(implode(" ", $current_object)) . " " . ($render_style == "tree" ? mb_strtolower(sub_collection_names($raindrop_collections_sublevel, $result["_id"])) : ""));
       } else if ($purpose == "searching") {
         $workflow->result()
           ->arg("⏦" . implode("/", $current_object) . "⏦" . $result["_id"] . "⏦" . $icon_file_name . "⏦" . mb_strtolower(implode(" ", $current_object)) . " " . ($render_style == "tree" ? mb_strtolower(sub_collection_names($raindrop_collections_sublevel, $result["_id"])) : ""))
           ->icon($icon_file_name)
-          ->title($indentation . $collection_title);
+          ->title($indentation . $collection_title)
+          ->mod("alt", "", "⏦" . implode("/", $current_object) . "⏦" . $result["_id"] . "⏦" . $icon_file_name . "⏦" . mb_strtolower(implode(" ", $current_object)) . " " . ($render_style == "tree" ? mb_strtolower(sub_collection_names($raindrop_collections_sublevel, $result["_id"])) : ""));
       }
 
       render_collections($raindrop_collections, $raindrop_collections_sublevel, $workflow, $render_style, $purpose, $result["_id"], $current_object, $current_level);

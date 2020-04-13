@@ -20,6 +20,12 @@ else {
   $browserUrl = $argv[1];
   $browserTitle = $argv[3];
 }
+
+$render_style = "tree";
+if ($argv[4] == "true") {
+  $render_style = "paths";
+}
+
 $workflow = new Workflow;
 
 // Check if the token file exists and otherwise send the user over to the authentication
@@ -45,7 +51,8 @@ if ($browserUrl === "No browser active") {
   $workflow->result()
     ->valid(false)
     ->title("There is nothing here to add to Raindrop.io")
-    ->subtitle("Go to the browser you want to add a bookmark from and try again");
+    ->subtitle("Go to the browser you want to add a bookmark from and try again")
+    ->mod("alt", "Go to the browser you want to add a bookmark from and try again", false);
   echo $workflow->output();
   die();
 }
@@ -55,7 +62,8 @@ $workflow->result()
   ->arg("")
   ->mod('cmd', $sub_indentation . "Save now, without setting custom title or adding tags", "-↪︎")
   ->title("Add Raindrop.io Bookmark to Unsorted")
-  ->subtitle("Or select a collection below");
+  ->subtitle("Or select a collection below")
+  ->mod("alt", "Or select a collection below", "");
 
 // Make sure that the icon_cache directory exists
 if (!file_exists('icon_cache')) {
@@ -73,7 +81,7 @@ else {
 }
 
 // Render collections
-render_collections($raindrop_collections, $raindrop_collections_sublevel, $workflow, "tree", "adding");
+render_collections($raindrop_collections, $raindrop_collections_sublevel, $workflow, $render_style, "adding");
 
 // Add Alfred variable for the title of the new bookmark
 $workflow->variable('title', $browserTitle);
