@@ -20,7 +20,7 @@ You can also use this workflow to add bookmarks to [Raindrop.io](https://raindro
 
 
 ## Supported Web Browsers
-Safari, Chrome, Firefox, Edge, Brave, Vivaldi, Opera, Chromium, Chrome Canary, Safari Technology Preview (and SeaMonkey, but only for opening bookmarks)
+Safari, Chrome, Firefox, Edge, Brave, Vivaldi, Opera, Chromium, Chrome Canary, Safari Technology Preview, NAVER Whale (and SeaMonkey, but only for opening bookmarks)
 
 ## Settings
 - To set keyboard shortcuts, go to the "Search Raindrop.io" workflow in the Alfred preferences and look in the top left corner, where you can set keyboard shortcuts for searching Raindrop.io, or for adding bookmarks.
