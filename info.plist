@@ -126,6 +126,16 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>7B5B2A0C-413E-4321-85A2-F96ADDB26BB6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>EB0BEEDE-D9CF-4DAF-A154-0E92E796BF0D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -258,11 +268,13 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>7B5B2A0C-413E-4321-85A2-F96ADDB26BB6</string>
+				<string>81A58593-A369-4BBC-B9F2-EAE7065DAD4F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>sourceoutputuid</key>
+				<string>621DCBE8-96B7-4E3A-9857-A4350C8010AB</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -1229,6 +1241,9 @@ else if (frontApp = "Chromium") then
 else if (frontApp = "Brave Browser") then
 	set browserURL to do shell script "/usr/bin/osascript browser-info/brave-url.scpt"
 	set browserTitle to do shell script "/usr/bin/osascript browser-info/brave-title.scpt"
+else if (frontApp = "Whale") then
+	set browserURL to do shell script "/usr/bin/osascript browser-info/whale-url.scpt"
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/whale-title.scpt"
 else if (frontApp = "Safari Technology Preview") then
 	set browserURL to do shell script "/usr/bin/osascript browser-info/safari-techpreview-url.scpt"
 	set browserTitle to do shell script "/usr/bin/osascript browser-info/safari-techpreview-title.scpt"
@@ -1511,6 +1526,25 @@ end run</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{var:link}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>7B5B2A0C-413E-4321-85A2-F96ADDB26BB6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>triggerid</key>
 				<string>search</string>
 			</dict>
@@ -1779,6 +1813,21 @@ end run</string>
 						<string>Safari Technology Preview</string>
 						<key>uid</key>
 						<string>2C831EA4-351A-4A60-9692-C921A53C83FC</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:browser}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>Whale
+</string>
+						<key>outputlabel</key>
+						<string>NAVER Whale</string>
+						<key>uid</key>
+						<string>621DCBE8-96B7-4E3A-9857-A4350C8010AB</string>
 					</dict>
 				</array>
 				<key>elselabel</key>
@@ -2070,25 +2119,6 @@ return frontApp</string>
 			<key>config</key>
 			<dict>
 				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{var:link}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>7B5B2A0C-413E-4321-85A2-F96ADDB26BB6</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
 				<string>com.apple.SafariTechnologyPreview</string>
 				<key>spaces</key>
 				<string></string>
@@ -2101,6 +2131,25 @@ return frontApp</string>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
 			<string>17FF8844-FFFD-4127-9879-42F68E3F5ED9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string>com.naver.Whale</string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{var:link}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>81A58593-A369-4BBC-B9F2-EAE7065DAD4F</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2727,7 +2776,7 @@ You can also use this workflow to add bookmarks to Raindrop.io from the browser 
 			<key>note</key>
 			<string>Vivaldi</string>
 			<key>xpos</key>
-			<integer>985</integer>
+			<integer>845</integer>
 			<key>ypos</key>
 			<integer>920</integer>
 		</dict>
@@ -2843,9 +2892,9 @@ I personally use cmd+option+space.</string>
 			<key>note</key>
 			<string>Default Browser</string>
 			<key>xpos</key>
-			<integer>845</integer>
+			<integer>985</integer>
 			<key>ypos</key>
-			<integer>920</integer>
+			<integer>400</integer>
 		</dict>
 		<key>7C43852C-AD13-4F99-A36F-7D099E1C5016</key>
 		<dict>
@@ -2855,6 +2904,17 @@ I personally use cmd+option+space.</string>
 			<integer>25</integer>
 			<key>ypos</key>
 			<integer>545</integer>
+		</dict>
+		<key>81A58593-A369-4BBC-B9F2-EAE7065DAD4F</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>NAVER Whale</string>
+			<key>xpos</key>
+			<integer>985</integer>
+			<key>ypos</key>
+			<integer>920</integer>
 		</dict>
 		<key>820C39FD-6428-476C-A97F-5C6E14544FCB</key>
 		<dict>
