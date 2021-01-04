@@ -360,6 +360,18 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>36896C84-4763-46D0-9598-45825301874A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>78162A37-E8DD-4034-9209-D9571900EC2D</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>E44DA31A-ABF5-41DD-8991-204E24E4827F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -1002,6 +1014,8 @@
 			<dict>
 				<key>argument</key>
 				<string>{query}§collection_list§</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict/>
 			</dict>
@@ -1017,6 +1031,8 @@
 			<dict>
 				<key>argument</key>
 				<string></string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict/>
 			</dict>
@@ -1582,6 +1598,8 @@ end run</string>
 				<false/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
 				<key>transient</key>
 				<false/>
 			</dict>
@@ -1886,6 +1904,8 @@ end run</string>
 			<dict>
 				<key>argument</key>
 				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict>
 					<key>browser</key>
@@ -2001,6 +2021,20 @@ return frontApp</string>
 						<key>uid</key>
 						<string>3A985C66-C402-4358-A103-FA2233FF2D18</string>
 					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>^https\:\/\/raindrop.io\/oauth\/authorize.*</string>
+						<key>outputlabel</key>
+						<string>Open</string>
+						<key>uid</key>
+						<string>78162A37-E8DD-4034-9209-D9571900EC2D</string>
+					</dict>
 				</array>
 				<key>elselabel</key>
 				<string>Add bookmark</string>
@@ -2017,6 +2051,8 @@ return frontApp</string>
 			<dict>
 				<key>argument</key>
 				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict>
 					<key>link</key>
@@ -2186,6 +2222,8 @@ echo($current_selection["title"]);</string>
 			<dict>
 				<key>argument</key>
 				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict>
 					<key>selection_status</key>
@@ -2425,6 +2463,8 @@ file_put_contents("current_selection.tmp", json_encode($current_selection));</st
 			<dict>
 				<key>argument</key>
 				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict>
 					<key>title_status</key>
