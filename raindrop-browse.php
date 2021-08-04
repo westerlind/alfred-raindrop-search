@@ -27,6 +27,13 @@ $workflow->result()
   ->icon("icon.png")
   ->mod("alt", "⬅︎ Go back to search all bookmarks", "⬅︎");
 
+$workflow->result()
+  ->arg("⏦Unsorted⏦-1⏦folder.png⏦unsorted ")
+  ->title("Unsorted")
+  ->subtitle("")
+  ->icon("folder.png")
+  ->mod("alt", "Unsorted", "⏦Unsorted⏦-1⏦folder.png⏦unsorted ");
+
 // Read token and related data from file
 $token = json_decode(file_get_contents("token.json"), true);
 

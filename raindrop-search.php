@@ -178,7 +178,7 @@ if ($query != "" || $collection_search || $tag_search) {
     $workflow->result()
       ->arg($result["link"])
       ->title($result["title"])
-      ->subtitle($prefer_description ? ($result["excerpt"] != "" ? $result["excerpt"] : $result["link"]) : $collection_names[$result["collection"]["\$id"]] . "  •  " . $tag_list . preg_replace('/^www\./', '', parse_url($result["link"])["host"]))
+      ->subtitle($prefer_description ? ($result["excerpt"] != "" ? $result["excerpt"] : $result["link"]) : $collection_names[$result["collection"]["\$id"]] . ($collection_names[$result["collection"]["\$id"]] != "" ? "  •  " : "") . $tag_list . preg_replace('/^www\./', '', parse_url($result["link"])["host"]))
       ->copy($result["link"])
       ->mod('cmd', $result["link"], $result["link"])
       ->mod('ctrl', $prefer_description ? $collection_names[$result["collection"]["\$id"]] . "  •  " . $tag_list . preg_replace('/^www\./', '', parse_url($result["link"])["host"]) : ($result["excerpt"] != "" ? $result["excerpt"] : "No description"), $result["link"])
