@@ -330,6 +330,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>34C442C0-5DC0-44D3-9C48-609A43A36847</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>048C10E2-3F90-4080-AE13-0F3DD2FF9AC6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>36896C84-4763-46D0-9598-45825301874A</key>
 		<array>
 			<dict>
@@ -726,6 +739,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>BAC4F4AC-8A01-4CF9-B2D0-F30EFC6C6FC4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8B78BDEB-BA1A-414A-BCD3-72F9CF7AB1EB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>DD37737C-3621-439C-BF13-9FD6B63BF73D</key>
 		<array>
 			<dict>
@@ -782,7 +808,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>8B78BDEB-BA1A-414A-BCD3-72F9CF7AB1EB</string>
+				<string>BAC4F4AC-8A01-4CF9-B2D0-F30EFC6C6FC4</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -808,7 +834,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>048C10E2-3F90-4080-AE13-0F3DD2FF9AC6</string>
+				<string>34C442C0-5DC0-44D3-9C48-609A43A36847</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -869,7 +895,8 @@
 				<key>runningsubtext</key>
 				<string>Loading...</string>
 				<key>script</key>
-				<string>/usr/bin/php raindrop-search.php "{query}" search "$description_in_boomark_listing"</string>
+				<string>export PATH="$path:$PATH"
+php raindrop-search.php "{query}" search "$description_in_boomark_listing"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -932,11 +959,11 @@
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>0</integer>
+				<integer>18</integer>
 				<key>hotmod</key>
-				<integer>0</integer>
+				<integer>1966080</integer>
 				<key>hotstring</key>
-				<string></string>
+				<string>1</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -977,7 +1004,8 @@
 				<key>runningsubtext</key>
 				<string>Loading...</string>
 				<key>script</key>
-				<string>/usr/bin/php raindrop-browse.php "{query}" "$subcollections_as_full_paths"</string>
+				<string>export PATH="$path:$PATH"
+php raindrop-browse.php "{query}" "$subcollections_as_full_paths"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1127,7 +1155,8 @@
 				<key>runningsubtext</key>
 				<string>Loading...</string>
 				<key>script</key>
-				<string>/usr/bin/php raindrop-search.php "{query}" collection "$description_in_boomark_listing"</string>
+				<string>export PATH="$path:$PATH"
+php raindrop-search.php "{query}" collection "$description_in_boomark_listing"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1160,11 +1189,11 @@
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>0</integer>
+				<integer>49</integer>
 				<key>hotmod</key>
-				<integer>0</integer>
+				<integer>1572864</integer>
 				<key>hotstring</key>
-				<string></string>
+				<string>Space</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1267,7 +1296,7 @@ else if (frontApp = "firefox") then
 		end tell
 	on error errMsg
 		log "ERROR: " &amp; quoted form of errMsg
-		return do shell script "/usr/bin/php firefox-error-management.php " &amp; quoted form of errMsg
+		return do shell script "PATH=\"" &amp; (system attribute "path") &amp; ":$PATH\" php firefox-error-management.php " &amp; quoted form of errMsg
 	end try
 
 	-- External Trigger calls are asynchronous, so wait up to one second for file to appear,
@@ -1280,14 +1309,14 @@ else if (frontApp = "firefox") then
 					-- Remove JSON file
 					do shell script "rm -f " &amp; quoted form of ff_path
 					if (ff_tab_info is equal to "Cannot Connect to Extension") then
-						return do shell script "/usr/bin/php firefox-error-management.php " &amp; quoted form of ff_tab_info
+						return do shell script "PATH=\"" &amp; (system attribute "path") &amp; ":$PATH\" php firefox-error-management.php " &amp; quoted form of ff_tab_info
 					else
-						return do shell script "/usr/bin/php raindrop-collections.php " &amp; quoted form of ff_tab_info &amp; " \"{query}\""
+						return do shell script "PATH=\"" &amp; (system attribute "path") &amp; ":$PATH\" php raindrop-collections.php " &amp; quoted form of ff_tab_info &amp; " \"{query}\""
 					end if
 				end if
 			on error errMsg
 				log "ERROR: " &amp; quoted form of errMsg
-				return do shell script "/usr/bin/php firefox-error-management.php " &amp; quoted form of errMsg
+				return do shell script "PATH=\"" &amp; (system attribute "path") &amp; ":$PATH\" php firefox-error-management.php " &amp; quoted form of errMsg
 			end try
 			delay 0.01
 		end repeat
@@ -1295,10 +1324,10 @@ else if (frontApp = "firefox") then
 
 	-- Failed to get tab info (in time)
 	log "Tab info not saved by Firefox Assistant"
-	return do shell script "/usr/bin/php firefox-error-management.php \"Tab info not saved by Firefox Assistant\""
+	return do shell script "PATH=\"" &amp; (system attribute "path") &amp; ":$PATH\" php firefox-error-management.php \"Tab info not saved by Firefox Assistant\""
 end if
 
-do shell script "/usr/bin/php raindrop-collections.php " &amp; quoted form of browserURL &amp; " \"{query}\" " &amp; quoted form of browserTitle &amp; " " &amp; quoted form of (system attribute "subcollections_as_full_paths")
+do shell script "PATH=\"" &amp; (system attribute "path") &amp; ":$PATH\" php raindrop-collections.php " &amp; quoted form of browserURL &amp; " \"{query}\" " &amp; quoted form of browserTitle &amp; " " &amp; quoted form of (system attribute "subcollections_as_full_paths")
 
 end run</string>
 				<key>scriptargtype</key>
@@ -1431,13 +1460,14 @@ end run</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>file_put_contents("current_tag.tmp", explode("⌈", "{query}")[1]);</string>
+				<string>export PATH="$path:$PATH"
+php -r 'file_put_contents("current_tag.tmp", explode("⌈", "{query}")[1]);'</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>1</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -1502,7 +1532,8 @@ end run</string>
 				<key>runningsubtext</key>
 				<string>Loading...</string>
 				<key>script</key>
-				<string>/usr/bin/php raindrop-search.php "{query}" tag "$description_in_boomark_listing"</string>
+				<string>export PATH="$path:$PATH"
+php raindrop-search.php "{query}" tag "$description_in_boomark_listing"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -2180,18 +2211,18 @@ return frontApp</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>//error_reporting(E_ERROR | E_PARSE);
-$query = "{query}";
+				<string>export PATH="$path:$PATH"
+php -r '$query = "{query}";
 $current_selection = json_decode(file_get_contents("current_selection.tmp"), true);
-$current_selection["collection"] = preg_replace('/^-↪︎/', '', explode(" ", $query)[0]);
+$current_selection["collection"] = preg_replace('"'"'/^-↪︎/'"'"', '"''"', explode(" ", $query)[0]);
 file_put_contents("current_selection.tmp", json_encode($current_selection));
-echo($current_selection["title"]);</string>
+echo($current_selection["title"]);'</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>1</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -2290,6 +2321,23 @@ echo($current_selection["title"]);</string>
 			<key>config</key>
 			<dict>
 				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>'</string>
+				<key>replacestring</key>
+				<string>'"'"'</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.replace</string>
+			<key>uid</key>
+			<string>BAC4F4AC-8A01-4CF9-B2D0-F30EFC6C6FC4</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>matchmode</key>
 				<integer>1</integer>
 				<key>matchstring</key>
 				<string>^-⟲</string>
@@ -2333,7 +2381,8 @@ echo($current_selection["title"]);</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/php raindrop-set-tags.php "{query}"</string>
+				<string>export PATH="$path:$PATH"
+php raindrop-set-tags.php "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -2410,7 +2459,8 @@ echo($current_selection["title"]);</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/php raindrop-set-title.php "{query}"</string>
+				<string>export PATH="$path:$PATH"
+php raindrop-set-title.php "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -2439,15 +2489,14 @@ echo($current_selection["title"]);</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>$current_selection = json_decode(file_get_contents("current_selection.tmp"), true);
-$current_selection["title"] = "{query}";
-file_put_contents("current_selection.tmp", json_encode($current_selection));</string>
+				<string>export PATH="$path:$PATH"
+php -r '$current_selection = json_decode(file_get_contents("current_selection.tmp"), true); $current_selection["title"] = "{query}"; file_put_contents("current_selection.tmp", json_encode($current_selection));'</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>1</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -2530,12 +2579,30 @@ file_put_contents("current_selection.tmp", json_encode($current_selection));</st
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>'</string>
+				<key>replacestring</key>
+				<string>'"'"'</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.replace</string>
+			<key>uid</key>
+			<string>34C442C0-5DC0-44D3-9C48-609A43A36847</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>/usr/bin/php raindrop-add.php "{query}"</string>
+				<string>export PATH="$path:$PATH"
+php raindrop-add.php "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -2605,6 +2672,9 @@ description_in_boomark_listing:
 When listing bookmarks while searching for or browsing them, by default you will get info about the collection, tags, and domain name in the subtitle of each bookmark, and you can hold down the ctrl key to view the description.
 If you set this to true, you will instead see the description first and can hold the ctrl key to view collection, tags and domain name.
 
+path:
+This is used to find the php binary, and if you have not installed this manually in a non-default place (other then where Homebrew, MacPorts or Fink installs it by default, or where it is available by default on older macOS versions) you can leave this as it is.
+
 ABOUT THIS WORKFLOW
 This Alfred workflow is created to have a single, fast, and always reachable way of searching Raindrop.io, and then open bookmarks in the web browser you are currently working in, even if that's not your default browser.
 You can also use this workflow to add bookmarks to Raindrop.io from the browser you are currently using.
@@ -2659,7 +2729,7 @@ You can also use this workflow to add bookmarks to Raindrop.io from the browser 
 		<key>13EB61EC-13DF-4C56-9ABC-8508648E3A62</key>
 		<dict>
 			<key>xpos</key>
-			<integer>220</integer>
+			<integer>185</integer>
 			<key>ypos</key>
 			<integer>1290</integer>
 		</dict>
@@ -2715,7 +2785,7 @@ You can also use this workflow to add bookmarks to Raindrop.io from the browser 
 			<key>note</key>
 			<string>Set title for the new bookmark</string>
 			<key>xpos</key>
-			<integer>80</integer>
+			<integer>50</integer>
 			<key>ypos</key>
 			<integer>1260</integer>
 		</dict>
@@ -2736,6 +2806,13 @@ You can also use this workflow to add bookmarks to Raindrop.io from the browser 
 			<integer>985</integer>
 			<key>ypos</key>
 			<integer>790</integer>
+		</dict>
+		<key>34C442C0-5DC0-44D3-9C48-609A43A36847</key>
+		<dict>
+			<key>xpos</key>
+			<integer>285</integer>
+			<key>ypos</key>
+			<integer>1290</integer>
 		</dict>
 		<key>36896C84-4763-46D0-9598-45825301874A</key>
 		<dict>
@@ -3003,6 +3080,13 @@ I personally use cmd+option+space.</string>
 			<key>ypos</key>
 			<integer>1070</integer>
 		</dict>
+		<key>BAC4F4AC-8A01-4CF9-B2D0-F30EFC6C6FC4</key>
+		<dict>
+			<key>xpos</key>
+			<integer>150</integer>
+			<key>ypos</key>
+			<integer>1095</integer>
+		</dict>
 		<key>BBD2CADE-7164-409D-9835-6A6ACF7A211B</key>
 		<dict>
 			<key>colorindex</key>
@@ -3093,7 +3177,7 @@ I personally use cmd+option+space.</string>
 		<key>EB409EE8-09FD-423A-BEBA-B6C3D1694D91</key>
 		<dict>
 			<key>xpos</key>
-			<integer>140</integer>
+			<integer>85</integer>
 			<key>ypos</key>
 			<integer>1095</integer>
 		</dict>
@@ -3131,7 +3215,7 @@ I personally use cmd+option+space.</string>
 		<key>FA046954-7AB1-4373-A391-1BE1836C277C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>280</integer>
+			<integer>235</integer>
 			<key>ypos</key>
 			<integer>1290</integer>
 		</dict>
@@ -3140,11 +3224,11 @@ I personally use cmd+option+space.</string>
 	<dict>
 		<key>description_in_boomark_listing</key>
 		<string>false</string>
+		<key>path</key>
+		<string>/opt/homebrew/bin:/usr/local/bin:/opt/local/bin:/sw/bin:/opt/bin:/usr/bin:/bin</string>
 		<key>subcollections_as_full_paths</key>
 		<string>false</string>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
 	<string>1.6</string>
 	<key>webaddress</key>
