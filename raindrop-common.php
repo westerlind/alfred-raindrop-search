@@ -4,6 +4,9 @@
 // By Andreas Westerlind in 2020
 //
 
+// Don't show warnings as many things in Alfred are dependent on scripts not printing out unexpected things, like warnings. Errors are still there.
+error_reporting(E_ERROR | E_PARSE);
+
 // Function for initiating authentication process
 function init_auth($workflow)
 {
