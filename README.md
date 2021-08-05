@@ -18,6 +18,9 @@ You can also use this workflow to add bookmarks to [Raindrop.io](https://raindro
   - The Firefox support for adding bookmarks was made possible with the help of deanishe's great workflow Firefox Assistant, which needs to be installed in Alfred for the Firefox support to function. Get it here: https://github.com/deanishe/alfred-firefox
 - If the workflow is not authenticated with Raindrop.io when you initiate it, you will be taken to the authentication process.
 
+## macOS 12 Monterey support
+macOS Monterey is supported if you have at least version 1.7 of the workflow, but as Monterey does not include a preinstalled PHP anymore you will have to install PHP yourself for this workflow to still function after updating to macOS Monterey.
+Information about the recommended way of installing PHP is available [here](https://www.php.net/manual/en/install.macosx.packages.php).
 
 ## Supported Web Browsers
 Safari, Chrome, Firefox, Edge, Brave, Vivaldi, Opera, Chromium, Chrome Canary, Safari Technology Preview, NAVER Whale (and SeaMonkey, but only for opening bookmarks)
