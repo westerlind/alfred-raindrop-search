@@ -896,7 +896,7 @@
 				<string>Loading...</string>
 				<key>script</key>
 				<string>export PATH="$path:$PATH"
-php raindrop-search.php "{query}" search "$description_in_boomark_listing"</string>
+php raindrop-search.php "{query}" search "$description_in_boomark_listing" "$favourites_first"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -959,11 +959,11 @@ php raindrop-search.php "{query}" search "$description_in_boomark_listing"</stri
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>18</integer>
+				<integer>0</integer>
 				<key>hotmod</key>
-				<integer>1966080</integer>
+				<integer>0</integer>
 				<key>hotstring</key>
-				<string>1</string>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1156,7 +1156,7 @@ php raindrop-browse.php "{query}" "$subcollections_as_full_paths"</string>
 				<string>Loading...</string>
 				<key>script</key>
 				<string>export PATH="$path:$PATH"
-php raindrop-search.php "{query}" collection "$description_in_boomark_listing"</string>
+php raindrop-search.php "{query}" collection "$description_in_boomark_listing" "$favourites_first"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1189,11 +1189,11 @@ php raindrop-search.php "{query}" collection "$description_in_boomark_listing"</
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>49</integer>
+				<integer>0</integer>
 				<key>hotmod</key>
-				<integer>1572864</integer>
+				<integer>0</integer>
 				<key>hotstring</key>
-				<string>Space</string>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1533,7 +1533,7 @@ php -r 'file_put_contents("current_tag.tmp", explode("⌈", "{query}")[1]);'</st
 				<string>Loading...</string>
 				<key>script</key>
 				<string>export PATH="$path:$PATH"
-php raindrop-search.php "{query}" tag "$description_in_boomark_listing"</string>
+php raindrop-search.php "{query}" tag "$description_in_boomark_listing" "$favourites_first"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -2672,8 +2672,12 @@ description_in_boomark_listing:
 When listing bookmarks while searching for or browsing them, by default you will get info about the collection, tags, and domain name in the subtitle of each bookmark, and you can hold down the ctrl key to view the description.
 If you set this to true, you will instead see the description first and can hold the ctrl key to view collection, tags and domain name.
 
+favourites_first:
+Set this to true if you want bookmarks that are marked as favourites to always be shown first in results (default), and otherwise set it to false.
+
 path:
-This is used to find the php binary, and if you have not installed this manually in a non-default place (other then where Homebrew, MacPorts or Fink installs it by default, or where it is available by default on older macOS versions) you can leave this as it is.
+You probably don't need to make any changes to this.
+This is used to find the php binary, and if you have not installed this manually in a non-default place (other than where Homebrew, MacPorts or Fink installs it by default, or where it is available by default on older macOS versions where it is preinstalled) you can leave this as it is.
 
 ABOUT THIS WORKFLOW
 This Alfred workflow is created to have a single, fast, and always reachable way of searching Raindrop.io, and then open bookmarks in the web browser you are currently working in, even if that's not your default browser.
@@ -3224,13 +3228,15 @@ I personally use cmd+option+space.</string>
 	<dict>
 		<key>description_in_boomark_listing</key>
 		<string>false</string>
+		<key>favourites_first</key>
+		<string>true</string>
 		<key>path</key>
 		<string>/opt/homebrew/bin:/usr/local/bin:/opt/local/bin:/sw/bin:/opt/bin:/usr/bin:/bin</string>
 		<key>subcollections_as_full_paths</key>
 		<string>false</string>
 	</dict>
 	<key>version</key>
-	<string>1.6</string>
+	<string>1.7</string>
 	<key>webaddress</key>
 	<string>https://www.packal.org/workflow/search-raindropio</string>
 </dict>

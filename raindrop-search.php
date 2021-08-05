@@ -35,6 +35,11 @@ if ($argv[3] == "true") {
   $prefer_description = true;
 }
 
+$favourites_first = false;
+if ($argv[4] == "true") {
+  $favourites_first = true;
+}
+
 $workflow = new Workflow;
 
 if ($collection_search) {
@@ -165,24 +170,50 @@ if ($query != "" || $collection_search || $tag_search) {
 
   $collection_names = collection_paths($raindrop_collections, $raindrop_collections_sublevel);
 
-  // Prepare results for being viewed in Alfred
-  foreach ($raindrop_results["items"] as $result) {
-    $tag_list = "";
-    foreach ($result["tags"] as $current_tag) {
-      $tag_list .= "#" . $current_tag . " ";
-    }
-    if ($tag_list != "") {
-      $tag_list .= " •  ";
-    }
+  // Prepare favourites for being viewed in Alfred
+  if ($favourites_first) {
+    foreach ($raindrop_results["items"] as $result) {
+      if ($result["important"]) {
+        $tag_list = "";
+        foreach ($result["tags"] as $current_tag) {
+          $tag_list .= "#" . $current_tag . " ";
+        }
+        if ($tag_list != "") {
+          $tag_list .= " •  ";
+        }
 
-    $workflow->result()
-      ->arg($result["link"])
-      ->title($result["title"])
-      ->subtitle($prefer_description ? ($result["excerpt"] != "" ? $result["excerpt"] : $result["link"]) : $collection_names[$result["collection"]["\$id"]] . ($collection_names[$result["collection"]["\$id"]] != "" ? "  •  " : "") . $tag_list . preg_replace('/^www\./', '', parse_url($result["link"])["host"]))
-      ->copy($result["link"])
-      ->mod('cmd', $result["link"], $result["link"])
-      ->mod('ctrl', $prefer_description ? $collection_names[$result["collection"]["\$id"]] . "  •  " . $tag_list . preg_replace('/^www\./', '', parse_url($result["link"])["host"]) : ($result["excerpt"] != "" ? $result["excerpt"] : "No description"), $result["link"])
-      ->mod('alt', "Press enter to copy this link to clipboard", "copy:::" . $result["link"]);
+        $workflow->result()
+          ->arg($result["link"])
+          ->title($result["title"])
+          ->subtitle("♥︎ " . ($prefer_description ? ($result["excerpt"] != "" ? $result["excerpt"] : $result["link"]) : $collection_names[$result["collection"]["\$id"]] . ($collection_names[$result["collection"]["\$id"]] != "" ? "  •  " : "") . $tag_list . preg_replace('/^www\./', '', parse_url($result["link"])["host"])))
+          ->copy($result["link"])
+          ->mod('cmd', $result["link"], $result["link"])
+          ->mod('ctrl', $prefer_description ? $collection_names[$result["collection"]["\$id"]] . "  •  " . $tag_list . preg_replace('/^www\./', '', parse_url($result["link"])["host"]) : ($result["excerpt"] != "" ? $result["excerpt"] : "No description"), $result["link"])
+          ->mod('alt', "Press enter to copy this link to clipboard", "copy:::" . $result["link"]);
+      }
+    }
+  }
+
+  // Prepare the rest of the results (or all results if favourites_first is disabled) for being viewed in Alfred
+  foreach ($raindrop_results["items"] as $result) {
+    if (!$favourites_first || (!isset($result["important"]) || !$result["important"])) {
+      $tag_list = "";
+      foreach ($result["tags"] as $current_tag) {
+        $tag_list .= "#" . $current_tag . " ";
+      }
+      if ($tag_list != "") {
+        $tag_list .= " •  ";
+      }
+
+      $workflow->result()
+        ->arg($result["link"])
+        ->title($result["title"])
+        ->subtitle(($result["important"] ? "♥︎ " : "") . ($prefer_description ? ($result["excerpt"] != "" ? $result["excerpt"] : $result["link"]) : $collection_names[$result["collection"]["\$id"]] . ($collection_names[$result["collection"]["\$id"]] != "" ? "  •  " : "") . $tag_list . preg_replace('/^www\./', '', parse_url($result["link"])["host"])))
+        ->copy($result["link"])
+        ->mod('cmd', $result["link"], $result["link"])
+        ->mod('ctrl', $prefer_description ? $collection_names[$result["collection"]["\$id"]] . "  •  " . $tag_list . preg_replace('/^www\./', '', parse_url($result["link"])["host"]) : ($result["excerpt"] != "" ? $result["excerpt"] : "No description"), $result["link"])
+        ->mod('alt', "Press enter to copy this link to clipboard", "copy:::" . $result["link"]);
+    }
   }
 }
 
