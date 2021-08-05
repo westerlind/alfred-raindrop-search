@@ -41,7 +41,7 @@ class AuthRedirectionHandler(SimpleHTTPRequestHandler):
       # We got the code, so we use that to request a token from Raindrop, which we use a PHP script to do
       # because of issues with SSL root certificates in some versions of Python on macOS,
       # which makes this unreliable to do in Python if we should keep this thing small and simple but still safe.
-      token_result = os.popen("/usr/bin/php raindrop-get-token.php '" + code.replace("'", "'\\''") + "'").read()
+      token_result = os.popen("php raindrop-get-token.php '" + code.replace("'", "'\\''") + "'").read()
       if token_result == "success":
         # If we succeeded in getting the token, display information about the authentication being successful
         self.path = "/auth_info.html"
