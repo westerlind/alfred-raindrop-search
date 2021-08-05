@@ -187,9 +187,9 @@ if ($query != "" || $collection_search || $tag_search) {
           ->title($result["title"])
           ->subtitle("♥︎ " . ($prefer_description ? ($result["excerpt"] != "" ? $result["excerpt"] : $result["link"]) : $collection_names[$result["collection"]["\$id"]] . ($collection_names[$result["collection"]["\$id"]] != "" ? "  •  " : "") . $tag_list . preg_replace('/^www\./', '', parse_url($result["link"])["host"])))
           ->copy($result["link"])
-          ->mod('cmd', $result["link"], $result["link"])
-          ->mod('ctrl', $prefer_description ? $collection_names[$result["collection"]["\$id"]] . "  •  " . $tag_list . preg_replace('/^www\./', '', parse_url($result["link"])["host"]) : ($result["excerpt"] != "" ? $result["excerpt"] : "No description"), $result["link"])
-          ->mod('alt', "Press enter to copy this link to clipboard", "copy:::" . $result["link"]);
+          ->mod('cmd', "♥︎ " . $result["link"], $result["link"])
+          ->mod('ctrl', "♥︎ " . ($prefer_description ? $collection_names[$result["collection"]["\$id"]] . "  •  " . $tag_list . preg_replace('/^www\./', '', parse_url($result["link"])["host"]) : ($result["excerpt"] != "" ? $result["excerpt"] : "No description")), $result["link"])
+          ->mod('alt', "♥︎ Press enter to copy this link to clipboard", "copy:::" . $result["link"]);
       }
     }
   }
@@ -210,9 +210,9 @@ if ($query != "" || $collection_search || $tag_search) {
         ->title($result["title"])
         ->subtitle(($result["important"] ? "♥︎ " : "") . ($prefer_description ? ($result["excerpt"] != "" ? $result["excerpt"] : $result["link"]) : $collection_names[$result["collection"]["\$id"]] . ($collection_names[$result["collection"]["\$id"]] != "" ? "  •  " : "") . $tag_list . preg_replace('/^www\./', '', parse_url($result["link"])["host"])))
         ->copy($result["link"])
-        ->mod('cmd', $result["link"], $result["link"])
-        ->mod('ctrl', $prefer_description ? $collection_names[$result["collection"]["\$id"]] . "  •  " . $tag_list . preg_replace('/^www\./', '', parse_url($result["link"])["host"]) : ($result["excerpt"] != "" ? $result["excerpt"] : "No description"), $result["link"])
-        ->mod('alt', "Press enter to copy this link to clipboard", "copy:::" . $result["link"]);
+        ->mod('cmd', ($result["important"] ? "♥︎ " : "") . $result["link"], $result["link"])
+        ->mod('ctrl', ($result["important"] ? "♥︎ " : "") . ($prefer_description ? $collection_names[$result["collection"]["\$id"]] . "  •  " . $tag_list . preg_replace('/^www\./', '', parse_url($result["link"])["host"]) : ($result["excerpt"] != "" ? $result["excerpt"] : "No description")), $result["link"])
+        ->mod('alt', ($result["important"] ? "♥︎ " : "") . "Press enter to copy this link to clipboard", "copy:::" . $result["link"]);
     }
   }
 }
