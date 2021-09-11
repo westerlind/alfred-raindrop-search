@@ -1,9 +1,1 @@
-token.json
-client_code.json
-icon_cache/*
-collections_sublevel.json
-collections.json
-current_collection.tmp
-current_tag.tmp
-tags.json
-current_selection.tmp
+alfred_raindrop

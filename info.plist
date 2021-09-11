@@ -45,19 +45,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>048C10E2-3F90-4080-AE13-0F3DD2FF9AC6</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>4251BB15-A382-4DD8-9250-782B029B5DD9</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>0B045132-17BF-4B34-B089-F612D2482BB5</key>
 		<array>
 			<dict>
@@ -75,7 +62,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>1DE7EE28-E463-45EF-AD0E-5C3CFFC91460</string>
+				<string>BA77A2E4-8185-4BFD-90BD-2A2AFE51773D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -88,32 +75,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>9A3C06F3-0910-45D6-8995-7183FC7E4500</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>13EB61EC-13DF-4C56-9ABC-8508648E3A62</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>FA046954-7AB1-4373-A391-1BE1836C277C</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>1DE7EE28-E463-45EF-AD0E-5C3CFFC91460</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>BA77A2E4-8185-4BFD-90BD-2A2AFE51773D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -278,6 +239,18 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>FEF2F562-262F-49AF-95AC-DDBCAD2BAAD8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>6BE5342C-C955-4B8A-A2BD-E4998C8F9C38</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>257547E2-4D79-45B1-B6C7-8788DA247B0D</key>
 		<array>
@@ -292,11 +265,24 @@
 				<false/>
 			</dict>
 		</array>
+		<key>27F44A5F-6948-4623-9DEC-78AA8EE60B5C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F23CB2F7-AEE3-4986-A419-974559A06123</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>2A543265-00FC-48D7-BDCB-7BDF95DE8FE0</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>13EB61EC-13DF-4C56-9ABC-8508648E3A62</string>
+				<string>4251BB15-A382-4DD8-9250-782B029B5DD9</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -309,17 +295,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>2A543265-00FC-48D7-BDCB-7BDF95DE8FE0</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>78757CD3-6B62-40A7-87F7-A72CA203E01D</string>
+				<string>9A3C06F3-0910-45D6-8995-7183FC7E4500</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -329,12 +305,9 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
-		</array>
-		<key>34C442C0-5DC0-44D3-9C48-609A43A36847</key>
-		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>048C10E2-3F90-4080-AE13-0F3DD2FF9AC6</string>
+				<string>FFD18FCB-55A3-45F4-8BA9-05FAA4310335</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -347,7 +320,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>8F4E601D-AEF9-444D-96F1-45875D1A39A3</string>
+				<string>C33F0548-F96D-43A8-A5E1-F157C8553D2A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -409,7 +382,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>EB409EE8-09FD-423A-BEBA-B6C3D1694D91</string>
+				<string>2E719CC5-B574-4926-BDD1-6DBDAAEB84A0</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -434,7 +407,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>78757CD3-6B62-40A7-87F7-A72CA203E01D</string>
+				<string>9A3C06F3-0910-45D6-8995-7183FC7E4500</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -460,7 +433,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>9819ED72-F0CF-42E1-9D2B-93BB82C0362A</string>
+				<string>38BC4967-CFC1-4968-A40F-E120F1EC709D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -472,7 +445,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>820C39FD-6428-476C-A97F-5C6E14544FCB</string>
+				<string>27F44A5F-6948-4623-9DEC-78AA8EE60B5C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -484,7 +457,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>E1E379C4-C939-47D5-BD24-8E675D385172</string>
+				<string>DD37737C-3621-439C-BF13-9FD6B63BF73D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -559,19 +532,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>78757CD3-6B62-40A7-87F7-A72CA203E01D</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>9A3C06F3-0910-45D6-8995-7183FC7E4500</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>78C09EC9-0B83-454E-B40B-4B6D1BBD21A2</key>
 		<array>
 			<dict>
@@ -590,19 +550,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>E326B12F-69C1-44A0-AC1A-7B9D3916C537</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>820C39FD-6428-476C-A97F-5C6E14544FCB</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>F23CB2F7-AEE3-4986-A419-974559A06123</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -636,50 +583,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>8B78BDEB-BA1A-414A-BCD3-72F9CF7AB1EB</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>2E719CC5-B574-4926-BDD1-6DBDAAEB84A0</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>8E440F7A-8E3A-416F-8FF8-05DB56CC966D</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>820C39FD-6428-476C-A97F-5C6E14544FCB</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>8F4E601D-AEF9-444D-96F1-45875D1A39A3</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>C33F0548-F96D-43A8-A5E1-F157C8553D2A</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>9819ED72-F0CF-42E1-9D2B-93BB82C0362A</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>38BC4967-CFC1-4968-A40F-E120F1EC709D</string>
+				<string>27F44A5F-6948-4623-9DEC-78AA8EE60B5C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -739,37 +647,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>BAC4F4AC-8A01-4CF9-B2D0-F30EFC6C6FC4</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>8B78BDEB-BA1A-414A-BCD3-72F9CF7AB1EB</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>DD37737C-3621-439C-BF13-9FD6B63BF73D</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>9B65CEA1-6A3B-4D6B-86D5-3FFE02B7E061</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>E1E379C4-C939-47D5-BD24-8E675D385172</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>DD37737C-3621-439C-BF13-9FD6B63BF73D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -804,19 +686,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>EB409EE8-09FD-423A-BEBA-B6C3D1694D91</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>BAC4F4AC-8A01-4CF9-B2D0-F30EFC6C6FC4</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>F23CB2F7-AEE3-4986-A419-974559A06123</key>
 		<array>
 			<dict>
@@ -830,11 +699,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>FA046954-7AB1-4373-A391-1BE1836C277C</key>
+		<key>FFD18FCB-55A3-45F4-8BA9-05FAA4310335</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>34C442C0-5DC0-44D3-9C48-609A43A36847</string>
+				<string>2A543265-00FC-48D7-BDCB-7BDF95DE8FE0</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -857,6 +726,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>tell application id "com.runningwithcrayons.Alfred" to run trigger "browse" in workflow "me.westerlind.alfred.raindrop-search"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BBD2CADE-7164-409D-9835-6A6ACF7A211B</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>triggerid</key>
 				<string>browse</string>
 			</dict>
@@ -870,67 +762,17 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>r</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<false/>
-				<key>queuedelaymode</key>
-				<integer>1</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Loading...</string>
-				<key>script</key>
-				<string>export PATH="$path:$PATH"
-php raindrop-search.php "{query}" search "$description_in_boomark_listing" "$favourites_first"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Search your Raindrop.io bookmarks</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>56E7477E-A147-406F-B423-659AB0BD8355</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
 						<key>inputstring</key>
-						<string></string>
+						<string>{var:goto}</string>
 						<key>matchcasesensitive</key>
 						<true/>
 						<key>matchmode</key>
 						<integer>0</integer>
 						<key>matchstring</key>
-						<string>⬅︎</string>
+						<string>back</string>
 						<key>outputlabel</key>
 						<string>Go back</string>
 						<key>uid</key>
@@ -1004,8 +846,8 @@ php raindrop-search.php "{query}" search "$description_in_boomark_listing" "$fav
 				<key>runningsubtext</key>
 				<string>Loading...</string>
 				<key>script</key>
-				<string>export PATH="$path:$PATH"
-php raindrop-browse.php "{query}" "$subcollections_as_full_paths"</string>
+				<string>/usr/bin/xattr -d com.apple.quarantine raindrop_alfred 2&gt; /dev/null
+./raindrop_alfred browse --query="{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1029,35 +871,65 @@ php raindrop-browse.php "{query}" "$subcollections_as_full_paths"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>102</integer>
+				<key>keyword</key>
+				<string>r</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>2</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
 				<key>script</key>
-				<string>tell application id "com.runningwithcrayons.Alfred" to run trigger "browse" in workflow "me.westerlind.alfred.raindrop-search"</string>
+				<string>/usr/bin/xattr -d com.apple.quarantine raindrop_alfred 2&gt; /dev/null
+./raindrop_alfred search --query="{query}"</string>
 				<key>scriptargtype</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>scriptfile</key>
 				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Search your Raindrop.io bookmarks</string>
 				<key>type</key>
-				<integer>6</integer>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>BBD2CADE-7164-409D-9835-6A6ACF7A211B</string>
+			<string>56E7477E-A147-406F-B423-659AB0BD8355</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
 				<key>argument</key>
-				<string>{query}§collection_list§</string>
+				<string></string>
 				<key>passthroughargument</key>
 				<false/>
 				<key>variables</key>
-				<dict/>
+				<dict>
+					<key>from</key>
+					<string>collections</string>
+				</dict>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
@@ -1069,17 +941,58 @@ php raindrop-browse.php "{query}" "$subcollections_as_full_paths"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict/>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:goto}</string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>browse</string>
+						<key>outputlabel</key>
+						<string>Browse</string>
+						<key>uid</key>
+						<string>3A985C66-C402-4358-A103-FA2233FF2D18</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:goto}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>collection</string>
+						<key>outputlabel</key>
+						<string>Collection</string>
+						<key>uid</key>
+						<string>BD0B458D-03A6-4B5D-A5D1-6C14976F0FB5</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:goto}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>tag</string>
+						<key>outputlabel</key>
+						<string>Tag</string>
+						<key>uid</key>
+						<string>DB17D67D-FB72-413D-BBC4-3F2924B5A344</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Open</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
+			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>9819ED72-F0CF-42E1-9D2B-93BB82C0362A</string>
+			<string>524B285B-20B4-4430-B10E-EE9E27113BE1</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1109,29 +1022,6 @@ php raindrop-browse.php "{query}" "$subcollections_as_full_paths"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>echo "{query}" &gt; current_collection.tmp</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>820C39FD-6428-476C-A97F-5C6E14544FCB</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -1155,8 +1045,7 @@ php raindrop-browse.php "{query}" "$subcollections_as_full_paths"</string>
 				<key>runningsubtext</key>
 				<string>Loading...</string>
 				<key>script</key>
-				<string>export PATH="$path:$PATH"
-php raindrop-search.php "{query}" collection "$description_in_boomark_listing" "$favourites_first"</string>
+				<string>./raindrop_alfred search --variant=collection --query="{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1176,6 +1065,23 @@ php raindrop-search.php "{query}" collection "$description_in_boomark_listing" "
 			<string>F23CB2F7-AEE3-4986-A419-974559A06123</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>27F44A5F-6948-4623-9DEC-78AA8EE60B5C</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1238,9 +1144,13 @@ php raindrop-search.php "{query}" collection "$description_in_boomark_listing" "
 				<key>script</key>
 				<string>property ff_dir: (system attribute "alfred_workflow_cache")
 property ff_path: ff_dir &amp; "/firefox_current_tab.json"
+property ff_run_check_path: ff_dir &amp; "/ff_run_check.tmp"
 property ff_file: POSIX file ff_path
+property ff_run_check: POSIX file ff_run_check_path
 
 on run
+
+do shell script "/usr/bin/xattr -d com.apple.quarantine raindrop_alfred 2&gt; /dev/null; exit 0"
 
 tell application "System Events"
 	set frontApp to name of first application process whose frontmost is true
@@ -1296,7 +1206,7 @@ else if (frontApp = "firefox") then
 		end tell
 	on error errMsg
 		log "ERROR: " &amp; quoted form of errMsg
-		return do shell script "PATH=\"" &amp; (system attribute "path") &amp; ":$PATH\" php firefox-error-management.php " &amp; quoted form of errMsg
+		return do shell script "./raindrop_alfred firefox_error --message=" &amp; quoted form of errMsg
 	end try
 
 	-- External Trigger calls are asynchronous, so wait up to one second for file to appear,
@@ -1306,17 +1216,33 @@ else if (frontApp = "firefox") then
 			try
 				if exists ff_file then
 					set ff_tab_info to do shell script "cat " &amp; quoted form of ff_path
+					delay 0.10
 					-- Remove JSON file
 					do shell script "rm -f " &amp; quoted form of ff_path
 					if (ff_tab_info is equal to "Cannot Connect to Extension") then
-						return do shell script "PATH=\"" &amp; (system attribute "path") &amp; ":$PATH\" php firefox-error-management.php " &amp; quoted form of ff_tab_info
+						return do shell script "./raindrop_alfred firefox_error --message=" &amp; quoted form of ff_tab_info
+					else if (ff_tab_info is equal to "") then
+						-- Got an empty response
+						if exists ff_run_check then
+							-- This is the second time we failed to recieve data from Firefox, so we will stop trying and show a message to the user
+							delete file ff_run_check
+							return do shell script "./raindrop_alfred firefox_error --message=\"Failed to read information from Firefox\""
+						else
+							-- This is the first time we failed to recive bookmark data from Firefox, so we will save info about having tried once and then try again
+							do shell script "touch " &amp; quoted form of ff_run_check_path
+							delay 2.0
+							tell application id "com.runningwithcrayons.Alfred" to run trigger "add" in workflow "me.westerlind.alfred.raindrop-search"
+						end if
 					else
-						return do shell script "PATH=\"" &amp; (system attribute "path") &amp; ":$PATH\" php raindrop-collections.php " &amp; quoted form of ff_tab_info &amp; " \"{query}\""
+						if exists ff_run_check then
+							delete file ff_run_check
+						end if
+						return do shell script "./raindrop_alfred select_collection --firefox_json=" &amp; quoted form of ff_tab_info &amp; " --query=\"{query}\""
 					end if
 				end if
 			on error errMsg
 				log "ERROR: " &amp; quoted form of errMsg
-				return do shell script "PATH=\"" &amp; (system attribute "path") &amp; ":$PATH\" php firefox-error-management.php " &amp; quoted form of errMsg
+				return do shell script "./raindrop_alfred firefox_error --message=" &amp; quoted form of errMsg
 			end try
 			delay 0.01
 		end repeat
@@ -1324,10 +1250,13 @@ else if (frontApp = "firefox") then
 
 	-- Failed to get tab info (in time)
 	log "Tab info not saved by Firefox Assistant"
-	return do shell script "PATH=\"" &amp; (system attribute "path") &amp; ":$PATH\" php firefox-error-management.php \"Tab info not saved by Firefox Assistant\""
+	return do shell script "./raindrop_alfred firefox_error --message=\"Tab info not saved by Firefox Assistant\""
+else if (the clipboard) is not "" then
+	set browserURL to (the clipboard)
+	set browserTitle to ""
 end if
 
-do shell script "PATH=\"" &amp; (system attribute "path") &amp; ":$PATH\" php raindrop-collections.php " &amp; quoted form of browserURL &amp; " \"{query}\" " &amp; quoted form of browserTitle &amp; " " &amp; quoted form of (system attribute "subcollections_as_full_paths")
+do shell script "./raindrop_alfred select_collection --bookmark_url=" &amp; quoted form of browserURL &amp; " --query=\"{query}\" --bookmark_title=" &amp; quoted form of browserTitle
 
 end run</string>
 				<key>scriptargtype</key>
@@ -1357,71 +1286,13 @@ end run</string>
 				<array>
 					<dict>
 						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<true/>
-						<key>matchmode</key>
-						<integer>4</integer>
-						<key>matchstring</key>
-						<string>^browse➡︎</string>
-						<key>outputlabel</key>
-						<string>Browse</string>
-						<key>uid</key>
-						<string>3A985C66-C402-4358-A103-FA2233FF2D18</string>
-					</dict>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
+						<string>{var:goto}</string>
 						<key>matchcasesensitive</key>
 						<false/>
 						<key>matchmode</key>
 						<integer>4</integer>
 						<key>matchstring</key>
-						<string>^⏦.*⏦</string>
-						<key>outputlabel</key>
-						<string>Collection</string>
-						<key>uid</key>
-						<string>BD0B458D-03A6-4B5D-A5D1-6C14976F0FB5</string>
-					</dict>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>4</integer>
-						<key>matchstring</key>
-						<string>^⌈.*⌈$</string>
-						<key>outputlabel</key>
-						<string>Tag</string>
-						<key>uid</key>
-						<string>DB17D67D-FB72-413D-BBC4-3F2924B5A344</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>Open</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>524B285B-20B4-4430-B10E-EE9E27113BE1</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>⬅︎⊟</string>
+						<string>browse</string>
 						<key>outputlabel</key>
 						<string>Browse</string>
 						<key>uid</key>
@@ -1429,13 +1300,13 @@ end run</string>
 					</dict>
 					<dict>
 						<key>inputstring</key>
-						<string></string>
+						<string>{var:goto}</string>
 						<key>matchcasesensitive</key>
 						<false/>
 						<key>matchmode</key>
-						<integer>0</integer>
+						<integer>4</integer>
 						<key>matchstring</key>
-						<string>⬅︎</string>
+						<string>back</string>
 						<key>outputlabel</key>
 						<string>Start over</string>
 						<key>uid</key>
@@ -1455,41 +1326,17 @@ end run</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>export PATH="$path:$PATH"
-php -r 'file_put_contents("current_tag.tmp", explode("⌈", "{query}")[1]);'</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>E1E379C4-C939-47D5-BD24-8E675D385172</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
 						<key>inputstring</key>
-						<string></string>
+						<string>{var:goto}</string>
 						<key>matchcasesensitive</key>
 						<true/>
 						<key>matchmode</key>
 						<integer>0</integer>
 						<key>matchstring</key>
-						<string>⬅︎</string>
+						<string>back</string>
 						<key>outputlabel</key>
 						<string>Start over</string>
 						<key>uid</key>
@@ -1532,8 +1379,7 @@ php -r 'file_put_contents("current_tag.tmp", explode("⌈", "{query}")[1]);'</st
 				<key>runningsubtext</key>
 				<string>Loading...</string>
 				<key>script</key>
-				<string>export PATH="$path:$PATH"
-php raindrop-search.php "{query}" tag "$description_in_boomark_listing" "$favourites_first"</string>
+				<string>./raindrop_alfred search --variant=tag --query="$current_tag"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1655,25 +1501,6 @@ php raindrop-search.php "{query}" tag "$description_in_boomark_listing" "$favour
 			<string>7C43852C-AD13-4F99-A36F-7D099E1C5016</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>C33F0548-F96D-43A8-A5E1-F157C8553D2A</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1860,6 +1687,21 @@ php raindrop-search.php "{query}" tag "$description_in_boomark_listing" "$favour
 						<key>uid</key>
 						<string>621DCBE8-96B7-4E3A-9857-A4350C8010AB</string>
 					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:browser}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>SigmaOS
+</string>
+						<key>outputlabel</key>
+						<string>SigmaOS</string>
+						<key>uid</key>
+						<string>6BE5342C-C955-4B8A-A2BD-E4998C8F9C38</string>
+					</dict>
 				</array>
 				<key>elselabel</key>
 				<string>else</string>
@@ -1874,23 +1716,21 @@ php raindrop-search.php "{query}" tag "$description_in_boomark_listing" "$favour
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>matchmode</key>
-				<integer>1</integer>
-				<key>matchstring</key>
-				<string>^copy:::</string>
-				<key>regexcaseinsensitive</key>
+				<key>autopaste</key>
 				<false/>
-				<key>regexmultiline</key>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
 				<false/>
-				<key>replacestring</key>
-				<string></string>
+				<key>transient</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.replace</string>
+			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
-			<string>8F4E601D-AEF9-444D-96F1-45875D1A39A3</string>
+			<string>C33F0548-F96D-43A8-A5E1-F157C8553D2A</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1899,13 +1739,13 @@ php raindrop-search.php "{query}" tag "$description_in_boomark_listing" "$favour
 				<array>
 					<dict>
 						<key>inputstring</key>
-						<string></string>
+						<string>{var:goto}</string>
 						<key>matchcasesensitive</key>
 						<true/>
 						<key>matchmode</key>
 						<integer>4</integer>
 						<key>matchstring</key>
-						<string>^copy:</string>
+						<string>copy</string>
 						<key>outputlabel</key>
 						<string>Copy</string>
 						<key>uid</key>
@@ -2003,7 +1843,7 @@ php raindrop-search.php "{query}" tag "$description_in_boomark_listing" "$favour
 			<key>config</key>
 			<dict>
 				<key>browser</key>
-				<string>org.mozilla.SeaMonkey</string>
+				<string>com.microsoft.edgemac</string>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
@@ -2014,7 +1854,7 @@ php raindrop-search.php "{query}" tag "$description_in_boomark_listing" "$favour
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>BE5382DD-AB74-4D17-919D-D9F08E264B12</string>
+			<string>311C1490-CED2-4F08-9B15-1BDE7A96CAC3</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2041,7 +1881,7 @@ php raindrop-search.php "{query}" tag "$description_in_boomark_listing" "$favour
 			<key>config</key>
 			<dict>
 				<key>browser</key>
-				<string>com.microsoft.edgemac</string>
+				<string>org.mozilla.SeaMonkey</string>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
@@ -2052,7 +1892,7 @@ php raindrop-search.php "{query}" tag "$description_in_boomark_listing" "$favour
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>311C1490-CED2-4F08-9B15-1BDE7A96CAC3</string>
+			<string>BE5382DD-AB74-4D17-919D-D9F08E264B12</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2150,7 +1990,7 @@ return frontApp</string>
 			<key>config</key>
 			<dict>
 				<key>browser</key>
-				<string>com.apple.SafariTechnologyPreview</string>
+				<string>com.vivaldi.Vivaldi</string>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
@@ -2161,7 +2001,7 @@ return frontApp</string>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>17FF8844-FFFD-4127-9879-42F68E3F5ED9</string>
+			<string>5073EAC4-DF95-479C-BCDD-B6828F53181C</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2188,7 +2028,7 @@ return frontApp</string>
 			<key>config</key>
 			<dict>
 				<key>browser</key>
-				<string>com.vivaldi.Vivaldi</string>
+				<string>com.apple.SafariTechnologyPreview</string>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
@@ -2199,48 +2039,26 @@ return frontApp</string>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>5073EAC4-DF95-479C-BCDD-B6828F53181C</string>
+			<string>17FF8844-FFFD-4127-9879-42F68E3F5ED9</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>export PATH="$path:$PATH"
-php -r '$query = "{query}";
-$current_selection = json_decode(file_get_contents("current_selection.tmp"), true);
-$current_selection["collection"] = preg_replace('"'"'/^-↪︎/'"'"', '"''"', explode(" ", $query)[0]);
-file_put_contents("current_selection.tmp", json_encode($current_selection));
-echo($current_selection["title"]);'</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
+				<key>browser</key>
+				<string>com.sigmaos.sigmaos.macos</string>
+				<key>spaces</key>
 				<string></string>
-				<key>type</key>
-				<integer>0</integer>
+				<key>url</key>
+				<string>{var:link}</string>
+				<key>utf8</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>8B78BDEB-BA1A-414A-BCD3-72F9CF7AB1EB</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>triggerid</key>
-				<string>set_tags</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>5A67646D-F12E-46AC-A943-6F956AEDC631</string>
+			<string>FEF2F562-262F-49AF-95AC-DDBCAD2BAAD8</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2270,90 +2088,15 @@ echo($current_selection["title"]);'</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:selection_status}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>4</integer>
-						<key>matchstring</key>
-						<string>^-↪︎.*</string>
-						<key>outputlabel</key>
-						<string>Save now</string>
-						<key>uid</key>
-						<string>3AF1C7E1-0068-4C6B-B941-8D79EFAFF1B0</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>Set title</string>
+				<key>triggerid</key>
+				<string>set_tags</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
+			<string>alfred.workflow.trigger.external</string>
 			<key>uid</key>
-			<string>2E719CC5-B574-4926-BDD1-6DBDAAEB84A0</string>
+			<string>5A67646D-F12E-46AC-A943-6F956AEDC631</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{query}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>selection_status</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>EB409EE8-09FD-423A-BEBA-B6C3D1694D91</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>matchmode</key>
-				<integer>0</integer>
-				<key>matchstring</key>
-				<string>'</string>
-				<key>replacestring</key>
-				<string>'"'"'</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.replace</string>
-			<key>uid</key>
-			<string>BAC4F4AC-8A01-4CF9-B2D0-F30EFC6C6FC4</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>matchmode</key>
-				<integer>1</integer>
-				<key>matchstring</key>
-				<string>^-⟲</string>
-				<key>regexcaseinsensitive</key>
-				<false/>
-				<key>regexmultiline</key>
-				<false/>
-				<key>replacestring</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.replace</string>
-			<key>uid</key>
-			<string>1DE7EE28-E463-45EF-AD0E-5C3CFFC91460</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2381,8 +2124,7 @@ echo($current_selection["title"]);'</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>export PATH="$path:$PATH"
-php raindrop-set-tags.php "{query}"</string>
+				<string>./raindrop_alfred set_tags --tags="{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -2410,13 +2152,13 @@ php raindrop-set-tags.php "{query}"</string>
 				<array>
 					<dict>
 						<key>inputstring</key>
-						<string>{query}</string>
+						<string>{var:goto}</string>
 						<key>matchcasesensitive</key>
 						<true/>
 						<key>matchmode</key>
-						<integer>4</integer>
+						<integer>0</integer>
 						<key>matchstring</key>
-						<string>^-⟲.*</string>
+						<string>more</string>
 						<key>outputlabel</key>
 						<string>More</string>
 						<key>uid</key>
@@ -2436,162 +2178,32 @@ php raindrop-set-tags.php "{query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string>export PATH="$path:$PATH"
-php raindrop-set-title.php "{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>2A543265-00FC-48D7-BDCB-7BDF95DE8FE0</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>export PATH="$path:$PATH"
-php -r '$current_selection = json_decode(file_get_contents("current_selection.tmp"), true); $current_selection["title"] = "{query}"; file_put_contents("current_selection.tmp", json_encode($current_selection));'</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>048C10E2-3F90-4080-AE13-0F3DD2FF9AC6</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
 						<key>inputstring</key>
-						<string>{var:title_status}</string>
+						<string>{var:goto}</string>
 						<key>matchcasesensitive</key>
 						<false/>
 						<key>matchmode</key>
-						<integer>4</integer>
+						<integer>0</integer>
 						<key>matchstring</key>
-						<string>^(?!-↪︎).*</string>
+						<string>save now</string>
 						<key>outputlabel</key>
-						<string>Add tags</string>
+						<string>Save now</string>
 						<key>uid</key>
 						<string>3AF1C7E1-0068-4C6B-B941-8D79EFAFF1B0</string>
 					</dict>
 				</array>
 				<key>elselabel</key>
-				<string>Save now</string>
+				<string>Set title</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>4251BB15-A382-4DD8-9250-782B029B5DD9</string>
+			<string>2E719CC5-B574-4926-BDD1-6DBDAAEB84A0</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>matchmode</key>
-				<integer>1</integer>
-				<key>matchstring</key>
-				<string>^-↪︎</string>
-				<key>regexcaseinsensitive</key>
-				<false/>
-				<key>regexmultiline</key>
-				<false/>
-				<key>replacestring</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.replace</string>
-			<key>uid</key>
-			<string>FA046954-7AB1-4373-A391-1BE1836C277C</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{query}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>title_status</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>13EB61EC-13DF-4C56-9ABC-8508648E3A62</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>matchmode</key>
-				<integer>0</integer>
-				<key>matchstring</key>
-				<string>'</string>
-				<key>replacestring</key>
-				<string>'"'"'</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.replace</string>
-			<key>uid</key>
-			<string>34C442C0-5DC0-44D3-9C48-609A43A36847</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2601,8 +2213,7 @@ php -r '$current_selection = json_decode(file_get_contents("current_selection.tm
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>export PATH="$path:$PATH"
-php raindrop-add.php "{query}"</string>
+				<string>./raindrop_alfred save_bookmark --tags="{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -2641,23 +2252,96 @@ php raindrop-add.php "{query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>matchmode</key>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
 				<integer>1</integer>
-				<key>matchstring</key>
-				<string>.*</string>
-				<key>regexcaseinsensitive</key>
-				<false/>
-				<key>regexmultiline</key>
-				<false/>
-				<key>replacestring</key>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
 				<string></string>
+				<key>script</key>
+				<string>./raindrop_alfred set_title --title="{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.replace</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>78757CD3-6B62-40A7-87F7-A72CA203E01D</string>
+			<string>2A543265-00FC-48D7-BDCB-7BDF95DE8FE0</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:goto}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>1</integer>
+						<key>matchstring</key>
+						<string>save now</string>
+						<key>outputlabel</key>
+						<string>Add tags</string>
+						<key>uid</key>
+						<string>3AF1C7E1-0068-4C6B-B941-8D79EFAFF1B0</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>Save now</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>4251BB15-A382-4DD8-9250-782B029B5DD9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:bookmark_title}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>FFD18FCB-55A3-45F4-8BA9-05FAA4310335</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -2674,10 +2358,6 @@ If you set this to true, you will instead see the description first and can hold
 
 favourites_first:
 Set this to true if you want bookmarks that are marked as favourites to always be shown first in results (default), and otherwise set it to false.
-
-path:
-You probably don't need to make any changes to this.
-This is used to find the php binary, and if you have not installed this manually in a non-default place (other than where Homebrew, MacPorts or Fink installs it by default, or where it is available by default on older macOS versions where it is preinstalled) you can leave this as it is.
 
 ABOUT THIS WORKFLOW
 This Alfred workflow is created to have a single, fast, and always reachable way of searching Raindrop.io, and then open bookmarks in the web browser you are currently working in, even if that's not your default browser.
@@ -2703,39 +2383,27 @@ You can also use this workflow to add bookmarks to Raindrop.io from the browser 
 		<key>00BF67F8-5443-44FF-8F1B-7758FE5AFF17</key>
 		<dict>
 			<key>xpos</key>
-			<integer>825</integer>
+			<integer>800</integer>
 			<key>ypos</key>
 			<integer>240</integer>
 		</dict>
-		<key>048C10E2-3F90-4080-AE13-0F3DD2FF9AC6</key>
-		<dict>
-			<key>xpos</key>
-			<integer>335</integer>
-			<key>ypos</key>
-			<integer>1260</integer>
-		</dict>
 		<key>0B045132-17BF-4B34-B089-F612D2482BB5</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
 			<key>note</key>
 			<string>Add tags to the new bookmark</string>
 			<key>xpos</key>
-			<integer>795</integer>
+			<integer>295</integer>
 			<key>ypos</key>
-			<integer>1175</integer>
+			<integer>1075</integer>
 		</dict>
 		<key>0FCFA442-A541-4768-9966-F915FD603717</key>
 		<dict>
 			<key>xpos</key>
-			<integer>935</integer>
+			<integer>440</integer>
 			<key>ypos</key>
-			<integer>1195</integer>
-		</dict>
-		<key>13EB61EC-13DF-4C56-9ABC-8508648E3A62</key>
-		<dict>
-			<key>xpos</key>
-			<integer>185</integer>
-			<key>ypos</key>
-			<integer>1290</integer>
+			<integer>1095</integer>
 		</dict>
 		<key>17FF8844-FFFD-4127-9879-42F68E3F5ED9</key>
 		<dict>
@@ -2747,13 +2415,6 @@ You can also use this workflow to add bookmarks to Raindrop.io from the browser 
 			<integer>705</integer>
 			<key>ypos</key>
 			<integer>920</integer>
-		</dict>
-		<key>1DE7EE28-E463-45EF-AD0E-5C3CFFC91460</key>
-		<dict>
-			<key>xpos</key>
-			<integer>935</integer>
-			<key>ypos</key>
-			<integer>1100</integer>
 		</dict>
 		<key>1EE45FF5-B323-4060-AC4B-CA15074C3028</key>
 		<dict>
@@ -2784,21 +2445,30 @@ You can also use this workflow to add bookmarks to Raindrop.io from the browser 
 			<key>ypos</key>
 			<integer>440</integer>
 		</dict>
+		<key>27F44A5F-6948-4623-9DEC-78AA8EE60B5C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>495</integer>
+			<key>ypos</key>
+			<integer>225</integer>
+		</dict>
 		<key>2A543265-00FC-48D7-BDCB-7BDF95DE8FE0</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>6</integer>
 			<key>note</key>
 			<string>Set title for the new bookmark</string>
 			<key>xpos</key>
-			<integer>50</integer>
+			<integer>95</integer>
 			<key>ypos</key>
-			<integer>1260</integer>
+			<integer>1320</integer>
 		</dict>
 		<key>2E719CC5-B574-4926-BDD1-6DBDAAEB84A0</key>
 		<dict>
 			<key>xpos</key>
-			<integer>360</integer>
+			<integer>40</integer>
 			<key>ypos</key>
-			<integer>1085</integer>
+			<integer>1200</integer>
 		</dict>
 		<key>311C1490-CED2-4F08-9B15-1BDE7A96CAC3</key>
 		<dict>
@@ -2811,19 +2481,12 @@ You can also use this workflow to add bookmarks to Raindrop.io from the browser 
 			<key>ypos</key>
 			<integer>790</integer>
 		</dict>
-		<key>34C442C0-5DC0-44D3-9C48-609A43A36847</key>
-		<dict>
-			<key>xpos</key>
-			<integer>285</integer>
-			<key>ypos</key>
-			<integer>1290</integer>
-		</dict>
 		<key>36896C84-4763-46D0-9598-45825301874A</key>
 		<dict>
 			<key>xpos</key>
-			<integer>240</integer>
+			<integer>255</integer>
 			<key>ypos</key>
-			<integer>650</integer>
+			<integer>640</integer>
 		</dict>
 		<key>38BC4967-CFC1-4968-A40F-E120F1EC709D</key>
 		<dict>
@@ -2841,14 +2504,14 @@ You can also use this workflow to add bookmarks to Raindrop.io from the browser 
 			<key>xpos</key>
 			<integer>115</integer>
 			<key>ypos</key>
-			<integer>845</integer>
+			<integer>830</integer>
 		</dict>
 		<key>4251BB15-A382-4DD8-9250-782B029B5DD9</key>
 		<dict>
 			<key>xpos</key>
-			<integer>475</integer>
+			<integer>235</integer>
 			<key>ypos</key>
-			<integer>1280</integer>
+			<integer>1340</integer>
 		</dict>
 		<key>5073EAC4-DF95-479C-BCDD-B6828F53181C</key>
 		<dict>
@@ -2878,7 +2541,7 @@ I personally use option+space.</string>
 			<key>xpos</key>
 			<integer>345</integer>
 			<key>ypos</key>
-			<integer>240</integer>
+			<integer>170</integer>
 		</dict>
 		<key>53B0EA43-377E-44EB-8FE6-3AA390620E97</key>
 		<dict>
@@ -2887,9 +2550,9 @@ I personally use option+space.</string>
 			<key>note</key>
 			<string>Show info to user</string>
 			<key>xpos</key>
-			<integer>985</integer>
+			<integer>530</integer>
 			<key>ypos</key>
-			<integer>1355</integer>
+			<integer>1265</integer>
 		</dict>
 		<key>55332F63-B661-47D7-B85D-C76484E34D12</key>
 		<dict>
@@ -2915,10 +2578,12 @@ I personally use option+space.</string>
 		</dict>
 		<key>5A67646D-F12E-46AC-A943-6F956AEDC631</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
 			<key>xpos</key>
-			<integer>655</integer>
+			<integer>130</integer>
 			<key>ypos</key>
-			<integer>1070</integer>
+			<integer>1075</integer>
 		</dict>
 		<key>6E6668A6-E82C-4C77-B178-FABE7F28863C</key>
 		<dict>
@@ -2951,13 +2616,6 @@ I personally use cmd+option+space.</string>
 			<integer>360</integer>
 			<key>ypos</key>
 			<integer>25</integer>
-		</dict>
-		<key>78757CD3-6B62-40A7-87F7-A72CA203E01D</key>
-		<dict>
-			<key>xpos</key>
-			<integer>690</integer>
-			<key>ypos</key>
-			<integer>1385</integer>
 		</dict>
 		<key>78C09EC9-0B83-454E-B40B-4B6D1BBD21A2</key>
 		<dict>
@@ -2997,15 +2655,6 @@ I personally use cmd+option+space.</string>
 			<key>ypos</key>
 			<integer>920</integer>
 		</dict>
-		<key>820C39FD-6428-476C-A97F-5C6E14544FCB</key>
-		<dict>
-			<key>note</key>
-			<string>Store info about selected collection</string>
-			<key>xpos</key>
-			<integer>475</integer>
-			<key>ypos</key>
-			<integer>190</integer>
-		</dict>
 		<key>84652CA3-B30D-4439-97C0-25EE490EF43F</key>
 		<dict>
 			<key>xpos</key>
@@ -3013,47 +2662,28 @@ I personally use cmd+option+space.</string>
 			<key>ypos</key>
 			<integer>25</integer>
 		</dict>
-		<key>8B78BDEB-BA1A-414A-BCD3-72F9CF7AB1EB</key>
-		<dict>
-			<key>xpos</key>
-			<integer>210</integer>
-			<key>ypos</key>
-			<integer>1065</integer>
-		</dict>
 		<key>8E440F7A-8E3A-416F-8FF8-05DB56CC966D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>810</integer>
+			<integer>815</integer>
 			<key>ypos</key>
-			<integer>85</integer>
-		</dict>
-		<key>8F4E601D-AEF9-444D-96F1-45875D1A39A3</key>
-		<dict>
-			<key>xpos</key>
-			<integer>295</integer>
-			<key>ypos</key>
-			<integer>595</integer>
-		</dict>
-		<key>9819ED72-F0CF-42E1-9D2B-93BB82C0362A</key>
-		<dict>
-			<key>xpos</key>
-			<integer>385</integer>
-			<key>ypos</key>
-			<integer>130</integer>
+			<integer>105</integer>
 		</dict>
 		<key>9A3C06F3-0910-45D6-8995-7183FC7E4500</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>9</integer>
 			<key>note</key>
 			<string>Save the bookmark</string>
 			<key>xpos</key>
-			<integer>795</integer>
+			<integer>390</integer>
 			<key>ypos</key>
-			<integer>1355</integer>
+			<integer>1265</integer>
 		</dict>
 		<key>9B65CEA1-6A3B-4D6B-86D5-3FFE02B7E061</key>
 		<dict>
 			<key>xpos</key>
-			<integer>825</integer>
+			<integer>800</integer>
 			<key>ypos</key>
 			<integer>335</integer>
 		</dict>
@@ -3079,17 +2709,12 @@ I personally use cmd+option+space.</string>
 		</dict>
 		<key>BA77A2E4-8185-4BFD-90BD-2A2AFE51773D</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
 			<key>xpos</key>
-			<integer>985</integer>
+			<integer>530</integer>
 			<key>ypos</key>
-			<integer>1070</integer>
-		</dict>
-		<key>BAC4F4AC-8A01-4CF9-B2D0-F30EFC6C6FC4</key>
-		<dict>
-			<key>xpos</key>
-			<integer>150</integer>
-			<key>ypos</key>
-			<integer>1095</integer>
+			<integer>1075</integer>
 		</dict>
 		<key>BBD2CADE-7164-409D-9835-6A6ACF7A211B</key>
 		<dict>
@@ -3136,18 +2761,9 @@ I personally use cmd+option+space.</string>
 			<key>note</key>
 			<string>Search within a tag</string>
 			<key>xpos</key>
-			<integer>615</integer>
+			<integer>545</integer>
 			<key>ypos</key>
-			<integer>335</integer>
-		</dict>
-		<key>E1E379C4-C939-47D5-BD24-8E675D385172</key>
-		<dict>
-			<key>note</key>
-			<string>Store info about selected tag</string>
-			<key>xpos</key>
-			<integer>475</integer>
-			<key>ypos</key>
-			<integer>335</integer>
+			<integer>340</integer>
 		</dict>
 		<key>E326B12F-69C1-44A0-AC1A-7B9D3916C537</key>
 		<dict>
@@ -3178,13 +2794,6 @@ I personally use cmd+option+space.</string>
 			<key>ypos</key>
 			<integer>530</integer>
 		</dict>
-		<key>EB409EE8-09FD-423A-BEBA-B6C3D1694D91</key>
-		<dict>
-			<key>xpos</key>
-			<integer>85</integer>
-			<key>ypos</key>
-			<integer>1095</integer>
-		</dict>
 		<key>EDB576B7-F065-49A4-840D-8EAD0C79DE5B</key>
 		<dict>
 			<key>colorindex</key>
@@ -3201,9 +2810,9 @@ I personally use cmd+option+space.</string>
 			<key>note</key>
 			<string>Search within a collection</string>
 			<key>xpos</key>
-			<integer>615</integer>
+			<integer>545</integer>
 			<key>ypos</key>
-			<integer>190</integer>
+			<integer>195</integer>
 		</dict>
 		<key>F2E4EA63-F9B6-4F44-8CFA-A6810711FAA1</key>
 		<dict>
@@ -3216,12 +2825,23 @@ I personally use cmd+option+space.</string>
 			<key>ypos</key>
 			<integer>190</integer>
 		</dict>
-		<key>FA046954-7AB1-4373-A391-1BE1836C277C</key>
+		<key>FEF2F562-262F-49AF-95AC-DDBCAD2BAAD8</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>SigmaOS</string>
+			<key>xpos</key>
+			<integer>985</integer>
+			<key>ypos</key>
+			<integer>1050</integer>
+		</dict>
+		<key>FFD18FCB-55A3-45F4-8BA9-05FAA4310335</key>
 		<dict>
 			<key>xpos</key>
-			<integer>235</integer>
+			<integer>40</integer>
 			<key>ypos</key>
-			<integer>1290</integer>
+			<integer>1350</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -3230,13 +2850,13 @@ I personally use cmd+option+space.</string>
 		<string>false</string>
 		<key>favourites_first</key>
 		<string>true</string>
-		<key>path</key>
-		<string>/opt/homebrew/bin:/usr/local/bin:/opt/local/bin:/sw/bin:/opt/bin:/usr/bin:/bin</string>
 		<key>subcollections_as_full_paths</key>
 		<string>false</string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>1.7</string>
+	<string>2.0</string>
 	<key>webaddress</key>
 	<string>https://www.packal.org/workflow/search-raindropio</string>
 </dict>
