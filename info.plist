@@ -1162,36 +1162,36 @@ set browserTitle to ""
 
 if (frontApp = "Safari") then
 	tell application "Safari"
-		set browserURL to the URL of the current tab of the front window
-		set browserTitle to the name of the current tab of the front window
+		set browserURL to the URL of the current tab of the front window as text
+		set browserTitle to the name of the current tab of the front window as text
 	end tell
 else if (frontApp = "Microsoft Edge") then
-	set browserURL to do shell script "/usr/bin/osascript browser-info/edge-url.scpt"
-	set browserTitle to do shell script "/usr/bin/osascript browser-info/edge-title.scpt"
+	set browserURL to do shell script "/usr/bin/osascript browser-info/edge-url.scpt" as text
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/edge-title.scpt" as text
 else if (frontApp = "Google Chrome") then
-	set browserURL to do shell script "/usr/bin/osascript browser-info/chrome-url.scpt"
-	set browserTitle to do shell script "/usr/bin/osascript browser-info/chrome-title.scpt"
+	set browserURL to do shell script "/usr/bin/osascript browser-info/chrome-url.scpt" as text
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/chrome-title.scpt" as text
 else if (frontApp = "Google Chrome Canary") then
-	set browserURL to do shell script "/usr/bin/osascript browser-info/chrome-canary-url.scpt"
-	set browserTitle to do shell script "/usr/bin/osascript browser-info/chrome-canary-title.scpt"
+	set browserURL to do shell script "/usr/bin/osascript browser-info/chrome-canary-url.scpt" as text
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/chrome-canary-title.scpt" as text
 else if (frontApp = "Chromium") then
-	set browserURL to do shell script "/usr/bin/osascript browser-info/chromium-url.scpt"
-	set browserTitle to do shell script "/usr/bin/osascript browser-info/chromium-title.scpt"
+	set browserURL to do shell script "/usr/bin/osascript browser-info/chromium-url.scpt" as text
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/chromium-title.scpt" as text
 else if (frontApp = "Brave Browser") then
-	set browserURL to do shell script "/usr/bin/osascript browser-info/brave-url.scpt"
-	set browserTitle to do shell script "/usr/bin/osascript browser-info/brave-title.scpt"
+	set browserURL to do shell script "/usr/bin/osascript browser-info/brave-url.scpt" as text
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/brave-title.scpt" as text
 else if (frontApp = "Whale") then
-	set browserURL to do shell script "/usr/bin/osascript browser-info/whale-url.scpt"
-	set browserTitle to do shell script "/usr/bin/osascript browser-info/whale-title.scpt"
+	set browserURL to do shell script "/usr/bin/osascript browser-info/whale-url.scpt" as text
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/whale-title.scpt" as text
 else if (frontApp = "Safari Technology Preview") then
-	set browserURL to do shell script "/usr/bin/osascript browser-info/safari-techpreview-url.scpt"
-	set browserTitle to do shell script "/usr/bin/osascript browser-info/safari-techpreview-title.scpt"
+	set browserURL to do shell script "/usr/bin/osascript browser-info/safari-techpreview-url.scpt" as text
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/safari-techpreview-title.scpt" as text
 else if (frontApp = "Opera") then
-	set browserURL to do shell script "/usr/bin/osascript browser-info/opera-url.scpt"
-	set browserTitle to do shell script "/usr/bin/osascript browser-info/opera-title.scpt"
+	set browserURL to do shell script "/usr/bin/osascript browser-info/opera-url.scpt" as text
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/opera-title.scpt" as text
 else if (frontApp = "Vivaldi") then
-	set browserURL to do shell script "/usr/bin/osascript browser-info/vivaldi-url.scpt"
-	set browserTitle to do shell script "/usr/bin/osascript browser-info/vivaldi-title.scpt"
+	set browserURL to do shell script "/usr/bin/osascript browser-info/vivaldi-url.scpt" as text
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/vivaldi-title.scpt" as text
 else if (frontApp = "firefox") then
 	-- For getting tab info from Firefox, we use the awsome Firefox Assistant by Dean Jackson, because Firefox does not have Apple Script support like the other browsers.
 	-- Ensure directory exists
@@ -1252,7 +1252,7 @@ else if (frontApp = "firefox") then
 	log "Tab info not saved by Firefox Assistant"
 	return do shell script "./raindrop_alfred firefox_error --message=\"Tab info not saved by Firefox Assistant\""
 else if (the clipboard) is not "" then
-	set browserURL to (the clipboard)
+	set browserURL to (the clipboard) as text
 	set browserTitle to ""
 end if
 
@@ -2856,8 +2856,10 @@ I personally use cmd+option+space.</string>
 		<key>subcollections_as_full_paths</key>
 		<string>false</string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>2.0.2</string>
+	<string>2.0.3</string>
 	<key>webaddress</key>
 	<string>https://www.packal.org/workflow/search-raindropio</string>
 </dict>
