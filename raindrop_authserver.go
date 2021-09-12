@@ -8,6 +8,7 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
@@ -15,6 +16,7 @@ import (
 	"net/url"
 	"os"
 	"os/exec"
+	"strings"
 	"time"
 )
 
@@ -26,13 +28,17 @@ func authserver() {
 		querystring, _ := url.ParseQuery(r.URL.RawQuery)
 		if len(querystring["code"]) > 0 {
 			code = querystring["code"][0]
-			if request_token(code) {
+			if ok, error_title, error_details := request_token(code); ok {
 				http.ServeFile(w, r, "auth_info.html")
 			} else {
-				http.ServeFile(w, r, "auth_error.html")
+				auth_error_file, _ := os.ReadFile("auth_error.html")
+				auth_error := strings.Replace(strings.Replace(string(auth_error_file), "$ERROR", error_title, 1), "$DETAILS", error_details, 1)
+				http.ServeContent(w, r, "auth_error", time.Now(), bytes.NewReader([]byte(auth_error)))
 			}
 		} else {
-			http.ServeFile(w, r, "auth_error.html")
+			auth_error_file, _ := os.ReadFile("auth_error.html")
+			auth_error := strings.Replace(strings.Replace(string(auth_error_file), "$ERROR", "No code variable provided", 1), "$DETAILS", "", 1)
+			http.ServeContent(w, r, "auth_error", time.Now(), bytes.NewReader([]byte(auth_error)))
 		}
 		endcmd := exec.Command("/bin/sh", "-c", "sleep 3 && pkill -P "+pid+" && kill "+pid, "&")
 		endcmd.Start()
@@ -42,7 +48,7 @@ func authserver() {
 	http.ListenAndServe("127.0.0.1:11038", nil)
 }
 
-func request_token(code string) bool {
+func request_token(code string) (bool, string, string) {
 	// Prepare POST variables
 	post_variables := url.Values{}
 	post_variables.Add("code", code)
@@ -53,20 +59,20 @@ func request_token(code string) bool {
 
 	resp, err := http.PostForm("https://raindrop.io/oauth/access_token", post_variables)
 	if err != nil {
-		return false
+		return false, "Failed to make request to Raindrop.io", err.Error()
 	}
 
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		return false
+		return false, "Failed to read response from Raindrop.io", err.Error()
 	}
 
 	token := RaindropToken{}
 	json.Unmarshal([]byte(body), &token)
 
 	if token.Error != "" {
-		return false
+		return false, "Failed to authenticate", token.Error
 	}
 
 	location, _ := time.LoadLocation("UTC")
@@ -76,8 +82,8 @@ func request_token(code string) bool {
 
 	// Save to Keychain
 	if err := wf.Keychain.Set("raindrop_token", string(token_json)); err != nil {
-		return false
+		return false, "Failed to save token to Keychain", err.Error()
 	}
 
-	return true
+	return true, "", ""
 }
