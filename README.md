@@ -9,7 +9,8 @@ You can also use this workflow to add bookmarks to [Raindrop.io](https://raindro
   - If you are working in another app, the bookmark will open in your default browser.
   - Hold the cmd-key to view the URL for a bookmark.
   - Hold the ctrl-key to view the description for a bookmark.
-  - Hold the option-key while pressing enter, or use cmd+c to copy the URL instead of opening it in a browser.
+  - Hold the option-key and press enter, or use cmd+c to copy the URL instead of opening it in a browser.
+  - Hold the shift-key and press enter to open the permanent copy that is stored at Raindrop.io (Requires a Raindrop.io Pro subscription to work)
   - Press enter before you have started typing a search query, and Raindrop.io itself will open in your active web browser.
 - To add a new bookmark to Raindrop.io, there are two ways to get the actual bookmark you want to add into the workflow.
     - The primary way is to first make sure that you have the webpage you want to add opened in a browser and that it is the frontmost window, and then open Alfred and type **ra** followed by a space.

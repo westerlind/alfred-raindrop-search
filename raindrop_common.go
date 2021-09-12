@@ -219,6 +219,9 @@ func render_results(raindrop_results []interface{}, include_favourites string, c
 				Arg(string(item["link"].(string))).
 				Var("goto", "copy").
 				Subtitle("Press enter to copy this link to clipboard")
+			alfred_item.Shift().
+				Arg("https://api.raindrop.io/v1/raindrop/" + fmt.Sprint(int(item["_id"].(float64))) + "/cache").
+				Subtitle("Press enter to open permantent copy")
 		}
 	}
 }
