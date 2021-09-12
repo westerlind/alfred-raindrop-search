@@ -2853,10 +2853,8 @@ I personally use cmd+option+space.</string>
 		<key>subcollections_as_full_paths</key>
 		<string>false</string>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>2.0</string>
+	<string>2.0.1</string>
 	<key>webaddress</key>
 	<string>https://www.packal.org/workflow/search-raindropio</string>
 </dict>
