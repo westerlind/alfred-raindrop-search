@@ -358,12 +358,12 @@ func render_collections(raindrop_collections []interface{}, raindrop_collections
 				}
 			}
 
-			var icon_file_name string
-			icon_url_array := strings.Split(item["cover"].([]interface{})[0].(string), "/")
-			if icon_url_array[len(icon_url_array)-1] == "" {
-				icon_file_name = "folder.png"
-			} else {
-				icon_file_name = wf.CacheDir() + "/icon_cache/" + icon_url_array[len(icon_url_array)-1]
+			var icon_file_name = "folder.png"
+			if len(item["cover"].([]interface{})) > 0 {
+				icon_url_array := strings.Split(item["cover"].([]interface{})[0].(string), "/")
+				if icon_url_array[len(icon_url_array)-1] != "" {
+					icon_file_name = wf.CacheDir() + "/icon_cache/" + icon_url_array[len(icon_url_array)-1]
+				}
 			}
 
 			// Make sure icon_cache folder exists
