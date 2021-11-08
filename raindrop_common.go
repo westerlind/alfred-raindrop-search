@@ -247,7 +247,7 @@ func get_collections(token RaindropToken, sublevel bool, caching string) []inter
 			// Read stored cached collections
 			cache_file, _ := os.ReadFile(cache_filename)
 			json.Unmarshal(cache_file, &cache_base)
-			if cache_base["items"].([]interface{}) != nil {
+			if cache_base["items"] != nil && cache_base["items"].([]interface{}) != nil {
 				collections = cache_base["items"].([]interface{})
 				return collections
 			}
