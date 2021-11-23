@@ -280,7 +280,7 @@ func get_collections(token RaindropToken, sublevel bool, caching string) []inter
 	os.WriteFile(cache_filename, response_body, 0666)
 
 	// Return collections
-	if cache_base["items"].([]interface{}) != nil {
+	if cache_base["items"] != nil && cache_base["items"].([]interface{}) != nil {
 		collections = cache_base["items"].([]interface{})
 	}
 	return collections
@@ -477,7 +477,7 @@ func get_tags(token RaindropToken, caching string) []interface{} {
 			// Read stored cached collections
 			cache_file, _ := os.ReadFile(wf.CacheDir() + "/tags.json")
 			json.Unmarshal(cache_file, &cache_base)
-			if cache_base["items"].([]interface{}) != nil {
+			if cache_base["items"] != nil && cache_base["items"].([]interface{}) != nil {
 				tags = cache_base["items"].([]interface{})
 				return tags
 			}
@@ -508,7 +508,7 @@ func get_tags(token RaindropToken, caching string) []interface{} {
 	os.WriteFile(wf.CacheDir()+"/tags.json", response_body, 0666)
 
 	// Return tags
-	if cache_base["items"].([]interface{}) != nil {
+	if cache_base["items"] != nil && cache_base["items"].([]interface{}) != nil {
 		tags = cache_base["items"].([]interface{})
 	}
 	return tags
