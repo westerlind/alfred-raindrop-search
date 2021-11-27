@@ -135,8 +135,11 @@ func search_request(query string, token RaindropToken, collection int, tag strin
 
 	json.Unmarshal(response_body, &result)
 
-	result_items := result["items"].([]interface{})
-	if result_items == nil {
+	var result_items []interface{}
+	if result["items"] != nil && len(result["items"].([]interface{})) > 0 {
+		result_items = result["items"].([]interface{})
+	} else {
+		fmt.Println("\n/**** Unexpected response from server ****\n" + string(response_body) + "\n***********************************/\n")
 		var nothing []interface{}
 		err = errors.New("Could not get results")
 		return nothing, err
