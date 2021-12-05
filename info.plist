@@ -251,6 +251,18 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>9B018208-830A-4EF1-A938-E5FB7D049859</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>A567D06C-4DD0-4132-8D5B-C58AAEE57A0E</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>257547E2-4D79-45B1-B6C7-8788DA247B0D</key>
 		<array>
@@ -1192,6 +1204,9 @@ else if (frontApp = "Opera") then
 else if (frontApp = "Vivaldi") then
 	set browserURL to do shell script "/usr/bin/osascript browser-info/vivaldi-url.scpt" as text
 	set browserTitle to do shell script "/usr/bin/osascript browser-info/vivaldi-title.scpt" as text
+else if (frontApp = "Sidekick") then
+	set browserURL to do shell script "/usr/bin/osascript browser-info/sidekick-url.scpt" as text
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/sidekick-title.scpt" as text
 else if (frontApp = "firefox") then
 	-- For getting tab info from Firefox, we use the awsome Firefox Assistant by Dean Jackson, because Firefox does not have Apple Script support like the other browsers.
 	-- Ensure directory exists
@@ -1702,6 +1717,21 @@ end run</string>
 						<key>uid</key>
 						<string>6BE5342C-C955-4B8A-A2BD-E4998C8F9C38</string>
 					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:browser}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>Sidekick
+</string>
+						<key>outputlabel</key>
+						<string>Sidekick</string>
+						<key>uid</key>
+						<string>A567D06C-4DD0-4132-8D5B-C58AAEE57A0E</string>
+					</dict>
 				</array>
 				<key>elselabel</key>
 				<string>else</string>
@@ -2059,6 +2089,25 @@ return frontApp</string>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
 			<string>FEF2F562-262F-49AF-95AC-DDBCAD2BAAD8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string>com.pushplaylabs.sidekick</string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{var:link}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>9B018208-830A-4EF1-A938-E5FB7D049859</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2437,7 +2486,7 @@ You can also use this workflow to add bookmarks to Raindrop.io from the browser 
 			<key>xpos</key>
 			<integer>480</integer>
 			<key>ypos</key>
-			<integer>565</integer>
+			<integer>555</integer>
 		</dict>
 		<key>257547E2-4D79-45B1-B6C7-8788DA247B0D</key>
 		<dict>
@@ -2683,6 +2732,17 @@ I personally use cmd+option+space.</string>
 			<key>ypos</key>
 			<integer>1265</integer>
 		</dict>
+		<key>9B018208-830A-4EF1-A938-E5FB7D049859</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>Sidekick</string>
+			<key>xpos</key>
+			<integer>845</integer>
+			<key>ypos</key>
+			<integer>1050</integer>
+		</dict>
 		<key>9B65CEA1-6A3B-4D6B-86D5-3FFE02B7E061</key>
 		<dict>
 			<key>xpos</key>
@@ -2746,7 +2806,7 @@ I personally use cmd+option+space.</string>
 			<key>xpos</key>
 			<integer>340</integer>
 			<key>ypos</key>
-			<integer>565</integer>
+			<integer>575</integer>
 		</dict>
 		<key>CC95B992-1336-4312-A443-B705E2E12F59</key>
 		<dict>
