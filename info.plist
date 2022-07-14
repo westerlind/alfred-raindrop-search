@@ -256,6 +256,30 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>52CFC36F-B8F2-4127-9C4A-71B4671CC948</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>681FB453-D741-44F4-B049-663D1ED5AFEE</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>52CFC36F-B8F2-4127-9C4A-71B4671CC948</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>55198203-2062-41E7-A984-6D660239FB3A</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>50522184-C1BE-4073-BF73-1B861F9F0F95</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -1233,6 +1257,12 @@ else if (frontApp = "Opera") then
 else if (frontApp = "Vivaldi") then
 	set browserURL to do shell script "/usr/bin/osascript browser-info/vivaldi-url.scpt" as text
 	set browserTitle to do shell script "/usr/bin/osascript browser-info/vivaldi-title.scpt" as text
+else if (frontApp = "Sidekick") then
+	set browserURL to do shell script "/usr/bin/osascript browser-info/sidekick-url.scpt" as text
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/sidekick-title.scpt" as text
+else if (frontApp = "Arc") then
+	set browserURL to do shell script "/usr/bin/osascript browser-info/arc-url.scpt" as text
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/arc-title.scpt" as text
 else if (frontApp = "firefox") then
 	-- For getting tab info from Firefox, we use the awsome Firefox Assistant by Dean Jackson, because Firefox does not have Apple Script support like the other browsers.
 	-- Ensure directory exists
@@ -1463,28 +1493,13 @@ end run</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>availableviaurlhandler</key>
-				<false/>
-				<key>triggerid</key>
-				<string>add</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>7C43852C-AD13-4F99-A36F-7D099E1C5016</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
 						<key>inputstring</key>
 						<string>{var:browser}</string>
 						<key>matchcasesensitive</key>
-						<true/>
+						<false/>
 						<key>matchmode</key>
 						<integer>0</integer>
 						<key>matchstring</key>
@@ -1498,7 +1513,7 @@ end run</string>
 						<key>inputstring</key>
 						<string>{var:browser}</string>
 						<key>matchcasesensitive</key>
-						<true/>
+						<false/>
 						<key>matchmode</key>
 						<integer>0</integer>
 						<key>matchstring</key>
@@ -1512,7 +1527,7 @@ end run</string>
 						<key>inputstring</key>
 						<string>{var:browser}</string>
 						<key>matchcasesensitive</key>
-						<true/>
+						<false/>
 						<key>matchmode</key>
 						<integer>0</integer>
 						<key>matchstring</key>
@@ -1526,7 +1541,7 @@ end run</string>
 						<key>inputstring</key>
 						<string>{var:browser}</string>
 						<key>matchcasesensitive</key>
-						<true/>
+						<false/>
 						<key>matchmode</key>
 						<integer>0</integer>
 						<key>matchstring</key>
@@ -1540,7 +1555,7 @@ end run</string>
 						<key>inputstring</key>
 						<string>{var:browser}</string>
 						<key>matchcasesensitive</key>
-						<true/>
+						<false/>
 						<key>matchmode</key>
 						<integer>0</integer>
 						<key>matchstring</key>
@@ -1663,6 +1678,34 @@ end run</string>
 						<key>uid</key>
 						<string>6BE5342C-C955-4B8A-A2BD-E4998C8F9C38</string>
 					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:browser}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>company.thebrowser.Browser</string>
+						<key>outputlabel</key>
+						<string>Arc</string>
+						<key>uid</key>
+						<string>681FB453-D741-44F4-B049-663D1ED5AFEE</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:browser}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>com.pushplaylabs.sidekick</string>
+						<key>outputlabel</key>
+						<string>Sidekick</string>
+						<key>uid</key>
+						<string>55198203-2062-41E7-A984-6D660239FB3A</string>
+					</dict>
 				</array>
 				<key>elselabel</key>
 				<string>else</string>
@@ -1673,6 +1716,21 @@ end run</string>
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>2469C16C-7E26-4F22-AB46-7D1C762E942B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>add</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>7C43852C-AD13-4F99-A36F-7D099E1C5016</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1733,9 +1791,9 @@ end run</string>
 				<key>browser</key>
 				<string></string>
 				<key>skipqueryencode</key>
-				<true/>
+				<false/>
 				<key>skipvarencode</key>
-				<true/>
+				<false/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
@@ -2058,6 +2116,27 @@ end run</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Raindrop.io Bookmark Added</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>53B0EA43-377E-44EB-8FE6-3AA390620E97</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -2077,27 +2156,6 @@ end run</string>
 			<string>9A3C06F3-0910-45D6-8995-7183FC7E4500</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Raindrop.io Bookmark Added</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>53B0EA43-377E-44EB-8FE6-3AA390620E97</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2258,23 +2316,23 @@ You can also use this workflow to add bookmarks to Raindrop.io from the browser 
 			<key>xpos</key>
 			<real>295</real>
 			<key>ypos</key>
-			<real>1075</real>
+			<real>1100</real>
 		</dict>
 		<key>0FCFA442-A541-4768-9966-F915FD603717</key>
 		<dict>
 			<key>xpos</key>
 			<real>440</real>
 			<key>ypos</key>
-			<real>1095</real>
+			<real>1120</real>
 		</dict>
 		<key>2469C16C-7E26-4F22-AB46-7D1C762E942B</key>
 		<dict>
 			<key>note</key>
 			<string>If a browser is the frontmost app, open the webpage in that browser, or otherwise open it in the default browser.</string>
 			<key>xpos</key>
-			<real>525</real>
+			<real>515</real>
 			<key>ypos</key>
-			<real>565</real>
+			<real>540</real>
 		</dict>
 		<key>257547E2-4D79-45B1-B6C7-8788DA247B0D</key>
 		<dict>
@@ -2301,14 +2359,14 @@ You can also use this workflow to add bookmarks to Raindrop.io from the browser 
 			<key>xpos</key>
 			<real>95</real>
 			<key>ypos</key>
-			<real>1320</real>
+			<real>1345</real>
 		</dict>
 		<key>2E719CC5-B574-4926-BDD1-6DBDAAEB84A0</key>
 		<dict>
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>1200</real>
+			<real>1225</real>
 		</dict>
 		<key>36896C84-4763-46D0-9598-45825301874A</key>
 		<dict>
@@ -2340,7 +2398,7 @@ You can also use this workflow to add bookmarks to Raindrop.io from the browser 
 			<key>xpos</key>
 			<real>235</real>
 			<key>ypos</key>
-			<real>1340</real>
+			<real>1365</real>
 		</dict>
 		<key>50522184-C1BE-4073-BF73-1B861F9F0F95</key>
 		<dict>
@@ -2349,7 +2407,7 @@ You can also use this workflow to add bookmarks to Raindrop.io from the browser 
 			<key>xpos</key>
 			<real>770</real>
 			<key>ypos</key>
-			<real>950</real>
+			<real>940</real>
 		</dict>
 		<key>51318D41-E845-48F7-822D-8B6D1F0BC11F</key>
 		<dict>
@@ -2386,7 +2444,7 @@ I personally use option+space.</string>
 			<key>xpos</key>
 			<real>530</real>
 			<key>ypos</key>
-			<real>1265</real>
+			<real>1290</real>
 		</dict>
 		<key>56E7477E-A147-406F-B423-659AB0BD8355</key>
 		<dict>
@@ -2406,7 +2464,7 @@ I personally use option+space.</string>
 			<key>xpos</key>
 			<real>130</real>
 			<key>ypos</key>
-			<real>1075</real>
+			<real>1100</real>
 		</dict>
 		<key>6E6668A6-E82C-4C77-B178-FABE7F28863C</key>
 		<dict>
@@ -2468,7 +2526,7 @@ I personally use cmd+option+space.</string>
 			<key>xpos</key>
 			<real>390</real>
 			<key>ypos</key>
-			<real>1265</real>
+			<real>1290</real>
 		</dict>
 		<key>9B65CEA1-6A3B-4D6B-86D5-3FFE02B7E061</key>
 		<dict>
@@ -2500,7 +2558,7 @@ I personally use cmd+option+space.</string>
 			<key>xpos</key>
 			<real>530</real>
 			<key>ypos</key>
-			<real>1075</real>
+			<real>1100</real>
 		</dict>
 		<key>BBD2CADE-7164-409D-9835-6A6ACF7A211B</key>
 		<dict>
@@ -2572,7 +2630,7 @@ I personally use cmd+option+space.</string>
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>1350</real>
+			<real>1375</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>

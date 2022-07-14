@@ -27,6 +27,11 @@ func select_collection(query string, bookmark_url string, bookmark_title string,
 		bookmark_title = firefox_interface["alfredworkflow"].(map[string]interface{})["variables"].(map[string]interface{})["FF_TITLE"].(string)
 	}
 
+	// Fix bookmark_url if it has been escaped en extra time, which Arc seems to currently do (they will probably fix that eventually)
+	if strings.HasPrefix(bookmark_url, "\"") {
+		json.Unmarshal([]byte(bookmark_url), &bookmark_url)
+	}
+
 	render_style := "tree"
 	if full_collection_paths {
 		render_style = "paths"
