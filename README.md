@@ -27,7 +27,7 @@ The reason for not supporting older versions than High Sierra is that Go 1.17 do
 You can still run version 1.7 of this workflow on older macOS versions if you need to be able to do that, as all versions of this workflow prior to 2.0 is based on PHP and Python rather than Go.
 
 ## Supported Web Browsers
-Safari, Chrome, Firefox, Edge, Brave, Vivaldi, Opera, Chromium, Chrome Canary, Safari Technology Preview, NAVER Whale (and SeaMonkey and SigmaOS, but only for opening bookmarks)
+Safari, Chrome, Firefox, Edge, Brave, Vivaldi, Opera, Chromium, Chrome Canary, Safari Technology Preview, Arc, Sidekick NAVER Whale (and SeaMonkey and SigmaOS, but only for opening bookmarks)
 
 ## Settings
 - To set keyboard shortcuts, go to the "Search Raindrop.io" workflow in the Alfred preferences and look in the top left corner, where you can set keyboard shortcuts for searching Raindrop.io, or for adding bookmarks.
