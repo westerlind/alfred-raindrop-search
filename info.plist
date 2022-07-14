@@ -1793,7 +1793,7 @@ end run</string>
 				<key>skipqueryencode</key>
 				<false/>
 				<key>skipvarencode</key>
-				<false/>
+				<true/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>

@@ -37,7 +37,7 @@ func select_collection(query string, bookmark_url string, bookmark_title string,
 		render_style = "paths"
 	}
 
-	// Try to read token, and initiate authentication mekanism if it fails
+	// Try to read token, and initiate authentication mechanism if it fails
 	token := read_token()
 	if token.Error != "" {
 		init_auth()
