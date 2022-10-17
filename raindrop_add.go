@@ -206,7 +206,7 @@ func set_tags(tags string) {
 				Arg(previous_tags+current_tag+", ").
 				Var("goto", "more").
 				Valid(true).
-				Icon(&aw.Icon{"tag.png", ""})
+				Icon(&aw.Icon{Value: "tag.png", Type: ""})
 			alfred_item.Alt().
 				Subtitle("").
 				Arg(previous_tags+current_tag+", ").

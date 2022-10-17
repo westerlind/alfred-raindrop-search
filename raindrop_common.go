@@ -11,7 +11,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"os"
@@ -72,7 +71,7 @@ func refresh_token(token RaindropToken) RaindropToken {
 	}
 
 	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		token.Error = "Error reading response"
 		return token
@@ -127,7 +126,7 @@ func search_request(query string, token RaindropToken, collection int, tag strin
 		var nothing []interface{}
 		return nothing, err
 	}
-	response_body, err := ioutil.ReadAll(response.Body)
+	response_body, err := io.ReadAll(response.Body)
 	if err != nil {
 		var nothing []interface{}
 		return nothing, err
@@ -141,7 +140,7 @@ func search_request(query string, token RaindropToken, collection int, tag strin
 	} else {
 		fmt.Println("\n/**** Unexpected response from server ****\n" + string(response_body) + "\n***********************************/\n")
 		var nothing []interface{}
-		err = errors.New("Could not get results")
+		err = errors.New("could not get results")
 		return nothing, err
 	}
 
@@ -155,7 +154,7 @@ func render_results(raindrop_results []interface{}, include_favourites string, c
 
 		var is_fav bool = false
 		if _, ok := item["important"]; ok {
-			if item["important"].(bool) == true {
+			if item["important"].(bool) {
 				is_fav = true
 			}
 		}
@@ -246,7 +245,7 @@ func get_collections(token RaindropToken, sublevel bool, caching string) []inter
 	// Check if cache file exists
 	if cache_file_stat, err := os.Stat(cache_filename); err == nil {
 		// Ceck modification time of the cache file. Use cache if it is less than 1 minute old, and caching is set "check", or if caching is set to "trust"
-		if caching == "trust" || (time.Now().Sub(cache_file_stat.ModTime()).Seconds() < 60 && caching == "check") {
+		if caching == "trust" || (time.Since(cache_file_stat.ModTime()).Seconds() < 60 && caching == "check") {
 			// Read stored cached collections
 			cache_file, _ := os.ReadFile(cache_filename)
 			json.Unmarshal(cache_file, &cache_base)
@@ -273,7 +272,7 @@ func get_collections(token RaindropToken, sublevel bool, caching string) []inter
 	if err != nil {
 		return collections
 	}
-	response_body, err := ioutil.ReadAll(response.Body)
+	response_body, err := io.ReadAll(response.Body)
 	if err != nil {
 		return collections
 	}
@@ -292,7 +291,7 @@ func get_collections(token RaindropToken, sublevel bool, caching string) []inter
 // Returns only the hostname minus www from a given URL
 func get_hostname(url_string string) string {
 	url_object, _ := url.Parse(url_string)
-	re := regexp.MustCompile("^www\\.")
+	re := regexp.MustCompile(`^www\.`)
 	return re.ReplaceAllString(url_object.Host, "")
 }
 
@@ -376,15 +375,17 @@ func render_collections(raindrop_collections []interface{}, raindrop_collections
 			if strings.HasPrefix(icon_file_name, wf.CacheDir()+"/icon_cache/") {
 				// Download/Redownload image if it doesnt exist or is more than 60 days old
 				file_stat, err := os.Stat(icon_file_name)
-				if err != nil || time.Now().Sub(file_stat.ModTime()).Hours() > 1440 {
+				if err != nil || time.Since(file_stat.ModTime()).Hours() > 1440 {
 					if !os.IsNotExist(err) {
 						os.Remove(icon_file_name)
 					}
 					file, _ := os.Create(icon_file_name)
 					defer file.Close()
-					resp, _ := http.Get(item["cover"].([]interface{})[0].(string))
+					resp, err := http.Get(item["cover"].([]interface{})[0].(string))
+					if err == nil {
+						io.Copy(file, resp.Body)
+					}
 					defer resp.Body.Close()
-					io.Copy(file, resp.Body)
 				}
 			}
 
@@ -415,7 +416,7 @@ func render_collections(raindrop_collections []interface{}, raindrop_collections
 					Arg(fmt.Sprint(strings.ToLower(strings.Join(current_object, " "))+" "+tree_arg_section)).
 					Var("bookmark_info", string(collection_json)).
 					Valid(true).
-					Icon(&aw.Icon{icon_file_name, ""})
+					Icon(&aw.Icon{Value: icon_file_name, Type: ""})
 				alfred_item.Cmd().
 					Var("bookmark_info", string(collection_json)).
 					Var("goto", "save now").
@@ -429,7 +430,7 @@ func render_collections(raindrop_collections []interface{}, raindrop_collections
 					Var("collection_info", string(collection_json)).
 					Var("goto", "collection").
 					Valid(true).
-					Icon(&aw.Icon{icon_file_name, ""})
+					Icon(&aw.Icon{Value: icon_file_name, Type: ""})
 				alfred_item.Alt().
 					Arg(strings.ToLower(strings.Join(current_object, " "))+" "+tree_arg_section).
 					Var("collection_info", string(collection_json)).
@@ -476,7 +477,7 @@ func get_tags(token RaindropToken, caching string) []interface{} {
 	// Check if cache file exists
 	if cache_file_stat, err := os.Stat("tags.json"); err == nil {
 		// Ceck modification time of the cache file. Use cache if it is less than 1 minute old, and caching is set "check", or if caching is set to "trust"
-		if caching == "trust" || (time.Now().Sub(cache_file_stat.ModTime()).Seconds() < 60 && caching == "check") {
+		if caching == "trust" || (time.Since(cache_file_stat.ModTime()).Seconds() < 60 && caching == "check") {
 			// Read stored cached collections
 			cache_file, _ := os.ReadFile(wf.CacheDir() + "/tags.json")
 			json.Unmarshal(cache_file, &cache_base)
@@ -501,7 +502,7 @@ func get_tags(token RaindropToken, caching string) []interface{} {
 	if err != nil {
 		return tags
 	}
-	response_body, err := ioutil.ReadAll(response.Body)
+	response_body, err := io.ReadAll(response.Body)
 	if err != nil {
 		return tags
 	}
@@ -616,7 +617,7 @@ func firefox_error(message string) {
 		alfred_item := wf.NewItem("Firefox Assistant is disabled").
 			Subtitle("Enable it in Alfred's preferences to be able to add bookmarks from Firefox").
 			Valid(false).
-			Icon(&aw.Icon{"firefox.png", ""})
+			Icon(&aw.Icon{Value: "firefox.png", Type: ""})
 		alfred_item.Alt().
 			Subtitle("Enable it in Alfred's preferences to be able to add bookmarks from Firefox")
 	} else if message == "Cannot find workflow with Id 'net.deanishe.alfred.firefox-assistant'" {
@@ -624,7 +625,7 @@ func firefox_error(message string) {
 			Arg("https://github.com/deanishe/alfred-firefox/blob/master/README.md").
 			Subtitle("Press enter for instructions to install and configure Firefox Assistant").
 			Valid(true).
-			Icon(&aw.Icon{"firefox.png", ""})
+			Icon(&aw.Icon{Value: "firefox.png", Type: ""})
 		alfred_item.Alt().
 			Arg("https://github.com/deanishe/alfred-firefox/blob/master/README.md").
 			Subtitle("Press enter for instructions to install and configure Firefox Assistant")
@@ -633,14 +634,14 @@ func firefox_error(message string) {
 			Arg("https://github.com/deanishe/alfred-firefox/blob/master/README.md").
 			Subtitle("Press enter for instructions to install and configure Firefox Assistant").
 			Valid(true).
-			Icon(&aw.Icon{"firefox.png", ""})
+			Icon(&aw.Icon{Value: "firefox.png", Type: ""})
 		alfred_item.Alt().
 			Arg("https://github.com/deanishe/alfred-firefox/blob/master/README.md").
 			Subtitle("Press enter for instructions to install and configure Firefox Assistant")
 	} else if message == "Failed to read information from Firefox" {
 		alfred_item := wf.NewItem("Failed to read information from Firefox").
 			Subtitle("It will probably work if you try again").
-			Icon(&aw.Icon{"firefox.png", ""})
+			Icon(&aw.Icon{Value: "firefox.png", Type: ""})
 		alfred_item.Alt().
 			Arg("https://github.com/deanishe/alfred-firefox/blob/master/README.md").
 			Subtitle("Press enter for instructions to install and configure Firefox Assistant")
@@ -649,7 +650,7 @@ func firefox_error(message string) {
 			Arg("https://github.com/deanishe/alfred-firefox/blob/master/README.md").
 			Subtitle("Press enter for instructions to install and configure Firefox Assistant").
 			Valid(true).
-			Icon(&aw.Icon{"firefox.png", ""})
+			Icon(&aw.Icon{Value: "firefox.png", Type: ""})
 		alfred_item.Alt().
 			Arg("https://github.com/deanishe/alfred-firefox/blob/master/README.md").
 			Subtitle("Press enter for instructions to install and configure Firefox Assistant")

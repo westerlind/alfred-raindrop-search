@@ -46,7 +46,7 @@ func search(variant string, query string, collection_json string, from string, d
 				Var("goto", "browse").
 				Subtitle("⬅︎ Go back to collection browser").
 				Valid(true).
-				Icon(&aw.Icon{collection_search_icon, ""})
+				Icon(&aw.Icon{Value: collection_search_icon, Type: ""})
 			alfred_item.Alt().
 				Var("goto", "back").
 				Subtitle("⬅︎ Go back to collection browser")
@@ -56,7 +56,7 @@ func search(variant string, query string, collection_json string, from string, d
 				Var("goto", "back").
 				Subtitle("⬅︎ Go back to search all bookmarks").
 				Valid(true).
-				Icon(&aw.Icon{collection_search_icon, ""})
+				Icon(&aw.Icon{Value: collection_search_icon, Type: ""})
 			alfred_item.Alt().
 				Var("goto", "back").
 				Subtitle("⬅︎ Go back to search all bookmarks")
@@ -69,7 +69,7 @@ func search(variant string, query string, collection_json string, from string, d
 			Var("goto", "back").
 			Subtitle("⬅︎ Go back to search all bookmarks").
 			Valid(true).
-			Icon(&aw.Icon{"tag.png", ""})
+			Icon(&aw.Icon{Value: "tag.png", Type: ""})
 		alfred_item.Alt().
 			Var("goto", "back").
 			Subtitle("⬅︎ Go back to search all bookmarks")
@@ -100,7 +100,7 @@ func search(variant string, query string, collection_json string, from string, d
 			} else {
 				// Try to query Raindrop again, and assume it will work now as we just got a fresh new token to authenticate with
 				token = new_token
-				raindrop_results, err = search_request(query, token, collection_search_id, tag)
+				raindrop_results, _ = search_request(query, token, collection_search_id, tag)
 			}
 		}
 
@@ -124,7 +124,7 @@ func search(variant string, query string, collection_json string, from string, d
 					Var("current_tag", item["_id"].(string)).
 					Var("goto", "tag").
 					Valid(true).
-					Icon(&aw.Icon{"tag.png", ""})
+					Icon(&aw.Icon{Value: "tag.png", Type: ""})
 				alfred_item.Alt().
 					Var("current_tag", item["_id"].(string)).
 					Var("goto", "tag").
@@ -163,7 +163,7 @@ func search(variant string, query string, collection_json string, from string, d
 				Var("goto", "browse").
 				Subtitle("").
 				Valid(true).
-				Icon(&aw.Icon{"folder.png", ""})
+				Icon(&aw.Icon{Value: "folder.png", Type: ""})
 			alfred_item2.Alt().
 				Var("goto", "browse").
 				Subtitle("")
@@ -198,7 +198,7 @@ func browse(query string, full_collection_paths bool) {
 		Var("goto", "back").
 		Subtitle("⬅︎ Go back to search all bookmarks").
 		Valid(true).
-		Icon(&aw.Icon{"icon.png", ""})
+		Icon(&aw.Icon{Value: "icon.png", Type: ""})
 	alfred_item.Alt().
 		Var("goto", "back").
 		Subtitle("⬅︎ Go back to search all bookmarks")
@@ -207,7 +207,7 @@ func browse(query string, full_collection_paths bool) {
 		Var("goto", "collection").
 		Subtitle("").
 		Valid(true).
-		Icon(&aw.Icon{"folder.png", ""})
+		Icon(&aw.Icon{Value: "folder.png", Type: ""})
 	alfred_item2.Alt().
 		Var("collection_info", "{\"icon\":\"folder.png\",\"id\":\"-1\",\"name\":\"Unsorted\"}").
 		Var("goto", "collection").
