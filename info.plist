@@ -2255,21 +2255,7 @@ end run</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>SETTINGS
-Change the Workflow Environment Variables to adjust the settings
-
-subcollections_as_full_paths:
-Set this to true if you prefer that subcollections are always rendered as full paths (like "collection/subcollection"), instead of like a tree view which is the default.
-You see this (if you have subcollections) in the collection listing while selecting to browse collections, or while selecting a collection for a new bookmark.
-
-description_in_boomark_listing:
-When listing bookmarks while searching for or browsing them, by default you will get info about the collection, tags, and domain name in the subtitle of each bookmark, and you can hold down the ctrl key to view the description.
-If you set this to true, you will instead see the description first and can hold the ctrl key to view collection, tags and domain name.
-
-favourites_first:
-Set this to true if you want bookmarks that are marked as favourites to always be shown first in results (default), and otherwise set it to false.
-
-ABOUT THIS WORKFLOW
+	<string>ABOUT THIS WORKFLOW
 This Alfred workflow is created to have a single, fast, and always reachable way of searching Raindrop.io, and then open bookmarks in the web browser you are currently working in, even if that's not your default browser.
 You can also use this workflow to add bookmarks to Raindrop.io from the browser you are currently using.
 
@@ -2634,20 +2620,69 @@ I personally use cmd+option+space.</string>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
-	<array/>
-	<key>variables</key>
-	<dict>
-		<key>description_in_boomark_listing</key>
-		<string>false</string>
-		<key>favourites_first</key>
-		<string>true</string>
-		<key>subcollections_as_full_paths</key>
-		<string>false</string>
-	</dict>
-	<key>variablesdontexport</key>
-	<array/>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>description</key>
+			<string>When listing bookmarks while searching for or browsing them, by default you will get info about the collection, tags, and domain name in the subtitle of each bookmark, and you can hold down the ctrl key to view the description.
+If you enable this setting, you will instead see the description first and can hold the ctrl key to view collection, tags and domain name.</string>
+			<key>label</key>
+			<string>Description in Boomark Listing</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>description_in_boomark_listing</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>description</key>
+			<string>Enable if you want bookmarks that are marked as favourites to always be shown first in results (default)</string>
+			<key>label</key>
+			<string>Favourites First in Results</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>favourites_first</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>description</key>
+			<string>Enable this if you prefer that subcollections are always rendered as full paths (like "collection/subcollection"), instead of like a tree view which is the default.
+You see this (if you have subcollections) in the collection listing while selecting to browse collections, or while selecting a collection for a new bookmark.</string>
+			<key>label</key>
+			<string>Subcollections as Full Paths</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>subcollections_as_full_paths</string>
+		</dict>
+	</array>
 	<key>version</key>
-	<string>2.0.7</string>
+	<string>2.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/westerlind/alfred-raindrop-search/</string>
 </dict>
