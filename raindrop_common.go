@@ -114,7 +114,7 @@ func search_request(query string, token RaindropToken, collection int, tag strin
 	var result map[string]interface{}
 	var err error
 	client := &http.Client{}
-	request, err := http.NewRequest("GET", "https://api.raindrop.io/rest/v1/raindrops/"+fmt.Sprint(collection)+"/?search=["+tag+"{\"key\":\"word\",\"val\":\""+url.QueryEscape(query)+"\"}]&sort=\""+sorting+"\"", nil)
+	request, err := http.NewRequest("GET", fmt.Sprintf("https://api.raindrop.io/rest/v1/raindrops/%d/?search=%s&sort=%s", collection, url.QueryEscape(query), sorting), nil)
 	if err != nil {
 		var nothing []interface{}
 		return nothing, err
