@@ -37,13 +37,13 @@ func run() {
 	descr_in_list := false
 	favs_first := true
 	full_collection_paths := false
-	if wf.Config.Get("description_in_boomark_listing", "false") == "true" {
+	if wf.Config.Get("description_in_boomark_listing", "0") == "1" {
 		descr_in_list = true
 	}
-	if wf.Config.Get("favourites_first", "true") == "false" {
+	if wf.Config.Get("favourites_first", "true") == "0" {
 		favs_first = false
 	}
-	if wf.Config.Get("subcollections_as_full_paths", "false") == "true" {
+	if wf.Config.Get("subcollections_as_full_paths", "0") == "1" {
 		full_collection_paths = true
 	}
 
