@@ -14,7 +14,7 @@ import (
 	aw "github.com/deanishe/awgo"
 )
 
-func search(variant string, query string, collection_json string, from string, descr_in_list bool, favs_first bool) {
+func search(variant string, query string, collection_json string, tag string, from string, descr_in_list bool, favs_first bool) {
 	var collection_search bool = false
 	var collection_search_id int = 0
 	var collection_search_name string
@@ -33,10 +33,8 @@ func search(variant string, query string, collection_json string, from string, d
 	}
 
 	var tag_search bool = false
-	var tag string = ""
 	if variant == "tag" {
 		tag_search = true
-		tag = query
 	}
 
 	if collection_search {

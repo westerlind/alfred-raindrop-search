@@ -101,7 +101,7 @@ func refresh_token(token RaindropToken) RaindropToken {
 func search_request(query string, token RaindropToken, collection int, tag string) ([]interface{}, error) {
 	// Prepare for searching by tag, if a tag is provided
 	if tag != "" {
-		tag = "{\"key\":\"tag\",\"val\":\"" + url.QueryEscape(tag) + "\"},"
+		tag = "#" + tag + " "
 	}
 
 	// Sorting behaviour
@@ -114,7 +114,17 @@ func search_request(query string, token RaindropToken, collection int, tag strin
 	var result map[string]interface{}
 	var err error
 	client := &http.Client{}
-	request, err := http.NewRequest("GET", "https://api.raindrop.io/rest/v1/raindrops/"+fmt.Sprint(collection)+"/?search=["+tag+"{\"key\":\"word\",\"val\":\""+url.QueryEscape(query)+"\"}]&sort=\""+sorting+"\"", nil)
+	params := url.Values{
+		"search": []string{tag + query},
+		"sort":   []string{sorting},
+	}
+	u := &url.URL{
+		Scheme:   "https",
+		Host:     "api.raindrop.io",
+		Path:     "/rest/v1/raindrops/" + fmt.Sprint(collection),
+		RawQuery: params.Encode(),
+	}
+	request, err := http.NewRequest("GET", u.String(), nil)
 	if err != nil {
 		var nothing []interface{}
 		return nothing, err

@@ -49,7 +49,7 @@ func run() {
 
 	// Select function
 	if f == "search" {
-		search(variant, query, wf.Config.Get("collection_info", ""), wf.Config.Get("from", ""), descr_in_list, favs_first)
+		search(variant, query, wf.Config.Get("collection_info", ""), tags, wf.Config.Get("from", ""), descr_in_list, favs_first)
 	}
 	if f == "browse" {
 		browse(query, full_collection_paths)
