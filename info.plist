@@ -812,6 +812,8 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
 				<key>triggerid</key>
 				<string>browse</string>
 			</dict>
@@ -844,6 +846,8 @@
 				</array>
 				<key>elselabel</key>
 				<string>View collection</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -1049,6 +1053,8 @@
 				</array>
 				<key>elselabel</key>
 				<string>Open</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -1380,6 +1386,8 @@ end run</string>
 				</array>
 				<key>elselabel</key>
 				<string>Open</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -1410,6 +1418,8 @@ end run</string>
 				</array>
 				<key>elselabel</key>
 				<string>Open</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -1468,6 +1478,8 @@ end run</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
 				<key>triggerid</key>
 				<string>search</string>
 			</dict>
@@ -1697,6 +1709,8 @@ end run</string>
 				</array>
 				<key>elselabel</key>
 				<string>else</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -1708,6 +1722,8 @@ end run</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
 				<key>triggerid</key>
 				<string>add</string>
 			</dict>
@@ -1759,6 +1775,8 @@ end run</string>
 				</array>
 				<key>elselabel</key>
 				<string>Open</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -1772,12 +1790,14 @@ end run</string>
 			<dict>
 				<key>browser</key>
 				<string></string>
+				<key>skipqueryencode</key>
+				<true/>
+				<key>skipvarencode</key>
+				<true/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
 				<string>{var:link}</string>
-				<key>utf8</key>
-				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -1897,6 +1917,8 @@ end run</string>
 				</array>
 				<key>elselabel</key>
 				<string>Add bookmark</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -1968,6 +1990,8 @@ end run</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
 				<key>triggerid</key>
 				<string>set_tags</string>
 			</dict>
@@ -2047,6 +2071,8 @@ end run</string>
 				</array>
 				<key>elselabel</key>
 				<string>Done</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -2077,6 +2103,8 @@ end run</string>
 				</array>
 				<key>elselabel</key>
 				<string>Set title</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -2198,6 +2226,8 @@ end run</string>
 				</array>
 				<key>elselabel</key>
 				<string>Save now</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -2603,6 +2633,8 @@ I personally use cmd+option+space.</string>
 			<real>1375</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>variables</key>
 	<dict>
 		<key>description_in_boomark_listing</key>
@@ -2613,7 +2645,7 @@ I personally use cmd+option+space.</string>
 		<string>false</string>
 	</dict>
 	<key>version</key>
-	<string>2.0.8</string>
+	<string>2.0.9</string>
 	<key>webaddress</key>
 	<string>https://github.com/westerlind/alfred-raindrop-search/</string>
 </dict>
