@@ -1228,7 +1228,8 @@ set browserTitle to ""
 if (frontApp = "Safari") then
 	tell application "Safari"
 		set browserURL to the URL of the current tab of the front window as text
-		set browserTitle to the name of the current tab of the front window as text
+		set browserTitleText to the name of the current tab of the front window as text
+		set browserTitle to do shell script "echo " &amp; quoted form of browserTitleText &amp; " | iconv --to-code=UTF-8 | base64"
 	end tell
 else if (frontApp = "Microsoft Edge") then
 	set browserURL to do shell script "/usr/bin/osascript browser-info/edge-url.scpt" as text
@@ -2644,8 +2645,10 @@ I personally use cmd+option+space.</string>
 		<key>subcollections_as_full_paths</key>
 		<string>false</string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>2.0.9</string>
+	<string>2.0.10</string>
 	<key>webaddress</key>
 	<string>https://github.com/westerlind/alfred-raindrop-search/</string>
 </dict>
