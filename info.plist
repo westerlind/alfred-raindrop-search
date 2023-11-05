@@ -280,6 +280,30 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>52CFC36F-B8F2-4127-9C4A-71B4671CC948</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>91416DE9-AA0B-49C6-848C-1909550971F5</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>52CFC36F-B8F2-4127-9C4A-71B4671CC948</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>ADDE898C-301A-4C17-9486-FFC1BE154D82</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>50522184-C1BE-4073-BF73-1B861F9F0F95</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -871,6 +895,8 @@
 				<integer>0</integer>
 				<key>hotmod</key>
 				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1165,6 +1191,8 @@
 				<integer>0</integer>
 				<key>hotmod</key>
 				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1252,6 +1280,12 @@ else if (frontApp = "Whale") then
 else if (frontApp = "Safari Technology Preview") then
 	set browserURL to do shell script "/usr/bin/osascript browser-info/safari-techpreview-url.scpt" as text
 	set browserTitle to do shell script "/usr/bin/osascript browser-info/safari-techpreview-title.scpt" as text
+else if (frontApp = "Orion") then
+	set browserURL to do shell script "/usr/bin/osascript browser-info/orion-url.scpt" as text
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/orion-title.scpt" as text
+else if (frontApp = "Orion RC") then
+	set browserURL to do shell script "/usr/bin/osascript browser-info/orionrc-url.scpt" as text
+	set browserTitle to do shell script "/usr/bin/osascript browser-info/orionrc-title.scpt" as text
 else if (frontApp = "Opera") then
 	set browserURL to do shell script "/usr/bin/osascript browser-info/opera-url.scpt" as text
 	set browserTitle to do shell script "/usr/bin/osascript browser-info/opera-title.scpt" as text
@@ -1706,6 +1740,34 @@ end run</string>
 						<string>Sidekick</string>
 						<key>uid</key>
 						<string>55198203-2062-41E7-A984-6D660239FB3A</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:browser}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>com.kagi.kagimacOS</string>
+						<key>outputlabel</key>
+						<string>Orion</string>
+						<key>uid</key>
+						<string>91416DE9-AA0B-49C6-848C-1909550971F5</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:browser}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>com.kagi.kagimacOS.RC</string>
+						<key>outputlabel</key>
+						<string>Orion RC</string>
+						<key>uid</key>
+						<string>ADDE898C-301A-4C17-9486-FFC1BE154D82</string>
 					</dict>
 				</array>
 				<key>elselabel</key>
@@ -2317,14 +2379,14 @@ You can also use this workflow to add bookmarks to Raindrop.io from the browser 
 			<key>xpos</key>
 			<real>295</real>
 			<key>ypos</key>
-			<real>1100</real>
+			<real>1160</real>
 		</dict>
 		<key>0FCFA442-A541-4768-9966-F915FD603717</key>
 		<dict>
 			<key>xpos</key>
 			<real>440</real>
 			<key>ypos</key>
-			<real>1120</real>
+			<real>1180</real>
 		</dict>
 		<key>2469C16C-7E26-4F22-AB46-7D1C762E942B</key>
 		<dict>
@@ -2360,14 +2422,14 @@ You can also use this workflow to add bookmarks to Raindrop.io from the browser 
 			<key>xpos</key>
 			<real>95</real>
 			<key>ypos</key>
-			<real>1345</real>
+			<real>1405</real>
 		</dict>
 		<key>2E719CC5-B574-4926-BDD1-6DBDAAEB84A0</key>
 		<dict>
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>1225</real>
+			<real>1285</real>
 		</dict>
 		<key>36896C84-4763-46D0-9598-45825301874A</key>
 		<dict>
@@ -2399,16 +2461,16 @@ You can also use this workflow to add bookmarks to Raindrop.io from the browser 
 			<key>xpos</key>
 			<real>235</real>
 			<key>ypos</key>
-			<real>1365</real>
+			<real>1425</real>
 		</dict>
 		<key>50522184-C1BE-4073-BF73-1B861F9F0F95</key>
 		<dict>
 			<key>note</key>
 			<string>Empty string for the default browser</string>
 			<key>xpos</key>
-			<real>770</real>
+			<real>840</real>
 			<key>ypos</key>
-			<real>940</real>
+			<real>855</real>
 		</dict>
 		<key>51318D41-E845-48F7-822D-8B6D1F0BC11F</key>
 		<dict>
@@ -2445,7 +2507,7 @@ I personally use option+space.</string>
 			<key>xpos</key>
 			<real>530</real>
 			<key>ypos</key>
-			<real>1290</real>
+			<real>1350</real>
 		</dict>
 		<key>56E7477E-A147-406F-B423-659AB0BD8355</key>
 		<dict>
@@ -2465,7 +2527,7 @@ I personally use option+space.</string>
 			<key>xpos</key>
 			<real>130</real>
 			<key>ypos</key>
-			<real>1100</real>
+			<real>1160</real>
 		</dict>
 		<key>6E6668A6-E82C-4C77-B178-FABE7F28863C</key>
 		<dict>
@@ -2527,7 +2589,7 @@ I personally use cmd+option+space.</string>
 			<key>xpos</key>
 			<real>390</real>
 			<key>ypos</key>
-			<real>1290</real>
+			<real>1350</real>
 		</dict>
 		<key>9B65CEA1-6A3B-4D6B-86D5-3FFE02B7E061</key>
 		<dict>
@@ -2559,7 +2621,7 @@ I personally use cmd+option+space.</string>
 			<key>xpos</key>
 			<real>530</real>
 			<key>ypos</key>
-			<real>1100</real>
+			<real>1160</real>
 		</dict>
 		<key>BBD2CADE-7164-409D-9835-6A6ACF7A211B</key>
 		<dict>
@@ -2631,7 +2693,7 @@ I personally use cmd+option+space.</string>
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>1375</real>
+			<real>1435</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -2648,7 +2710,7 @@ I personally use cmd+option+space.</string>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>2.0.10</string>
+	<string>2.0.11</string>
 	<key>webaddress</key>
 	<string>https://github.com/westerlind/alfred-raindrop-search/</string>
 </dict>
