@@ -30,7 +30,7 @@ You can still run version 1.7 of this workflow on older macOS versions if you ne
 Alfred 4 is supported for version 1.X and 2.X of this workflow, and Alfred 5 is supported from version 2.0.7 onwards.
 
 ## Supported Web Browsers
-Safari, Chrome, Firefox, Edge, Brave, Vivaldi, Opera, Arc, Sidekick, Chromium, Chrome Canary, Safari Technology Preview, NAVER Whale (and SeaMonkey and SigmaOS, but only for opening bookmarks)
+Safari, Chrome, Firefox, Edge, Brave, Vivaldi, Opera, Arc, Orion, Sidekick, Chromium, Chrome Canary, Safari Technology Preview, NAVER Whale (and SeaMonkey and SigmaOS, but only for opening bookmarks)
 
 ## Settings
 - To set keyboard shortcuts, go to the "Search Raindrop.io" workflow in the Alfred preferences and look in the top left corner, where you can set keyboard shortcuts for searching Raindrop.io, or for adding bookmarks.
