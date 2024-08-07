@@ -2710,7 +2710,7 @@ I personally use cmd+option+space.</string>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>2.0.11</string>
+	<string>2.0.12</string>
 	<key>webaddress</key>
 	<string>https://github.com/westerlind/alfred-raindrop-search/</string>
 </dict>

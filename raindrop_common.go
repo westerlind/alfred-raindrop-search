@@ -319,7 +319,7 @@ func collection_paths(raindrop_collections []interface{}, raindrop_collections_s
 		if item["parent"] != nil {
 			item_parent = item["parent"].(map[string]interface{})
 		}
-		if parent_id == 0 || int(item_parent["$id"].(float64)) == parent_id {
+		if parent_id == 0 || (item_parent != nil && item_parent["$id"] != nil && int(item_parent["$id"].(float64)) == parent_id) {
 			current_level++
 			current_object = append(current_object, item["title"].(string))
 			path_list[int(item["_id"].(float64))] = strings.Join(current_object, "/")
@@ -351,7 +351,7 @@ func render_collections(raindrop_collections []interface{}, raindrop_collections
 		if item["parent"] != nil {
 			item_parent = item["parent"].(map[string]interface{})
 		}
-		if parent_id == 0 || int(item_parent["$id"].(float64)) == parent_id {
+		if parent_id == 0 || (item_parent != nil && item_parent["$id"] != nil && int(item_parent["$id"].(float64)) == parent_id) {
 			current_level++
 			current_object = append(current_object, item["title"].(string))
 			indentation := ""
