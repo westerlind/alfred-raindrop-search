@@ -468,7 +468,7 @@ func sub_collection_names(raindrop_collections_sublevel []interface{}, parent_id
 		if item["parent"] != nil {
 			item_parent = item["parent"].(map[string]interface{})
 		}
-		if int(item_parent["$id"].(float64)) == parent_id {
+		if item_parent != nil && item_parent["$id"] != nil && int(item_parent["$id"].(float64)) == parent_id {
 			names += item["title"].(string) + " " + sub_collection_names(raindrop_collections_sublevel, int(item["_id"].(float64)))
 		}
 	}
