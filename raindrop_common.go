@@ -310,7 +310,11 @@ func collection_paths(raindrop_collections []interface{}, raindrop_collections_s
 	if parent_id == 0 {
 		collection_array = raindrop_collections
 	} else {
-		collection_array = raindrop_collections_sublevel
+		if raindrop_collections_sublevel != nil {
+			collection_array = raindrop_collections_sublevel
+		} else {
+			return path_list
+		}
 	}
 
 	for _, item_interface := range collection_array {
@@ -342,7 +346,11 @@ func render_collections(raindrop_collections []interface{}, raindrop_collections
 	if parent_id == 0 {
 		collection_array = raindrop_collections
 	} else {
-		collection_array = raindrop_collections_sublevel
+		if raindrop_collections_sublevel != nil {
+			collection_array = raindrop_collections_sublevel
+		} else {
+			return
+		}
 	}
 
 	for _, item_interface := range collection_array {
