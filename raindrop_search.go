@@ -1,7 +1,7 @@
 /*
 	Functions for searching and browsing Raindrop.io bookmarks in Alfred
 
-	By Andreas Westerlind in 2021
+	By Andreas Westerlind, 2021-2025
 */
 
 package main
@@ -14,7 +14,7 @@ import (
 	aw "github.com/deanishe/awgo"
 )
 
-func search(variant string, query string, collection_json string, from string, descr_in_list bool, favs_first bool) {
+func search(variant string, query string, collection_json string, tag string, from string, descr_in_list bool, favs_first bool) {
 	var collection_search bool = false
 	var collection_search_id int = 0
 	var collection_search_name string
@@ -33,10 +33,8 @@ func search(variant string, query string, collection_json string, from string, d
 	}
 
 	var tag_search bool = false
-	var tag string = ""
 	if variant == "tag" {
 		tag_search = true
-		tag = query
 	}
 
 	if collection_search {
@@ -75,7 +73,7 @@ func search(variant string, query string, collection_json string, from string, d
 			Subtitle("⬅︎ Go back to search all bookmarks")
 	}
 
-	// Try to read token, and initiate authentication mekanism if it fails
+	// Try to read token, and initiate authentication mechanism if it fails
 	token := read_token()
 	if token.Error != "" {
 		init_auth()
@@ -112,7 +110,7 @@ func search(variant string, query string, collection_json string, from string, d
 		if !collection_search && !tag_search {
 			// Render collections
 			var current_object []string
-			render_collections(raindrop_collections, raindrop_collections_sublevel, "paths", "searching", 0, current_object, -1, "", "")
+			render_collections(raindrop_collections, raindrop_collections_sublevel, "paths", "searching", 0, current_object, -1, "", "", "")
 
 			// Get tag list from cache
 			raindrop_tags := get_tags(token, "check")
@@ -227,7 +225,7 @@ func browse(query string, full_collection_paths bool) {
 
 	// Render collections
 	var current_object []string
-	render_collections(raindrop_collections, raindrop_collections_sublevel, render_style, "searching", 0, current_object, -1, "", "")
+	render_collections(raindrop_collections, raindrop_collections_sublevel, render_style, "searching", 0, current_object, -1, "", "", "")
 
 	if query != "" {
 		wf.Filter(query)

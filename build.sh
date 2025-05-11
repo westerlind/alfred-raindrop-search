@@ -13,8 +13,8 @@ if [ -e raindrop_alfred ]
 then
   rm raindrop_alfred
 fi
-GOOS=darwin GOARCH=amd64 go build -o raindrop_alfred_amd64 raindrop_main.go raindrop_common.go client_code.go raindrop_authserver.go raindrop_search.go raindrop_add.go
-GOOS=darwin GOARCH=arm64 go build -o raindrop_alfred_arm64 raindrop_main.go raindrop_common.go client_code.go raindrop_authserver.go raindrop_search.go raindrop_add.go
+GOOS=darwin GOARCH=amd64 go build -o raindrop_alfred_amd64 raindrop_main.go raindrop_common.go client_code.go raindrop_authserver.go raindrop_search.go raindrop_add.go raindrop_local.go
+GOOS=darwin GOARCH=arm64 go build -o raindrop_alfred_arm64 raindrop_main.go raindrop_common.go client_code.go raindrop_authserver.go raindrop_search.go raindrop_add.go raindrop_local.go
 lipo -create -output raindrop_alfred raindrop_alfred_amd64 raindrop_alfred_arm64
 rm raindrop_alfred_amd64
 rm raindrop_alfred_arm64

@@ -1,7 +1,7 @@
 /*
 	Common functions for different tasks needed to handle Raindrop.io integration in Alfred
 
-	By Andreas Westerlind in 2021
+	By Andreas Westerlind in 2021, 2021-2025
 */
 
 package main
@@ -101,7 +101,7 @@ func refresh_token(token RaindropToken) RaindropToken {
 func search_request(query string, token RaindropToken, collection int, tag string) ([]interface{}, error) {
 	// Prepare for searching by tag, if a tag is provided
 	if tag != "" {
-		tag = "{\"key\":\"tag\",\"val\":\"" + url.QueryEscape(tag) + "\"},"
+		tag = "#" + tag + " "
 	}
 
 	// Sorting behaviour
@@ -114,7 +114,17 @@ func search_request(query string, token RaindropToken, collection int, tag strin
 	var result map[string]interface{}
 	var err error
 	client := &http.Client{}
-	request, err := http.NewRequest("GET", "https://api.raindrop.io/rest/v1/raindrops/"+fmt.Sprint(collection)+"/?search=["+tag+"{\"key\":\"word\",\"val\":\""+url.QueryEscape(query)+"\"}]&sort=\""+sorting+"\"", nil)
+	params := url.Values{
+		"search": []string{tag + query},
+		"sort":   []string{sorting},
+	}
+	u := &url.URL{
+		Scheme:   "https",
+		Host:     "api.raindrop.io",
+		Path:     "/rest/v1/raindrops/" + fmt.Sprint(collection),
+		RawQuery: params.Encode(),
+	}
+	request, err := http.NewRequest("GET", u.String(), nil)
 	if err != nil {
 		var nothing []interface{}
 		return nothing, err
@@ -207,6 +217,7 @@ func render_results(raindrop_results []interface{}, include_favourites string, c
 				Var("goto", "open").
 				Copytext(item["link"].(string)).
 				Subtitle(subtitle_main).
+				Match(item["title"].(string) + " " + tag_list + " " + item["title"].(string) + " " + item["link"].(string)).
 				Valid(true)
 			alfred_item.Cmd().
 				Arg(item["link"].(string)).
@@ -300,7 +311,11 @@ func collection_paths(raindrop_collections []interface{}, raindrop_collections_s
 	if parent_id == 0 {
 		collection_array = raindrop_collections
 	} else {
-		collection_array = raindrop_collections_sublevel
+		if raindrop_collections_sublevel != nil {
+			collection_array = raindrop_collections_sublevel
+		} else {
+			return path_list
+		}
 	}
 
 	for _, item_interface := range collection_array {
@@ -309,7 +324,7 @@ func collection_paths(raindrop_collections []interface{}, raindrop_collections_s
 		if item["parent"] != nil {
 			item_parent = item["parent"].(map[string]interface{})
 		}
-		if parent_id == 0 || int(item_parent["$id"].(float64)) == parent_id {
+		if parent_id == 0 || (item_parent != nil && item_parent["$id"] != nil && int(item_parent["$id"].(float64)) == parent_id) {
 			current_level++
 			current_object = append(current_object, item["title"].(string))
 			path_list[int(item["_id"].(float64))] = strings.Join(current_object, "/")
@@ -327,12 +342,16 @@ func collection_paths(raindrop_collections []interface{}, raindrop_collections_s
 }
 
 // Function for rendering Raindrop.io collections in Alfred
-func render_collections(raindrop_collections []interface{}, raindrop_collections_sublevel []interface{}, render_style string, purpose string, parent_id int, current_object []string, current_level int, bookmark_title string, bookmark_url string) {
+func render_collections(raindrop_collections []interface{}, raindrop_collections_sublevel []interface{}, render_style string, purpose string, parent_id int, current_object []string, current_level int, bookmark_title string, bookmark_url string, goto_prefix string) {
 	var collection_array []interface{}
 	if parent_id == 0 {
 		collection_array = raindrop_collections
 	} else {
-		collection_array = raindrop_collections_sublevel
+		if raindrop_collections_sublevel != nil {
+			collection_array = raindrop_collections_sublevel
+		} else {
+			return
+		}
 	}
 
 	for _, item_interface := range collection_array {
@@ -341,7 +360,7 @@ func render_collections(raindrop_collections []interface{}, raindrop_collections
 		if item["parent"] != nil {
 			item_parent = item["parent"].(map[string]interface{})
 		}
-		if parent_id == 0 || int(item_parent["$id"].(float64)) == parent_id {
+		if parent_id == 0 || (item_parent != nil && item_parent["$id"] != nil && int(item_parent["$id"].(float64)) == parent_id) {
 			current_level++
 			current_object = append(current_object, item["title"].(string))
 			indentation := ""
@@ -425,20 +444,24 @@ func render_collections(raindrop_collections []interface{}, raindrop_collections
 					Var("bookmark_info", string(collection_json)).
 					Subtitle("")
 			} else if purpose == "searching" {
+				collection_goto := "collection"
+				if goto_prefix != "" {
+					collection_goto = goto_prefix + "_collection"
+				}
 				alfred_item := wf.NewItem(indentation+collection_title).
 					Arg(strings.ToLower(strings.Join(current_object, " "))+" "+tree_arg_section).
 					Var("collection_info", string(collection_json)).
-					Var("goto", "collection").
+					Var("goto", collection_goto).
 					Valid(true).
 					Icon(&aw.Icon{Value: icon_file_name, Type: ""})
 				alfred_item.Alt().
 					Arg(strings.ToLower(strings.Join(current_object, " "))+" "+tree_arg_section).
 					Var("collection_info", string(collection_json)).
-					Var("goto", "collection").
+					Var("goto", collection_goto).
 					Subtitle("")
 			}
 
-			render_collections(raindrop_collections, raindrop_collections_sublevel, render_style, purpose, int(item["_id"].(float64)), current_object, current_level, bookmark_title, bookmark_url)
+			render_collections(raindrop_collections, raindrop_collections_sublevel, render_style, purpose, int(item["_id"].(float64)), current_object, current_level, bookmark_title, bookmark_url, goto_prefix)
 
 			// Remove last value from current_object
 			if len(current_object) > 0 {
@@ -458,7 +481,7 @@ func sub_collection_names(raindrop_collections_sublevel []interface{}, parent_id
 		if item["parent"] != nil {
 			item_parent = item["parent"].(map[string]interface{})
 		}
-		if int(item_parent["$id"].(float64)) == parent_id {
+		if item_parent != nil && item_parent["$id"] != nil && int(item_parent["$id"].(float64)) == parent_id {
 			names += item["title"].(string) + " " + sub_collection_names(raindrop_collections_sublevel, int(item["_id"].(float64)))
 		}
 	}
@@ -475,7 +498,7 @@ func get_tags(token RaindropToken, caching string) []interface{} {
 	var cache_base map[string]interface{}
 
 	// Check if cache file exists
-	if cache_file_stat, err := os.Stat("tags.json"); err == nil {
+	if cache_file_stat, err := os.Stat(wf.CacheDir() + "/tags.json"); err == nil {
 		// Ceck modification time of the cache file. Use cache if it is less than 1 minute old, and caching is set "check", or if caching is set to "trust"
 		if caching == "trust" || (time.Since(cache_file_stat.ModTime()).Seconds() < 60 && caching == "check") {
 			// Read stored cached collections
@@ -526,7 +549,7 @@ func reverse_interface_array(array []interface{}) []interface{} {
 	return new_array
 }
 
-// Check if Token has gone through more than half of it's lifetime, and in that case, refresh it
+// Check if Token has gone through more than half of its lifetime, and in that case, refresh it
 func check_token_lifetime(token RaindropToken) {
 	time_location, _ := time.LoadLocation("UTC")
 	time_format := "2006-01-02 15:04:05"
@@ -609,6 +632,22 @@ func get_title(url_string string) string {
 			}
 		}
 	}
+}
+
+// Function for logging out by removing the token from the Keychain
+func logout() {
+	// Remove the token from the Keychain
+	if err := wf.Keychain.Delete("raindrop_token"); err != nil {
+		wf.NewItem("Failed to remove token from Keychain").
+			Subtitle(err.Error()).
+			Valid(false)
+		wf.SendFeedback()
+		return
+	}
+	wf.NewItem("Successfully logged out from Raindrop.io").
+		Subtitle("You will be asked to log in again next time you use the Raindrop.io workflow").
+		Valid(false)
+	wf.SendFeedback()
 }
 
 // Function for handling Firefox related error messages

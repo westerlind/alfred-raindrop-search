@@ -1,13 +1,14 @@
 /*
 	Functions related to adding a new bookmark to Raindrop.io via Alfred
 
-	By Andreas Westerlind in 2021
+	By Andreas Westerlind, 2021-2025
 */
 
 package main
 
 import (
 	"bytes"
+	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -25,6 +26,10 @@ func select_collection(query string, bookmark_url string, bookmark_title string,
 		json.Unmarshal([]byte(firefox_json), &firefox_interface)
 		bookmark_url = firefox_interface["alfredworkflow"].(map[string]interface{})["variables"].(map[string]interface{})["FF_URL"].(string)
 		bookmark_title = firefox_interface["alfredworkflow"].(map[string]interface{})["variables"].(map[string]interface{})["FF_TITLE"].(string)
+	} else {
+		if bookmark_title_decoded, err := base64.StdEncoding.DecodeString(bookmark_title); err == nil {
+			bookmark_title = strings.TrimSuffix(string(bookmark_title_decoded), "\n")
+		}
 	}
 
 	// Fix bookmark_url if it has been escaped en extra time, which Arc seems to currently do (they will probably fix that eventually)
@@ -49,7 +54,6 @@ func select_collection(query string, bookmark_url string, bookmark_title string,
 	if bookmark_title == "" && bookmark_url != "" {
 		if _, err := url.ParseRequestURI(bookmark_url); err == nil {
 			bookmark_title = get_title(bookmark_url)
-			//bookmark_title = "TEST"
 		} else {
 			bookmark_url = "No browser active"
 		}
@@ -99,7 +103,7 @@ func select_collection(query string, bookmark_url string, bookmark_title string,
 	}
 
 	var current_object []string
-	render_collections(raindrop_collections, raindrop_collections_sublevel, render_style, "adding", 0, current_object, -1, bookmark_title, bookmark_url)
+	render_collections(raindrop_collections, raindrop_collections_sublevel, render_style, "adding", 0, current_object, -1, bookmark_title, bookmark_url, "")
 
 	// Add Alfred variables for info about the new bookmark
 	wf.Var("bookmark_title", bookmark_title)
