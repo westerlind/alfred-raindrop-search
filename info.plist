@@ -3683,11 +3683,11 @@ I personally use cmd+option+space.</string>
 			<string>When listing bookmarks while searching for or browsing them, by default you will get info about the collection, tags, and domain name in the subtitle of each bookmark, and you can hold down the ctrl key to view the description.
 If you enable this setting, you will instead see the description first and can hold the ctrl key to view collection, tags and domain name.</string>
 			<key>label</key>
-			<string>Description in Boomark Listing</string>
+			<string>Description in Bookmark Listing</string>
 			<key>type</key>
 			<string>checkbox</string>
 			<key>variable</key>
-			<string>description_in_boomark_listing</string>
+			<string>description_in_bookmark_listing</string>
 		</dict>
 		<dict>
 			<key>config</key>
